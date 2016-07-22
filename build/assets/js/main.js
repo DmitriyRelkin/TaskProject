@@ -1,6 +1,6 @@
 var app = angular.module("sampleApp", ['ui.router']);
 app.controller("mainHeaderCtrl", function($scope) {
-    $scope.headerView = "main-header.html";
+    $scope.headerView = "header.html";
 
     $scope.url = $scope.headerView;
     
@@ -17,10 +17,29 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: '/',
             templateUrl: '/home.html'
         })
+
+       //====Contacts====
+        .state('contacts', {
+            url: '/contacts',
+            templateUrl: '/contacts.html'
+        })
+
+       //====Blog====
+        .state('blog', {
+            url: '/blog',
+            templateUrl: '/blog.html'
+        })
+
         //====Registration====
         .state('reg', {
             url: '/reg',
-            templateUrl: '/main-registration.html'
+            templateUrl: '/registration.html'
+        })
+
+        //====Sig-in====
+        .state('sig-in', {
+            url: '/sig-in',
+            templateUrl: '/sig-in.html'
         });
 });
 
