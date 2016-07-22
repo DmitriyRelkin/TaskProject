@@ -11771,13 +11771,17 @@ button.close {
         .massange-block .wrapper-content-massange-block .content-massange-block .paragraph-massange-block .author-paragraph-massange-block {
           color: #dc6226; }
 
-.business-services-block {
+.upper-services-blocks {
   margin-top: 5%; }
-  .business-services-block .service-block {
-    margin: 5% 0;
-    text-align: center; }
-    .business-services-block .service-block h3 {
-      font: 200 25px/40px Bebas, sans-serif; }
+
+.bottom-services-blocks {
+  margin-bottom: 5%; }
+
+.business-services-block .service-block {
+  margin: 5% 0;
+  text-align: center; }
+  .business-services-block .service-block h3 {
+    font: 200 25px/40px Bebas, sans-serif; }
 
 .content-wrapper {
   padding-top: 100px;

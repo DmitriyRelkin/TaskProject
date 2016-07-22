@@ -98,9 +98,13 @@
 	}	
 
 }
+.upper-services-blocks {
+	margin-top: 5%;
+}
+.bottom-services-blocks {
+	margin-bottom: 5%;
+}
 .business-services-block {
-	// .wrapper-services-blocks {
-		margin-top: 5%;
 		.service-block {
 			margin: 5% 0; 
 			text-align: center;
@@ -108,5 +112,4 @@
 				font: 200 25px/40px Bebas, sans-serif;
 			}
 		}
-	// }
 }
