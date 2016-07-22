@@ -1,21 +1,41 @@
+
 .wrapper-slider {
 	.slider-view {
+		padding: 0; 
 		img {
 			width: 100%;
 		}
 	}
-	.wrapper-links-slider {
-		.link-slide {
-			padding: 0; 
-		}
+	.wrapper-nav-slider {
+		padding: 0;
+		margin: 0 auto;
+		text-align: center;
 		.nav-galery {
-			padding: 0; 
-			.slide {
-				list-style: none;
+			padding: 35px 0px;
+			margin: 0;
+			background: #e8eef2;
+			.slide-link {
+				display: inline-block;
+				list-style-type: none;
+				width: 14.5%;
+				overflow: hidden;
 				img {
-					width: 100%;
+					height: 130px;
+				    width: auto;
+				    max-width: none;
+				    position: relative;
+				    margin: 0 0 0 -250px;
+				    left: 18%;
 				}
 			}	
 		}
 	}
+}
+.greeting-block {
+	background: url(/build/img/map.png) no-repeat center;
+	text-align: center;
+	padding: 130px 0;
+}
+.massange-block {
+
 }

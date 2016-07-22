@@ -1,18 +1,16 @@
 <div class="comtainer wrapper-slider" ng-controller="galaryCtrl">
-	<div class="row">
+	<!-- <div class="row"> -->
 		<div class="col-sm-12 slider-view">
 			<img ng-src="{{photoSrc.src}}">
 		</div>
-		<div class="col-sm-12 wrapper-links-slider">
-			<div class="col-sm-3 link-slide" ng-repeat="photo in photos">
-				<ul class="nav-galery">
-					<li class="slide">
-						<img ng-src="{{photo.src}}" ng-click="showPhoto($index)">
-					</li>
-				</ul>
-			</div>
+		<div class="col-sm-12 wrapper-nav-slider">
+			<ul class="nav-galery">
+				<li ng-repeat="photo in photos" class="slide-link">
+					<img ng-src="{{photo.src}}" ng-click="showPhoto($index)">
+				</li>
+			</ul>
 		</div>
-	</div>
+	<!-- </div> -->
 </div>
 <div class="col-sm-12 greeting-block">
    <h1>WELCOME TO OUR COMPANY!</h1>
@@ -21,7 +19,6 @@
    <p>Our specialists in each service area provide optimum solutions for client's needs!</p>
    <button type="button" class="btn btn-warning">VIEW PORTFOLIO</button>
    <div class="col-sm-12 massange-block">
-   	<div class="col-sm-2"></div>
-   	<div class="col-sm-12"></div>
+   	
    </div>
 </div>
