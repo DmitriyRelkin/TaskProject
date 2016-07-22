@@ -17,25 +17,21 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: '/',
             templateUrl: '/home.html'
         })
-
        //====Contacts====
         .state('contacts', {
             url: '/contacts',
             templateUrl: '/contacts.html'
         })
-
        //====Blog====
         .state('blog', {
             url: '/blog',
             templateUrl: '/blog.html'
         })
-
         //====Registration====
         .state('reg', {
             url: '/reg',
             templateUrl: '/registration.html'
         })
-
         //====Sig-in====
         .state('sig-in', {
             url: '/sig-in',

@@ -34,7 +34,30 @@
 .greeting-block {
 	background: url(/build/img/map.png) no-repeat center;
 	text-align: center;
-	padding: 130px 0;
+	// padding: 130px 0;
+	.header1-greeting-block {
+		font: 300 39px/40px Bebas, sans-serif;
+		color: #404041;
+		margin-top: 5%;
+		padding-bottom: 2%;
+	}
+	.header2-greeting-block {
+		font-weight: 600;
+		font-size: 21px;
+	}
+	.content-greeting-block {
+		padding-bottom: 4%;
+		.paragraph1-in-greeting-block {
+			font-size: 22px;
+			line-height: 32px;
+		}
+		.paragraph2-in-greeting-block {
+			font-size: 19px;
+		}
+		.paragraph1-in-greeting-block, .paragraph2-in-greeting-block {
+			padding: 1% 21%;
+		}
+	}
 }
 .massange-block {
 	background: url(/build/img/parallax-1.jpg) fixed;
