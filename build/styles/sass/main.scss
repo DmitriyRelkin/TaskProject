@@ -1,0 +1,9 @@
+@import "variables/customVariables";
+@import "variables/appVariables";
+@import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+
+@import "header/header";
+@import "format/format";
+@import "greeting-block/greeting-block";
+@import "home-page/home-page";
+@import "content-wrapper/content-wrapper";

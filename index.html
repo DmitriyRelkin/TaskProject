@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="sampleApp">
+  <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Live preview for Buisness</title>
+   <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link href="build/assets/css/main.css" rel="stylesheet">
+   <link href="build/assets/css/normalize.css" rel="stylesheet">
+   </head>
+      <body>
+         <header ng-include="'main-header.html'"></header>
+         <!-- Основной Контент!!! -->
+         <!-- <div class="col-sm-12 main-wrapper-content"> -->
+         <div class="content-wrapper" ui-view></div>
+            
+         <script src="bower_components/angular/angular.min.js"></script>
+         <script src="build/assets/js/angular-ui-router.js"></script>
+         <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script> -->
+         <script src="build/assets/js/main.js"></script>
+         <script src="bower_components/jquery/dist/jquery.min.js"></script>
+         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+      </body>
+</html>

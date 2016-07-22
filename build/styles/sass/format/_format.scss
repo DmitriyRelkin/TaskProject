@@ -1,0 +1,55 @@
+@import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: $screen-sm-min){
+	.main-header {
+		.content-main-header {
+			width: 99% !important;
+			.links-main-header {
+				li > a {
+					// padding: 7px 13px !important;
+				}
+			}
+			.search-block-main-header {
+				a {
+					// padding: 9px 0 !important;
+				}
+			}
+		}
+	}
+}
+	/* Medium devices (desktops, 992px and up) */
+@media (max-width: $screen-md-min) {
+	.main-header {
+		.content-main-header {
+			// padding: 0px 17px;
+			.wrapper-input-search {
+				padding: 0;
+			}
+			width: 100%;
+			.header-logo {
+				font-size: 111%;
+				padding: 41px 0; 
+			}
+			.links-main-header {
+				li > a {
+					// padding: 41px 6px !important;
+				}
+			}
+		}
+	}		
+}
+
+/*Large devices (large desktops, 1200px and up)*/
+@media (max-width: $screen-lg-min) {
+			.main-header {
+				width: 100%;
+				.content-main-header {
+					width: 97% !important;
+					padding: 0;
+				}
+				.search-block-main-header {
+					padding: 0;
+				}
+			}		
+	}

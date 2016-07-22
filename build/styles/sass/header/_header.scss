@@ -1,0 +1,51 @@
+.main-header {
+	.content-main-header {
+		// padding: 0px 331px;
+		width: 76%;
+		.header-logo {
+			color: $main-white-content;
+			font-size: 199%;
+			&:hover {
+				color: darken($main-white-content, 5%);
+			}
+		}
+		.header-logo-piece {
+			color: $main-orange-content;
+			font-size: 105%;
+			&:hover {
+				color: darken($main-orange-content, 5%);
+			}
+		}
+		.links-main-header {
+			overflow: hidden;
+			li > a {
+				font: 700 14px/20px , sans-serif;
+				font-weight: bold;
+			}
+		}
+		.search-header-input {
+			border-radius: 0px;
+			width: 132px;
+			height: 32px;
+			border: $header-background;
+			background: $header-background;
+			&:hover {
+				border: 1px solid $main-orange-content;
+			}
+		}
+		.search-block-main-header {
+			padding: 0; 
+			margin: 35px 0px 35px 0px;
+			position: relative;
+			 	a {
+				color: $pure-white;
+				position: absolute;
+	   				top: 18%;
+	   				right: 7%;
+				&:hover {
+					color: $main-orange-content;
+				}
+			}
+		}
+	}	
+}

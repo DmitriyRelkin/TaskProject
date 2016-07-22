@@ -1,0 +1,22 @@
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmitriyRelkin/TaskProject-V-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DmitriyRelkin/TaskProject-V-2/issues"
+  },
+  "homepage": "https://github.com/DmitriyRelkin/TaskProject-V-2#readme",
+  "devDependencies": {
+    "gulp-sass": "^2.3.2"
+  }
+}

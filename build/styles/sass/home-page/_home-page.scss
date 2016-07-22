@@ -1,0 +1,21 @@
+.wrapper-slider {
+	.slider-view {
+		img {
+			width: 100%;
+		}
+	}
+	.wrapper-links-slider {
+		.link-slide {
+			padding: 0; 
+		}
+		.nav-galery {
+			padding: 0; 
+			.slide {
+				list-style: none;
+				img {
+					width: 100%;
+				}
+			}	
+		}
+	}
+}
