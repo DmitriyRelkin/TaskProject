@@ -1,4 +1,25 @@
 @charset "UTF-8";
+.greeting-block .header1-greeting-block, .strategy-block .heading-strategy-block {
+  font: 300 39px/40px Bebas, sans-serif;
+  color: #404041;
+  margin-top: 5%;
+  padding-bottom: 2%;
+  text-align: center; }
+
+.strategy-block p {
+  font-size: 147%;
+  text-align: center; }
+
+.strategy-block .content-strategy-block .column-strategy-block .header-strategy-block {
+  color: #404b52;
+  text-transform: uppercase;
+  font: 900 20px/24px Bebas, sans-serif;
+  font-size: 173%;
+  margin-bottom: 10px; }
+
+/* %indent-paragraph {
+	
+} */
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -11726,11 +11747,6 @@ button.close {
 .greeting-block {
   background: url(/build/img/map.png) no-repeat center;
   text-align: center; }
-  .greeting-block .header1-greeting-block {
-    font: 300 39px/40px Bebas, sans-serif;
-    color: #404041;
-    margin-top: 5%;
-    padding-bottom: 2%; }
   .greeting-block .header2-greeting-block {
     font-weight: 600;
     font-size: 21px; }
@@ -11782,6 +11798,30 @@ button.close {
   text-align: center; }
   .business-services-block .service-block h3 {
     font: 200 25px/40px Bebas, sans-serif; }
+
+.strategy-block {
+  background: #e8eef2; }
+  .strategy-block p {
+    margin-bottom: 4%; }
+  .strategy-block .heading-strategy-block {
+    color: #404041; }
+  .strategy-block .content-strategy-block {
+    padding: 0; }
+    .strategy-block .content-strategy-block .column-strategy-block {
+      text-align: center; }
+      .strategy-block .content-strategy-block .column-strategy-block img {
+        padding: 6px;
+        background: #fff;
+        -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15); }
+      .strategy-block .content-strategy-block .column-strategy-block ul {
+        text-align: left;
+        padding: 0;
+        list-style: none; }
+      .strategy-block .content-strategy-block .column-strategy-block .header-strategy-block {
+        text-align: left;
+        margin-top: 14%; }
 
 .content-wrapper {
   padding-top: 100px;

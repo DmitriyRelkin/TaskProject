@@ -13,7 +13,7 @@
 		.nav-galery {
 			padding: 35px 0px;
 			margin: 0;
-			background: #e8eef2;
+			background: $turquoise-gray;
 			.slide-link {
 				display: inline-block;
 				list-style-type: none;
@@ -34,12 +34,8 @@
 .greeting-block {
 	background: url(/build/img/map.png) no-repeat center;
 	text-align: center;
-	// padding: 130px 0;
 	.header1-greeting-block {
-		font: 300 39px/40px Bebas, sans-serif;
-		color: $heading-greeting-color;
-		margin-top: 5%;
-		padding-bottom: 2%;
+		@extend %heading-content;
 	}
 	.header2-greeting-block {
 		font-weight: 600;
@@ -112,4 +108,40 @@
 				font: 200 25px/40px Bebas, sans-serif;
 			}
 		}
+}
+.strategy-block {
+	background: $turquoise-gray;
+	p {
+		@extend %paragraph-patern;
+		margin-bottom: 4%;		
+	}
+	.heading-strategy-block {
+		@extend %heading-content;
+		color: $heading-greeting-color;
+		
+	}
+	.content-strategy-block {
+		padding: 0; 
+		.column-strategy-block {
+			text-align: center;
+			img {
+				padding: 6px;
+			    background: #fff;
+			    -webkit-box-shadow: 0 4px 4px rgba(0,0,0,0.15);
+			    -moz-box-shadow: 0 4px 4px rgba(0,0,0,0.15);
+			    box-shadow: 0 4px 4px rgba(0,0,0,0.15);
+			}
+			ul {
+				text-align: left;
+			   padding: 0;
+			   list-style: none;
+			}
+			.header-strategy-block {
+				@extend %mini-heading;
+				text-align: left;
+				margin-top: 14%;
+			}
+		}
+	}
+
 }
