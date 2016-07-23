@@ -43,43 +43,11 @@
 	</div>
 </div>
 <div class="container business-services-block">
-	<div class="col-sm-12 wrapper-services-blocks upper-services-blocks">
-		<div class="col-sm-4 service-block">
-			<img src="build/img/icon-service-1.png" alt="">
-			<h3>BUSINESS CONSULTING</h3>
-			<p>Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur</p>
-			<button type="button" class="btn btn-default btn-lg content-button">READ MORE</button>
-		</div>
-		<div class="col-sm-4 service-block">
-			<img src="build/img/icon-service-2.png" alt="">
-			<h3>ENTERPRISE APPLICATION</h3>
-			<p>Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur</p>
-			<button type="button" class="btn btn-default btn-lg content-button">READ MORE</button>
-		</div>
-		<div class="col-sm-4 service-block">
-			<img src="build/img/icon-service-3.png" alt="">
-			<h3>NEW STRATEGY</h3>
-			<p>Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur</p>
-			<button type="button" class="btn btn-default btn-lg content-button">READ MORE</button>
-		</div>
-	</div>
-	<div class="col-sm-12 wrapper-services-blocks bottom-services-blocks">
-		<div class="col-sm-4 service-block">
-			<img src="build/img/icon-service-4.png" alt="">
-			<h3>BUSINESS CONSULTING</h3>
-			<p>Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur</p>
-			<button type="button" class="btn btn-default btn-lg content-button">READ MORE</button>
-		</div>
-		<div class="col-sm-4 service-block">
-			<img src="build/img/icon-service-5.png" alt="">
-			<h3>BUSINESS CONSULTING</h3>
-			<p>Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur</p>
-			<button type="button" class="btn btn-default btn-lg content-button">READ MORE</button>
-		</div>
-		<div class="col-sm-4 service-block">
-			<img src="build/img/icon-service-6.png" alt="">
-			<h3>BUSINESS CONSULTING</h3>
-			<p>Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur</p>
+	<div class="col-sm-12 wrapper-services-blocks services-blocks"  ng-controller="bisinessBlockCtrl">
+		<div class="col-sm-4 service-block" ng-repeat="block in serviceBlock">
+			<img src="{{block.srcImg}}" alt="">
+			<h3>{{block.header}}</h3>
+			<p>{{block.paragraph}}</p>
 			<button type="button" class="btn btn-default btn-lg content-button">READ MORE</button>
 		</div>
 	</div>
@@ -87,37 +55,65 @@
 <div class="col-sm-12 strategy-block">
 	<h3 class="heading-strategy-block">STRATEGY IS NOTHING WITHOUT EXECUTION</h3>
 	<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-	<div class="container content-strategy-block">
-		<div class="col-sm-4 column-strategy-block">
-			<img src="build/img/page1_img1.jpg" alt="">
-			<h5 class="header-strategy-block">QUESTIONS TO ASK:</h5>
+	<div class="container content-strategy-block" ng-controller="strategyCtrl">
+		<div ng-repeat="list in strategyBlock" class="col-sm-4 column-strategy-block">
+			<img src="{{list.srcImg}}" alt="">
+			<h5 class="header-strategy-block">{{list.header}}</h5>
 			<ul>
-				<li>What is your growth strategy?</li>
-				<li>The "unbundled" company : Are you global?</li>
-				<li>How do you imagine your business model for growth and performance?</li>
-				<li>Which kind of ecosystem would support my development?</li>
-			</ul>
-		</div>
-		<div class="col-sm-4 column-strategy-block">
-			<img src="build/img/page1_img2.jpg" alt="">
-			<h5 class="header-strategy-block">THE COMPANY'S ROLE:</h5>
-			<ul>
-				<li>Analysing your organisation business model</li>
-				<li>Identifying development opportunities</li>
-				<li>Defining your objectives</li>
-				<li>Identifying the key factors for success</li>
-			</ul>
-		</div>
-		<div class="col-sm-4 column-strategy-block">
-			<img src="build/img/page1_img3.jpg" alt="">
-			<h5 class="header-strategy-block">OUR KEY OFFERS:</h5>
-			<ul>
-				<li>Creator of opportunities</li>
-				<li>(CO) - Pilot</li>
-				<li>Talent management</li>
-				<li>Mobility partner</li>
-				<li>Communications expertise</li>
+				<li>{{list.item1}}</li>
+				<li>{{list.item2}}</li>
+				<li>{{list.item3}}</li>
+				<li>{{list.item4}}</li>
 			</ul>
 		</div>
 	</div>
 </div>
+<div class="col-sm-12 wrapper-footer-block">
+	<div class="row footer-block">
+		<div class="col-sm-8 left-footer-block">
+			<div class="col-sm-2 footer-column">
+				<h4 class="header-footer-column">NAVIGATION</h4>
+				<ul>
+					<li class="active"><a ui-sref="home">Home<span class="sr-only">(current)</span></a></li>
+			        <li><a ui-sref="contacts">Contacts</a></li>
+			        <li><a ui-sref="blog">Blog</a></li>
+			        <li><a ui-sref="reg">Registration</a></li>
+			        <li><a ui-sref="sig-in">Sig In</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-2 footer-column">
+				<h4 class="header-footer-column">NEWS</h4>
+				<ul>
+					<li><a href="">New Releases</a></li>
+					<li><a href="">Events</a></li>
+					<li><a href="">How To</a></li>
+					<li><a href="">Real Help</a></li>
+					<li><a href="">Charity</a></li>
+					<li><a href="">Contes</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-4 footer-column">
+				<h4 class="header-footer-column">GET IN TOUCH</h4>
+				<ul class="contacts-footer-column">
+					<li>E-mail: <a href="#">mail@demolink.org</a></li>
+					<li>8901 Marmora Road</li>
+					<li>Glasgow, DO4 89GR.</li>
+					<li>Freephone:+1 800 559 6580</li>
+					<li>Telephone:+1 959 603 6035</li>
+					<li>FAX:+ 1 504 889 9898</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-sm-4 social-footer-column">
+			<h4 class="header-footer-column">CONNECT ONLINE</h4>
+			<div class="social-icons">
+				<a href="#" id="faceBook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+				<a href="#" id="googlePlus"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+				<a href="#" id="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+				<a href="#" id="pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+				<a href="#" id="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <div><iframe src="https://www.google.com.ua/maps/@50.0055563,36.2162146,14z?hl=ru" frameborder="0"></iframe></div> -->

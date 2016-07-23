@@ -57,12 +57,10 @@
 }
 .massange-block {
 	background: url(/build/img/parallax-1.jpg) fixed;
+	position: relative;
 	.wrapper-content-massange-block {
-		/* &:before {
-			background: url(/build/img/quote-1.png) no-repeat 0 0;
-			width: 61px;
-			height: 70px;
-		} */
+		@extend %quote-left;
+		@extend %quote-right;
 		.content-massange-block {
 			margin: 7% 14%;
 			background: $main-white-content;
@@ -94,8 +92,9 @@
 	}	
 
 }
-.upper-services-blocks {
+.services-blocks {
 	margin-top: 5%;
+	margin-bottom: 3%;
 }
 .bottom-services-blocks {
 	margin-bottom: 5%;
@@ -111,6 +110,7 @@
 }
 .strategy-block {
 	background: $turquoise-gray;
+	padding-bottom: 4%;
 	p {
 		@extend %paragraph-patern;
 		margin-bottom: 4%;		
@@ -135,13 +135,93 @@
 				text-align: left;
 			   padding: 0;
 			   list-style: none;
+				li {
+					@extend %links-strategy-block;
+					@extend %chekmark-strategy-block;
+				}
 			}
 			.header-strategy-block {
-				@extend %mini-heading;
+				/*@extend %mini-heading;*/
+				font-family: sans-serif;
+				font-size: 164%;
+    			font-weight: 600;
 				text-align: left;
 				margin-top: 14%;
 			}
 		}
 	}
 
+}
+.wrapper-footer-block {
+
+	.footer-block {
+		.left-footer-block {
+			border-right: 1px solid $color-border-fotter-block;
+		}
+		background: $footer-bg;
+		padding: 4% 14%;
+		.footer-column {
+			margin-right: 10%;
+			padding: 0;
+			a {
+				text-decoration: none;
+				&:hover {
+					color: $main-orange-content;
+				}
+			}
+			.header-footer-column {
+				@extend %header-footer-block;
+			}
+			.contacts-footer-column {
+				li {
+					color: $color-text-social-footer;
+					a {
+						text-decoration: none;
+						color: $color-text-social-footer;
+						&:hover {
+							color: $main-orange-content;
+						}
+					} 
+				}
+			}
+			ul {
+				text-align: left;
+			    padding: 0;
+				li {
+				    list-style: none;
+				    @extend %font-navigation-footer-block;	
+					.active {
+						a {
+							color: $main-orange-content;
+							text-decoration: none;
+						}
+					}
+					a {
+						color:$text-footer-block;
+					}
+				}
+			}
+		}
+
+		.social-footer-column {
+			padding: 0;
+			padding-left: 20px;
+			.header-footer-column {
+				@extend %header-footer-block;
+
+			}
+			.social-icons {
+				a {
+					.fa {
+						font-size: 34px;
+						color: $turquoise-gray;
+						margin-right: 15px;
+						&:hover {
+							color: $main-orange-content;	
+						}
+					}
+				}
+			}
+		}
+	}
 }
