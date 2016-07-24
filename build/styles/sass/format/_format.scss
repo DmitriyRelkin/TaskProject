@@ -7,20 +7,20 @@
 			width: 99% !important;
 			.links-main-header {
 				li > a {
-					// padding: 7px 13px !important;
+					padding: 7px 13px !important;
 				}
 			}
 			.search-block-main-header {
 				a {
-					// padding: 9px 0 !important;
+					padding: 9px 0 !important;
 				}
 			}
 		}
 	}
 	.content-wrapper{
 
-		.massange-block {
-			padding: 16% 16%;
+		.message-block {
+			padding: 20% 16%;
 			.wrapper-content-massange-block {
 				.content-massange-block {
 					.img-massange-block {
@@ -56,6 +56,15 @@
 					a {
 						font-size: 79%;
 					}
+				}
+			}
+		}
+	}
+	.business-services-block {
+		.wrapper-services-blocks {
+			.service-block {
+				h3 {
+					font-size: 137%;
 				}
 			}
 		}
