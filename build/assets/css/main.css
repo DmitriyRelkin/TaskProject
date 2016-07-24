@@ -11866,6 +11866,7 @@ button.close {
     .strategy-block .content-strategy-block .column-strategy-block {
       text-align: center; }
       .strategy-block .content-strategy-block .column-strategy-block img {
+        width: 100%;
         padding: 6px;
         background: #fff;
         -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
