@@ -32,8 +32,10 @@
 				padding: 41px 0; 
 			}
 			.links-main-header {
-				li > a {
-					// padding: 41px 6px !important;
+				li {
+					a {
+						font-size: 79%;
+					}
 				}
 			}
 		}
