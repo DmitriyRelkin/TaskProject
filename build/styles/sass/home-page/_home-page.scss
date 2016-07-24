@@ -55,19 +55,19 @@
 		}
 	}
 }
-.massange-block {
+.message-block {
 	background: url(/build/img/parallax-1.jpg) fixed;
 	position: relative;
 	padding: 10% 5%;
-	.wrapper-content-massange-block {
+	.wrapper-content-message-block {
 		@extend %quote-left;
 		@extend %quote-right;
 		padding: 0;
-		.content-massange-block {
+		.content-message-block {
 			/*margin: 7% 14%;*/
 			background: $main-white-content;
 			border-radius: 20px;
-			.img-massange-block {
+			.img-message-block {
 				text-align: center;
 				margin: 0 auto;
 				    padding: 0;
@@ -77,10 +77,10 @@
 					padding: 10% 0%;
 				}
 			}
-			.paragraph-massange-block {
+			.paragraph-message-block {
 				padding: 3% 4%;
 				p 	{
-					@extend %font-for-paragraph-massange-block;
+					@extend %font-for-paragraph-message-block;
 					a 	{
 						text-decoration: none;
 						color: $deafault-text-color;
@@ -89,7 +89,7 @@
 						}
 					}
 				}
-				.author-paragraph-massange-block {
+				.author-paragraph-message-block {
 					color: $main-orange-content;
 				}
 			}
