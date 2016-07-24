@@ -10,6 +10,9 @@
   font-size: 147%;
   text-align: center; }
 
+.massange-block .wrapper-content-massange-block .content-massange-block .paragraph-massange-block p {
+  font-family: WorkSans; }
+
 .strategy-block .content-strategy-block .column-strategy-block ul li {
   font-family: WorkSans;
   font-size: 114%;
@@ -30,8 +33,8 @@
   color: #F9F8F3;
   font-size: 50px;
   position: absolute;
-  top: 6%;
-  left: 15%; }
+  bottom: 100%;
+  left: 0; }
 
 .massange-block .wrapper-content-massange-block:after {
   content: "\f10e";
@@ -40,8 +43,8 @@
   color: #F9F8F3;
   font-size: 50px;
   position: absolute;
-  bottom: 5%;
-  right: 15%; }
+  top: 102%;
+  right: 0; }
 
 .wrapper-footer-block .footer-block .footer-column .header-footer-column, .wrapper-footer-block .footer-block .social-footer-column .header-footer-column {
   text-align: left;
@@ -11730,7 +11733,15 @@ button.close {
 /* Small devices (tablets, 768px and up) */
 @media (max-width: 768px) {
   .main-header .content-main-header {
-    width: 99% !important; } }
+    width: 99% !important; }
+  .content-wrapper .massange-block {
+    padding: 16% 16%; }
+    .content-wrapper .massange-block .wrapper-content-massange-block .content-massange-block .img-massange-block img {
+      width: 40%; }
+    .content-wrapper .massange-block .wrapper-content-massange-block .content-massange-block .paragraph-massange-block {
+      padding: 3% 10%;
+      font-size: 17px;
+      text-align: center; } }
 
 /* Medium devices (desktops, 992px and up) */
 @media (max-width: 992px) {
@@ -11768,10 +11779,11 @@ button.close {
     margin: 0;
     background: #e8eef2; }
     .wrapper-slider .wrapper-nav-slider .nav-galery .slide-link {
+      cursor: pointer;
       list-style-type: none;
       width: 19%;
       overflow: hidden;
-      margin-right: 20px;
+      margin: 0 10px;
       display: inline-block;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); }
       .wrapper-slider .wrapper-nav-slider .nav-galery .slide-link img {
@@ -11797,25 +11809,31 @@ button.close {
 
 .massange-block {
   background: url(/build/img/parallax-1.jpg) fixed;
-  position: relative; }
-  .massange-block .wrapper-content-massange-block .content-massange-block {
-    margin: 7% 14%;
-    background: #F9F8F3;
-    border-radius: 20px; }
-    .massange-block .wrapper-content-massange-block .content-massange-block .img-massange-block img {
-      border-radius: 50%;
-      width: 80%;
-      padding: 12%; }
-    .massange-block .wrapper-content-massange-block .content-massange-block .paragraph-massange-block {
-      padding: 3% 0%;
-      width: 78%; }
-      .massange-block .wrapper-content-massange-block .content-massange-block .paragraph-massange-block p a {
-        text-decoration: none;
-        color: #363636; }
-        .massange-block .wrapper-content-massange-block .content-massange-block .paragraph-massange-block p a:hover {
+  position: relative;
+  padding: 10% 5%; }
+  .massange-block .wrapper-content-massange-block {
+    padding: 0; }
+    .massange-block .wrapper-content-massange-block .content-massange-block {
+      /*margin: 7% 14%;*/
+      background: #F9F8F3;
+      border-radius: 20px; }
+      .massange-block .wrapper-content-massange-block .content-massange-block .img-massange-block {
+        text-align: center;
+        margin: 0 auto;
+        padding: 0; }
+        .massange-block .wrapper-content-massange-block .content-massange-block .img-massange-block img {
+          width: 60%;
+          border-radius: 50%;
+          padding: 10% 0%; }
+      .massange-block .wrapper-content-massange-block .content-massange-block .paragraph-massange-block {
+        padding: 3% 4%; }
+        .massange-block .wrapper-content-massange-block .content-massange-block .paragraph-massange-block p a {
+          text-decoration: none;
+          color: #363636; }
+          .massange-block .wrapper-content-massange-block .content-massange-block .paragraph-massange-block p a:hover {
+            color: #dc6226; }
+        .massange-block .wrapper-content-massange-block .content-massange-block .paragraph-massange-block .author-paragraph-massange-block {
           color: #dc6226; }
-      .massange-block .wrapper-content-massange-block .content-massange-block .paragraph-massange-block .author-paragraph-massange-block {
-        color: #dc6226; }
 
 .services-blocks {
   margin-top: 5%;

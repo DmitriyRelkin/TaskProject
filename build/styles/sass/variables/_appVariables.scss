@@ -32,6 +32,9 @@ $color-border-fotter-block: #5b5b5b;
 	margin-bottom: 10px;
 
 }
+%font-for-paragraph-massange-block {
+	font-family: WorkSans;
+}
 %links-strategy-block {
 	font-family: WorkSans;
 	font-size: 114%;
@@ -55,8 +58,8 @@ $color-border-fotter-block: #5b5b5b;
 		color: $main-white-content;
 		font-size: 50px;
 		position: absolute;
-		top: 6%;
-		left: 15%;
+		bottom: 100%;
+		left: 0;
 	}
 }
 %quote-right {
@@ -67,8 +70,8 @@ $color-border-fotter-block: #5b5b5b;
 		color: $main-white-content;
 		font-size: 50px;
 		position: absolute;
-		bottom: 5%;
-		right: 15%;
+		top: 102%;
+		right: 0;
 	}	
 }
 %header-footer-block {

@@ -17,6 +17,26 @@
 			}
 		}
 	}
+	.content-wrapper{
+
+		.massange-block {
+			padding: 16% 16%;
+			.wrapper-content-massange-block {
+				.content-massange-block {
+					.img-massange-block {
+						img {
+							width: 40%;
+						}
+					}
+					.paragraph-massange-block {
+						padding: 3% 10%;
+					    font-size: 17px;
+					    text-align: center;
+					}
+				}
+			}
+		}
+	}
 }
 	/* Medium devices (desktops, 992px and up) */
 @media (max-width: $screen-md-min) {

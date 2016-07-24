@@ -15,10 +15,11 @@
 			margin: 0;
 			background: $turquoise-gray;
 			.slide-link {
+				cursor: pointer;
 				list-style-type: none;
 			    width: 19%;
 			    overflow: hidden;
-			    margin-right: 20px;
+			    margin: 0 10px;
 			    display: inline-block;
 			    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 				img {
@@ -57,24 +58,29 @@
 .massange-block {
 	background: url(/build/img/parallax-1.jpg) fixed;
 	position: relative;
+	padding: 10% 5%;
 	.wrapper-content-massange-block {
 		@extend %quote-left;
 		@extend %quote-right;
+		padding: 0;
 		.content-massange-block {
-			margin: 7% 14%;
+			/*margin: 7% 14%;*/
 			background: $main-white-content;
 			border-radius: 20px;
 			.img-massange-block {
+				text-align: center;
+				margin: 0 auto;
+				    padding: 0;
 				img {
+					width: 60%;
 					border-radius: 50%;
-					width: 80%;
-					padding: 12%;	
+					padding: 10% 0%;
 				}
 			}
 			.paragraph-massange-block {
-				padding: 3% 0%;
-				width: 78%;
+				padding: 3% 4%;
 				p 	{
+					@extend %font-for-paragraph-massange-block;
 					a 	{
 						text-decoration: none;
 						color: $deafault-text-color;
