@@ -11798,7 +11798,7 @@ button.close {
         width: 154%; }
 
 .greeting-block {
-  background: url(/build/img/map.png) no-repeat center;
+  background: url(/website/consalting/assets/images/map.png) no-repeat center;
   text-align: center; }
   .greeting-block .header2-greeting-block {
     font-weight: 600;
@@ -11814,7 +11814,7 @@ button.close {
       padding: 1% 21%; }
 
 .message-block {
-  background: url(/build/img/parallax-1.jpg) fixed;
+  background: url(/website/consalting/assets/images/parallax-1.jpg) fixed;
   position: relative;
   padding: 10% 5%; }
   .message-block .wrapper-content-message-block {
@@ -11930,13 +11930,13 @@ button.close {
 
 @font-face {
   font-family: Bebas;
-  src: url(./fonts/Bebas/Bebas.ttf); }
+  src: url(/website/consalting/assets/fonts/Bebas/Bebas.ttf); }
 
 @font-face {
-  font-family: Wo	rkSans;
-  src: url(./fonts/WorkSans/WorkSans.otf); }
+  font-family: WorkSans;
+  src: url(/website/consalting/assets/fonts/WorkSans/WorkSans.otf); }
 
-@fa-font-path :   "./build/font-awesome/scss/_variables.scss";
+@fa-font-path :   "/website/consalting/assets/fonts/font-awesome/scss/_variables.scss";
 .content-button {
   border: none;
   border-radius: 0; }
