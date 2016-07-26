@@ -1,21 +1,17 @@
 var app = angular.module("sampleApp", ['ui.router']);
 app.controller("mainHeaderCtrl", function($scope) {
     $scope.headerView = "website/templates/components/header.html";
-
     $scope.url = $scope.headerView;
-    
-    $scope.showHeader = function() {
+/*    $scope.showHeader = function() {
         $scope.url = $scope.headerView;
-    }
+    }*/
 });
 app.controller("mainFooterCtrl", function($scope) {
     $scope.footerView = "website/templates/components/footer.html";
-
     $scope.url = $scope.footerView;
-    
-    $scope.showHeader = function() {
+/*    $scope.showHeader = function() {
         $scope.url = $scope.footerView;
-    }
+    }*/
 });
 // -=-=-=-=-=-=-=-=-=-=-Router=-=--=-=-=-=-=-=-=-=-=-=-
 app.config(function($stateProvider, $urlRouterProvider) {

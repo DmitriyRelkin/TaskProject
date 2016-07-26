@@ -1,16 +1,14 @@
 <div class="comtainer wrapper-slider" ng-controller="galaryCtrl">
-	<!-- <div class="row"> -->
-		<div class="col-sm-12 slider-view">
-			<img ng-src="{{photoSrc.src}}">
-		</div>
-		<div class="col-sm-12 wrapper-nav-slider">
-			<ul class="nav-galery">
-				<li ng-repeat="photo in photos" class="slide-link">
-					<img ng-src="{{photo.src}}" ng-click="showPhoto($index)">
-				</li>
-			</ul>
-		</div>
-	<!-- </div> -->
+	<div class="col-sm-12 slider-view">
+		<img ng-src="{{photoSrc.src}}">
+	</div>
+	<div class="col-sm-12 wrapper-nav-slider">
+		<ul class="nav-galery">
+			<li ng-repeat="photo in photos" class="slide-link">
+				<img ng-src="{{photo.src}}" ng-click="showPhoto($index)">
+			</li>
+		</ul>
+	</div>
 </div>
 <div class="col-sm-12 greeting-block">
 

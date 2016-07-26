@@ -5879,9 +5879,10 @@ button.close {
   width: 76%; }
   .main-header .content-main-header .header-logo {
     color: #fff;
-    font-size: 199%; }
-    .main-header .content-main-header .header-logo:hover {
-      color: #f2f2f2; }
+    font-size: 199%;
+    /* 			&:hover {
+	color: darken($main-white-content, 5%);
+} */ }
   .main-header .content-main-header .header-logo-piece {
     color: #dc6226;
     font-size: 105%; }

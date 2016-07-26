@@ -3,9 +3,9 @@
 @import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 
 @import "layouts/header";
-@import "format/format";
+@import "mobile/mobile";
 @import "pages/home-page";
-@import "content-wrapper/content-wrapper";
+@import "components/content-wrapper";
 @import "fonts/fonts";
 @import "components/content-buttons";
 @import "layouts/footer";

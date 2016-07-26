@@ -5,9 +5,9 @@
 		.header-logo {
 			color: $main-white-content;
 			font-size: 199%;
-			&:hover {
-				color: darken($main-white-content, 5%);
-			}
+/* 			&:hover {
+	color: darken($main-white-content, 5%);
+} */
 		}
 		.header-logo-piece {
 			color: $main-orange-content;
