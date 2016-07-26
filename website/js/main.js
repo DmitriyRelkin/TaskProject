@@ -14,6 +14,12 @@ app.controller("mainFooterCtrl", function($scope) {
     }*/
 });
 // -=-=-=-=-=-=-=-=-=-=-Router=-=--=-=-=-=-=-=-=-=-=-=-
+app.run([
+    "$rootScope", "$state", "$stateParams", function($rootScope, $state, $stateParams) {
+      $rootScope.$state = $state;
+      return $rootScope.$stateParams = $stateParams;
+    }
+  ]);
 app.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
     $stateProvider
