@@ -2,10 +2,10 @@
 @import "variables/appVariables";
 @import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 
-@import "header/header";
+@import "layouts/header";
 @import "format/format";
-@import "home-page/home-page";
+@import "pages/home-page";
 @import "content-wrapper/content-wrapper";
 @import "fonts/fonts";
-@import "content-buttons/content-buttons";
-@import "footer/footer";
+@import "components/content-buttons";
+@import "layouts/footer";
