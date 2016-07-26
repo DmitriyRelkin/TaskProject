@@ -54,10 +54,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 app.controller("galaryCtrl", function($scope) {
     $scope.photos = [
-        {src: "website/images/slide-1.jpg", desc:"1"},
-        {src: "website/images/slide-2.jpg", desc:"2"},
-        {src: "website/images/slide-3.jpg", desc:"3"},
-        {src: "website/images/slide-4.jpg", desc:"4"}
+        {src: "website/images/slide-1.jpg", desc:"1", btnName: "BUSINES WORKS WITH TECNOLOGY"},
+        {src: "website/images/slide-2.jpg", desc:"2", btnName: "PROFESSIONAL CONSULTING SERVICES"},
+        {src: "website/images/slide-3.jpg", desc:"3", btnName: "BROADEN YOUR MARKET EDGE"},
+        {src: "website/images/slide-4.jpg", desc:"4", btnName: "WE AREA NETWORK OF LEADERS"}
     ];
     $scope.photoSrc = $scope.photos[0];
     $scope.showPhoto = function(index) {

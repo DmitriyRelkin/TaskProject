@@ -1,4 +1,3 @@
-
 .wrapper-slider {
 	.slider-view {
 		padding: 0; 
@@ -59,6 +58,10 @@
 	background: url(/website/images/parallax-1.jpg) fixed;
 	position: relative;
 	padding: 10% 5%;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	.wrapper-content-message-block {
 		@extend %quote-left;
 		@extend %quote-right;

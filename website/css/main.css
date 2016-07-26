@@ -11817,7 +11817,11 @@ button.close {
 .message-block {
   background: url(/website/images/parallax-1.jpg) fixed;
   position: relative;
-  padding: 10% 5%; }
+  padding: 10% 5%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
   .message-block .wrapper-content-message-block {
     padding: 0; }
     .message-block .wrapper-content-message-block .content-message-block {
@@ -11923,6 +11927,9 @@ button.close {
       margin-right: 15px; }
       .wrapper-footer-block .footer-block .social-footer-column .social-icons a .fa:hover {
         color: #dc6226; }
+
+body {
+  height: 100%; }
 
 .content-wrapper {
   padding-top: 100px;
