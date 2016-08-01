@@ -11,7 +11,14 @@ $footer-bg: #3d3d3d;
 $text-footer-block: #858686;
 $color-text-social-footer: #9c9d9e;
 $color-border-fotter-block: #5b5b5b;
+$backgound-footer: #3d3d3d;
 
+%header-footer-block {
+	color: $turquoise-gray;
+	padding-bottom: 12%;
+	font-weight: bold;
+	margin: 0; 
+}
 %heading-content { 
 	font: 300 39px/40px Bebas, sans-serif;
 	color: $heading-greeting-color;
@@ -73,13 +80,6 @@ $color-border-fotter-block: #5b5b5b;
 		top: 102%;
 		right: 0;
 	}	
-}
-%header-footer-block {
-	text-align: left;
-    color: $turquoise-gray;
-    font-weight: 600;
-    margin: 0;
-    padding-bottom: 24%;
 }
 %font-navigation-footer-block {
 	font-family: WorkSans;

@@ -68,19 +68,19 @@
 	</div>
 </div>
 <div class="col-sm-12 wrapper-footer-block">
-	<div class="row footer-block">
-		<div class="col-sm-8 left-footer-block">
-			<div class="col-sm-2 footer-column">
+	<div class="container footer-block">
+		<div class="col-sm-8 col-xs-12 left-footer-block">
+			<div class="col-sm-3 col-xs-3 footer-column">
 				<h4 class="header-footer-column">NAVIGATION</h4>
 				<ul>
-					<li class="active"><a ui-sref="home">Home<span class="sr-only">(current)</span></a></li>
+					<li><a ui-sref="home">Home<span class="sr-only">(current)</span></a></li>
 			        <li><a ui-sref="contacts">Contacts</a></li>
 			        <li><a ui-sref="blog">Blog</a></li>
 			        <li><a ui-sref="reg">Registration</a></li>
 			        <li><a ui-sref="sig-in">Sig In</a></li>
 				</ul>
 			</div>
-			<div class="col-sm-2 footer-column">
+			<div class="col-sm-3 col-xs-3 footer-column">
 				<h4 class="header-footer-column">NEWS</h4>
 				<ul>
 					<li><a href="">New Releases</a></li>
@@ -91,7 +91,7 @@
 					<li><a href="">Contes</a></li>
 				</ul>
 			</div>
-			<div class="col-sm-4 footer-column">
+			<div class="col-sm-4 col-xs-4 footer-column">
 				<h4 class="header-footer-column">GET IN TOUCH</h4>
 				<ul class="contacts-footer-column">
 					<li>E-mail: <a href="#">mail@demolink.org</a></li>
@@ -112,7 +112,20 @@
 				<a href="#" id="pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
 				<a href="#" id="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 			</div>
+			<div class="col-sm-10 social-footer-column-informed-input">
+				<h4>STAY INFORMED</h4>
+				<div class="input-group">
+					<input type="text" class="form-control input-social-footer-column" placeholder="e-mail adress">
+					<span class="input-group-btn">
+						<button class="btn btn-default btn-input-social-footer-column" type="button">SIGN UP</button>
+					</span>
+				</div><!-- /input-group -->
+			</div><!-- /.col-lg-6 -->
+
 		</div>
 	</div>
 </div>
-<!-- <div><iframe src="https://www.google.com.ua/maps/@50.0055563,36.2162146,14z?hl=ru" frameborder="0"></iframe></div> -->
+
+<footer ng-include="'website/templates/components/footer.html'"></footer>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3504958.519617769!2d-90.1488676!3d30.9199051!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x889cf1bffbc210eb%3A0x86e9d363d0ccba38!2z0JHRgNGD0LrQu9C40L0sINCc0LjRgdGB0LjRgdC40L_QuCAzOTQyNSwg0KHQqNCQ!5e0!3m2!1sru!2sua!4v1470065958589" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
