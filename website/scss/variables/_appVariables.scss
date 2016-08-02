@@ -4,27 +4,27 @@ $orangeSearchInput: #dc6226;
 $main-white-content: #fff;
 $main-orange-content: #dc6226;
 $pure-white: #fff;
-$heading-greeting-color:#404041;
 $deafault-text-color:#363636;
 $turquoise-gray: #e8eef2;
 $footer-bg: #3d3d3d;
 $text-footer-block: #858686;
 $color-text-social-footer: #9c9d9e;
 $color-border-fotter-block: #5b5b5b;
+$heading-color:#404041;
 $backgound-footer: #3d3d3d;
 
+%main-heading {
+	font: 300 39px/40px Bebas, sans-serif;
+	margin-top: 5%;
+	margin-bottom: 3%;
+	padding: 0; 
+	text-align: center;
+}
 %header-footer-block {
 	color: $turquoise-gray;
 	padding-bottom: 12%;
 	font-weight: bold;
 	margin: 0; 
-}
-%heading-content { 
-	font: 300 39px/40px Bebas, sans-serif;
-	color: $heading-greeting-color;
-	padding-top: 5%;
-	padding-bottom: 2%;
-	text-align: center;
 }
 %paragraph-patern {
 	font-size: 147%;

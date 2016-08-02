@@ -34,7 +34,7 @@
 	background: url(/website/images/map.png) no-repeat center;
 	text-align: center;
 	.header1-greeting-block {
-		@extend %heading-content;
+		@extend %main-heading
 	}
 	.header2-greeting-block {
 		font-weight: 600;
@@ -124,9 +124,7 @@
 		margin-bottom: 4%;		
 	}
 	.heading-strategy-block {
-		@extend %heading-content;
-		color: $heading-greeting-color;
-		
+		@extend %main-heading;
 	}
 	.content-strategy-block {
 		padding: 0; 

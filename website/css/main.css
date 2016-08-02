@@ -1,16 +1,16 @@
 @charset "UTF-8";
+.greeting-block .header1-greeting-block, .strategy-block .heading-strategy-block, .wrapper-content-contacts .content-contacts .header-contacts {
+  font: 300 39px/40px Bebas, sans-serif;
+  margin-top: 5%;
+  margin-bottom: 3%;
+  padding: 0;
+  text-align: center; }
+
 .wrapper-footer-block .footer-block .footer-column .header-footer-column, .wrapper-footer-block .footer-block .social-footer-column .header-footer-column {
   color: #e8eef2;
   padding-bottom: 12%;
   font-weight: bold;
   margin: 0; }
-
-.greeting-block .header1-greeting-block, .strategy-block .heading-strategy-block {
-  font: 300 39px/40px Bebas, sans-serif;
-  color: #404041;
-  padding-top: 5%;
-  padding-bottom: 2%;
-  text-align: center; }
 
 .strategy-block p {
   font-size: 147%;
@@ -11864,8 +11864,6 @@ button.close {
   padding-bottom: 4%; }
   .strategy-block p {
     margin-bottom: 4%; }
-  .strategy-block .heading-strategy-block {
-    color: #404041; }
   .strategy-block .content-strategy-block {
     padding: 0; }
     .strategy-block .content-strategy-block .column-strategy-block {
@@ -11969,7 +11967,8 @@ body {
 @fa-font-path :   "/website/fonts/font-awesome/scss/_variables.scss";
 .content-button {
   border: none;
-  border-radius: 0; }
+  border-radius: 0;
+  font-size: 16px; }
 
 .main-fotter {
   margin: 0;
@@ -11977,7 +11976,21 @@ body {
   color: #fff;
   text-align: center; }
 
-.wrapper-content-contacts .content-contacts .header-contacts {
-  text-align: center;
-  padding: 2% 0%;
-  margin-top: 6%; }
+.wrapper-content-contacts {
+  margin-bottom: 5%; }
+  .wrapper-content-contacts .content-contacts {
+    /*.wrapper-map-contacts {}*/ }
+    .wrapper-content-contacts .content-contacts .wrapper-columns-contacts {
+      padding: 0; }
+      .wrapper-content-contacts .content-contacts .wrapper-columns-contacts .form-column h2 {
+        padding-bottom: 3%; }
+      .wrapper-content-contacts .content-contacts .wrapper-columns-contacts .form-column form .form-contacts-message .text-area-form-contacts-message {
+        resize: vertical !important; }
+      .wrapper-content-contacts .content-contacts .wrapper-columns-contacts .information-column h2 {
+        padding-bottom: 3%; }
+      .wrapper-content-contacts .content-contacts .wrapper-columns-contacts .information-column a {
+        color: #dc6226;
+        text-decoration: none; }
+        .wrapper-content-contacts .content-contacts .wrapper-columns-contacts .information-column a:hover {
+          color: #e8eef2;
+          /*color: darken ($turquoise-gray, 2%);*/ }
