@@ -11994,3 +11994,6 @@ body {
         .wrapper-content-contacts .content-contacts .wrapper-columns-contacts .information-column a:hover {
           color: #e8eef2;
           /*color: darken ($turquoise-gray, 2%);*/ }
+
+.wrapper-content-blog-page {
+  margin-bottom: 5%; }
