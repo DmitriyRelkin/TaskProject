@@ -1,10 +1,11 @@
 @charset "UTF-8";
-.greeting-block .header1-greeting-block, .strategy-block .heading-strategy-block, .wrapper-content-contacts .content-contacts .header-contacts {
+.greeting-block .header1-greeting-block, .strategy-block .heading-strategy-block, .wrapper-content-contacts .content-contacts .header-contacts, .header-contacts {
   font: 300 39px/40px Bebas, sans-serif;
   margin-top: 5%;
   margin-bottom: 3%;
   padding: 0;
-  text-align: center; }
+  text-align: center;
+  color: #404041; }
 
 .wrapper-footer-block .footer-block .footer-column .header-footer-column, .wrapper-footer-block .footer-block .social-footer-column .header-footer-column {
   color: #e8eef2;
@@ -11997,3 +11998,5 @@ body {
 
 .wrapper-content-blog-page {
   margin-bottom: 5%; }
+  .wrapper-content-blog-page .content-blog-page .blog-column .content-blog-column h2 {
+    text-align: left; }

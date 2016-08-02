@@ -1,3 +1,15 @@
 .wrapper-content-blog-page {
 	margin-bottom: 5%;
+	.content-blog-page {
+		.blog-column {
+			.content-blog-column {
+				h2 {
+					text-align: left;
+				}
+			}
+		}
+	}
+}
+.header-contacts {
+	@extend %main-heading;
 }
