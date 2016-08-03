@@ -55,6 +55,21 @@
 			border: none !important;
 		}
 	}
+// =================CONTACT-PAGE=================
+	.wrapper-content-contacts {
+		.content-contacts {
+			.wrapper-columns-contacts {
+				.information-column {
+					.сontact-information {
+						.left-column-сontact-information {
+							margin: 5% 1px 13% 0;
+						}
+						// .right-column
+					}
+				}
+			}
+		}
+	}
 }
 	/* Medium devices (desktops, 992px and up) */
 @media (max-width: $screen-md-min) {

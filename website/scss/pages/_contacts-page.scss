@@ -1,5 +1,5 @@
 .wrapper-content-contacts {
-	margin-bottom: 5%;
+	margin-bottom: 20%;
 	.content-contacts {
 		/*.wrapper-map-contacts {}*/
 		.wrapper-columns-contacts {
@@ -15,6 +15,11 @@
 						}
 					}
 				}
+				label {
+					margin: 0;
+					position: relative;
+					@extend %stars-contact-form-links;
+				}
 			}
 			.information-column {
 				h2 {
@@ -22,11 +27,23 @@
 				}
 				a {
 					color: $main-orange-content;
-				   text-decoration: none;
-				   &:hover {
-				   	color: $turquoise-gray;
-				   	/*color: darken ($turquoise-gray, 2%);*/
-				   }
+					text-decoration: none;
+					&:hover {
+					color: $turquoise-gray;
+					/*color: darken ($turquoise-gray, 2%);*/
+					}
+				}
+				.сontact-information {
+					padding: 0;
+					.left-column-сontact-information {
+						padding: 0;
+						width: 48%;
+					}
+					.right-column-сontact-information {
+						padding: 0;
+						width: 52%;
+					}
+					// .right-column
 				}
 			}
 		}
