@@ -1,15 +1,65 @@
 .wrapper-content-blog-page {
+	@extend %top-margin-in-the-content;
 	margin-bottom: 5%;
 	.content-blog-page {
-		.blog-column {
-			.content-blog-column {
-				h2 {
-					text-align: left;
+		.wrapper-columns {
+			.blog-column {
+				.content-blog-column {
+					.note-blog {
+						margin-top: 2%;
+						margin-bottom: 3%;
+						h2 {
+							text-align: left;
+							@extend %main-mini-heading;
+						}
+						.note-blog-property {
+							margin: 2% 0 3% 0;
+							.admin {
+								@extend %user;
+							}
+							.date {
+								@extend %calendar;
+							}
+							.views {
+								@extend %eye;
+							}
+							.comments {
+								@extend %coment;
+							}
+						}
+						.note-depiction {
+						    padding: 6px;
+						    background: #fff;
+						    -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+						    -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+						    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+							img {
+						    width: 100%;
+							}
+						}
+						.paragraph-note-blog {
+							padding: 2% 0 2% 0;
+						}
+					}
+				}
+			}
+			.categories-column {
+				.blog-category {
+					margin-top: 2%;
+					padding: 0;
+					li {
+						list-style-type: none;
+						@extend %chekmark-strategy-block;
+						@extend %links-strategy-block;
+					}
+				}
+				.poll-level {
+					margin-top: 5%;
 				}
 			}
 		}
 	}
 }
-.header-contacts {
+.header-blog {
 	@extend %main-heading;
 }
