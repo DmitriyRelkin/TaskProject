@@ -54,16 +54,39 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 app.controller("galaryCtrl", function($scope) {
     $scope.photos = [
-        {src: "website/images/slide-1.jpg", desc:"1", btnName: "BUSINES WORKS WITH TECNOLOGY"},
-        {src: "website/images/slide-2.jpg", desc:"2", btnName: "PROFESSIONAL CONSULTING SERVICES"},
-        {src: "website/images/slide-3.jpg", desc:"3", btnName: "BROADEN YOUR MARKET EDGE"},
-        {src: "website/images/slide-4.jpg", desc:"4", btnName: "WE AREA NETWORK OF LEADERS"}
+        {src: "website/images/slide-1.jpg", desc:"1", btnName: "BUSINES WORKS WITH TECNOLOGY", btnBanner: "We added technology to strategy. You get the multiplier effect"},
+        {src: "website/images/slide-2.jpg", desc:"2", btnName: "PROFESSIONAL CONSULTING SERVICES", btnBanner: "We are the trusted advisor to the world's leading businesses"},
+        {src: "website/images/slide-3.jpg", desc:"3", btnName: "BROADEN YOUR MARKET EDGE", btnBanner: "We work with our clients as we do with our colleagues"},
+        {src: "website/images/slide-4.jpg", desc:"4", btnName: "WE AREA NETWORK OF LEADERS", btnBanner: "We develop unparalleled management insights"}
     ];
     $scope.photoSrc = $scope.photos[0];
+    $scope.btnSrc = $scope.photos[0];
+    $scope.btnImplication = $scope.photos[0];
     $scope.showPhoto = function(index) {
         $scope.photoSrc = $scope.photos[index];
+        $scope.btnSrc = $scope.photos[index];
+        $scope.btnImplication = $scope.photos[index];
     };
 });
+// ======================NAV-SLIDER================================
+    app.controller('NavigationController', function ($scope) {
+        // Must use a wrapper object, otherwise "activeItem" won't work
+        $scope.states = {};
+        $scope.states.activeItem = 'item1';
+        $scope.items = [{
+            id: 'item1',
+            title: 'slide1'
+        }, {
+            id: 'item2',
+            title: 'slide2'
+        },{
+            id: 'item3',
+            title: 'slide3'
+        }, {
+            id: 'item4',
+            title: 'slide4'
+        }];
+    });
 // ==============BisinessBlock=============================
 
 app.controller("bisinessBlockCtrl", function($scope) {
@@ -85,3 +108,4 @@ app.controller("strategyCtrl", function($scope) {
         {srcImg: "/website/images/page1_img3.jpg", header:"OUR KEY OFFERS:", item1:"Defining your objectives", item2: "Analysing your organisation business model", item3:"Identifying development opportunities",  item4:"Identifying the key factors for success"}
     ];
 });
+

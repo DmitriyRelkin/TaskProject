@@ -70,6 +70,7 @@
 			}
 		}
 	}
+
 }
 	/* Medium devices (desktops, 992px and up) */
 @media (max-width: $screen-md-min) {
@@ -102,6 +103,16 @@
 			}
 		}
 	}
+// =====================BLOG-PAGE======================
+	.wrapper-content-blog-page {
+		.content-blog-page {
+			.wrapper-columns {
+				.categories-column {
+					margin-top: 5%;
+				}
+			}
+		}
+	}	
 }
 
 /*Large devices (large desktops, 1200px and up)*/

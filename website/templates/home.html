@@ -1,7 +1,11 @@
 <div class="comtainer wrapper-slider" ng-controller="galaryCtrl">
 	<div class="col-sm-12 slider-view">
 		<img ng-src="{{photoSrc.src}}">
-		<button type="button" class="btn btn-default btn-lg">{{photos.btnName}}</button>
+		<div class="wrapper-btn-slider">
+			<button type="button" class="btn btn-default btn-lg btn-slider">{{btnSrc.btnName}}</button>
+			<!-- <p class="the-bottom-text-box">{{btnImplication.btnBanner}}</p> -->
+		</div>
+
 	</div>
 	<div class="col-sm-12 wrapper-nav-slider">
 		<ul class="nav-galery">
@@ -9,6 +13,9 @@
 				<img ng-src="{{photo.src}}" ng-click="showPhoto($index)">
 			</li>
 		</ul>
+		<!-- <ul class="navigation">
+		          <li ng-repeat="item in photos" class="item" ng-class="{'active': item.id == states.activeItem}" ng-click="states.activeItem=item.id">{{item.src}}</li>
+		     </ul> -->     
 	</div>
 </div>
 <div class="col-sm-12 wrapper-greeting-block">

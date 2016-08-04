@@ -176,9 +176,9 @@ $btn-danger-border:              darken($btn-danger-bg, 5%) !default;
 $btn-link-disabled-color:        $gray-light !default;
 
 // Allows for customizing button radius independently from global border radius
-$btn-border-radius-base:         $border-radius-base !default;
-$btn-border-radius-large:        $border-radius-large !default;
-$btn-border-radius-small:        $border-radius-small !default;
+$btn-border-radius-base:         0 !default;
+$btn-border-radius-large:        0 !default;
+$btn-border-radius-small:        0 !default;
 
 
 //== Forms
@@ -652,11 +652,12 @@ $alert-danger-border:         $state-danger-border !default;
 //##
 
 //** Background color of the whole progress component
-$progress-bg:                 #f5f5f5 !default;
+$progress-bg:                 #fff !default;
 //** Progress bar text color
 $progress-bar-color:          #fff !default;
 //** Variable for setting rounded corners on progress bar.
-$progress-border-radius:      $border-radius-base !default;
+/*$progress-border-radius:      $border-radius-base !default;*/
+$progress-border-radius:      0 !default;
 
 //** Default progress bar color
 $progress-bar-bg:             $brand-primary !default;

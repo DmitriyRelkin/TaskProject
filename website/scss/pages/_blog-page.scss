@@ -51,10 +51,31 @@
 						list-style-type: none;
 						@extend %chekmark-strategy-block;
 						@extend %links-strategy-block;
+						a {
+							@extend %content-links;
+						}
 					}
 				}
 				.poll-level {
 					margin-top: 5%;
+					.total-votes {
+						text-align: center;
+					}
+					.wrapper-poll-progress {
+						.state-level-poll-progress {
+							/*word-spacing: 20em;*/
+						}
+						.percentage-score {
+							float: right;
+						}
+						.poll-progress {
+							border: solid 1px #d3d3d3;
+						    padding: 1px;
+						    height: 24px;
+						    margin-bottom: 5%;
+					    	box-shadow: none;
+						}
+					}
 				}
 			}
 		}
