@@ -1,7 +1,7 @@
 @import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 
 /* Small devices (tablets, 768px and up) */
-@media (max-width: $screen-sm-min){
+@media (max-width: $screen-sm-min) {
 	.main-header {
 		.content-main-header {
 			width: 99% !important;
@@ -17,11 +17,12 @@
 			}
 		}
 	}
-
+// =============================================
 	.message-block {
-		padding: 22% 13% !important;
+		// padding: 22% 2% !important;
 		.wrapper-content-massange-block {
 			.content-massange-block {
+	    		// margin: 10% 15% !important;
 				.img-massange-block {
 					img {
 						width: 40%;
@@ -35,13 +36,13 @@
 			}
 		}
 	}
-	.greeting-block {
-		.content-greeting-block {
+// ======================================================
+	.section-greeting-block {
 			> p {
 				padding: 0 !important;
 			}	
-		}
 	}
+// ===========================================================
 	.wrapper-footer-block {
 		.footer-block {
 			.footer-column {
@@ -50,6 +51,7 @@
 			}
 		}
 	}
+// =============================================================
 	.wrapper-footer-block {
 		.social-footer-column {
 			border: none !important;
@@ -94,6 +96,11 @@
 			}
 		}
 	}
+// ========================================
+	.message-block {
+		// padding: 12% 4%;
+	}
+// =======================================
 	.business-services-block {
 		.wrapper-services-blocks {
 			.service-block {
@@ -125,6 +132,12 @@
 				}
 				.search-block-main-header {
 					padding: 0;
+				}
+			}
+			.message-block {
+				padding: 10% 4% !important;
+				.content-message-block {
+					margin: 10% 14% !important;
 				}
 			}		
 	}

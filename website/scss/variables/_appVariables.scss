@@ -12,7 +12,6 @@ $color-text-social-footer: #9c9d9e;
 $color-border-fotter-block: #5b5b5b;
 $heading-color:#404B52;
 $backgound-footer: #3d3d3d;
-$main-white: #fff;
 
 %content-links {
 	color: $deafault-text-color;
@@ -89,8 +88,8 @@ $main-white: #fff;
 		color: $main-white-content;
 		font-size: 50px;
 		position: absolute;
-		bottom: 100%;
-		left: 0;
+		top: 4%;
+		left: 17%;
 	}
 }
 %quote-right {
@@ -101,8 +100,8 @@ $main-white: #fff;
 		color: $main-white-content;
 		font-size: 50px;
 		position: absolute;
-		top: 102%;
-		right: 0;
+		bottom: 4%;
+		right: 17%;
 	}	
 }
 %stars-contact-form-links {

@@ -6,7 +6,7 @@
   .wrapper-footer-block .footer-block .footer-column a:hover, .wrapper-footer-block .footer-block .footer-column ul li .active a:hover, .wrapper-content-blog-page .content-blog-page .wrapper-columns .categories-column .blog-category li a:hover {
     color: #dc6226; }
 
-.wrapper-greeting-block .greeting-block, .wrapper-strategy-block .strategy-block, .wrapper-content-blog-page {
+.wrapper-strategy-block .strategy-block {
   padding-top: 5%; }
 
 .wrapper-slider .slider-view .wrapper-btn-slider .btn-slider, .wrapper-greeting-block .greeting-block .header1-greeting-block, .wrapper-strategy-block .strategy-block .heading-strategy-block, .wrapper-content-contacts .content-contacts .header-contacts, .header-blog {
@@ -54,25 +54,25 @@
     color: #dc6226;
     padding-right: 2%; }
 
-.message-block .wrapper-content-message-block:before {
+.message-block:before {
   content: "\f10d";
   display: inline-block;
   font-family: "fontawesome";
   color: #fff;
   font-size: 50px;
   position: absolute;
-  bottom: 100%;
-  left: 0; }
+  top: 4%;
+  left: 17%; }
 
-.message-block .wrapper-content-message-block:after {
+.message-block:after {
   content: "\f10e";
   display: inline-block;
   font-family: "fontawesome";
   color: #fff;
   font-size: 50px;
   position: absolute;
-  top: 102%;
-  right: 0; }
+  bottom: 4%;
+  right: 17%; }
 
 .wrapper-content-contacts .content-contacts .wrapper-columns-contacts .form-column label:after {
   content: "\f069";
@@ -11803,15 +11803,13 @@ button.close {
       padding: 7px 13px !important; }
     .main-header .content-main-header .search-block-main-header a {
       padding: 9px 0 !important; }
-  .message-block {
-    padding: 22% 13% !important; }
-    .message-block .wrapper-content-massange-block .content-massange-block .img-massange-block img {
-      width: 40%; }
-    .message-block .wrapper-content-massange-block .content-massange-block .paragraph-massange-block {
-      padding: 3% 10%;
-      font-size: 17px;
-      text-align: center; }
-  .greeting-block .content-greeting-block > p {
+  .message-block .wrapper-content-massange-block .content-massange-block .img-massange-block img {
+    width: 40%; }
+  .message-block .wrapper-content-massange-block .content-massange-block .paragraph-massange-block {
+    padding: 3% 10%;
+    font-size: 17px;
+    text-align: center; }
+  .section-greeting-block > p {
     padding: 0 !important; }
   .wrapper-footer-block .footer-block .footer-column {
     /*margin-right: 3%;*/
@@ -11845,7 +11843,11 @@ button.close {
       width: 97% !important;
       padding: 0; }
     .main-header .search-block-main-header {
-      padding: 0; } }
+      padding: 0; }
+  .message-block {
+    padding: 10% 4% !important; }
+    .message-block .content-message-block {
+      margin: 10% 14% !important; } }
 
 .wrapper-slider .slider-view {
   padding: 0;
@@ -11900,25 +11902,29 @@ button.close {
           opacity: 1; }
 
 .wrapper-greeting-block .greeting-block {
+  padding: 5% 0 1%;
   background: url(/website/images/map.png) no-repeat center;
   text-align: center; }
   .wrapper-greeting-block .greeting-block .header2-greeting-block {
     font-weight: 600;
-    font-size: 21px; }
-  .wrapper-greeting-block .greeting-block .content-greeting-block {
+    font-size: 21px;
+    clear: both;
+    padding: 1% 0; }
+  .wrapper-greeting-block .greeting-block .section-greeting-block {
     padding-bottom: 4%; }
-    .wrapper-greeting-block .greeting-block .content-greeting-block .paragraph1-in-greeting-block {
+    .wrapper-greeting-block .greeting-block .section-greeting-block .paragraph1-in-greeting-block {
       font-size: 22px;
       line-height: 32px; }
-    .wrapper-greeting-block .greeting-block .content-greeting-block .paragraph2-in-greeting-block {
-      font-size: 19px; }
-    .wrapper-greeting-block .greeting-block .content-greeting-block .paragraph1-in-greeting-block, .wrapper-greeting-block .greeting-block .content-greeting-block .paragraph2-in-greeting-block {
+    .wrapper-greeting-block .greeting-block .section-greeting-block .paragraph2-in-greeting-block {
+      font-size: 19px;
+      font-family: WorkSans; }
+    .wrapper-greeting-block .greeting-block .section-greeting-block .paragraph1-in-greeting-block, .wrapper-greeting-block .greeting-block .section-greeting-block .paragraph2-in-greeting-block {
       padding: 1% 21%; }
 
 .message-block {
   background: url(/website/images/parallax-1.jpg) fixed;
   position: relative;
-  padding: 10% 5%;
+  padding: 6% 4%;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -11926,7 +11932,7 @@ button.close {
   .message-block .wrapper-content-message-block {
     padding: 0; }
     .message-block .wrapper-content-message-block .content-message-block {
-      /*margin: 7% 14%;*/
+      margin: 0% 14%;
       background: #fff;
       border-radius: 20px; }
       .message-block .wrapper-content-message-block .content-message-block .img-message-block {
