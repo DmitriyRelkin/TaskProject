@@ -1,8 +1,13 @@
 .wrapper-content-contacts {
-	margin-bottom: 20%;
-	margin-top: 5%;
+	margin-bottom: 10%;
+	margin-top: 3%;
 	.content-contacts {
-		/*.wrapper-map-contacts {}*/
+		.wrapper-map-contacts {
+			margin: 2% 0;
+			h2 {
+				margin: 2% 0;
+			}
+		}
 		.wrapper-columns-contacts {
 			padding: 0;		
 			.form-column {
