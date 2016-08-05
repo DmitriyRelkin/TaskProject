@@ -17,6 +17,32 @@
 			}
 		}
 	}
+// ===============================================
+	.wrapper-slider {
+		.slider-view {
+			.wrapper-btn-slider {
+				padding: 4% 0;
+				text-align: center;
+				.btn-slider { 
+					position: relative !important;
+					margin: 0 !important; 
+					width: 82% !important;
+					font-size: 28px !important;
+					margin-bottom: 6px !important;
+				}
+				.the-bottom-text-box {
+					position: relative !important;
+					margin: 0 auto !important;
+					width: 82% !important;
+				}
+			}
+		}
+		.wrapper-nav-slider {
+			ul {
+				display: none !important;
+			}
+		}
+	}
 // =============================================
 	.message-block {
 		// padding: 22% 2% !important;
@@ -94,6 +120,18 @@
 					}
 				}
 			}
+		}
+	}
+	.wrapper-btn-slider {
+		margin: 0 !important;
+		.btn-slider { 
+			margin: 0 !important; 
+			width: 53% !important;
+			font-size: 28px !important;
+			margin-bottom: 6px !important;
+		}
+		.the-bottom-text-box {
+			width: 53% !important;
 		}
 	}
 // ========================================
