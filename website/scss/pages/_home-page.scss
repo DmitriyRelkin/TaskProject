@@ -6,27 +6,34 @@
 			width: 100%;
 		}
 		.wrapper-btn-slider {
+			background: $turquoise-gray;
+		    margin-left: 10%;
 			.btn-slider {
 				position: absolute;
 				z-index: 1;
 				bottom: 49%;
-				margin-left: 5%;
-				@extend %main-heading;
+				// left: 12%;
+				margin-bottom: 10px !important;
+				font-size: 33px;
+				font-family: Bebas;
 				color: $main-white-content;
-				width: 44%;
-				height: 20%;
+				width: 580px;
+				height: 100px;
 				border: none;
+				&:hover {
+					background: $header-background;
+				}
 			}
 			.the-bottom-text-box {
 				font-family: sans-serif;
 				position: absolute;
 			    z-index: 1;
-			    bottom: 34.5%;
-			    margin-left: 5%;
+			    top: 51%;
+			    // left: 12%;
 			    background: $main-white-content;
 			    /*height: 11%;*/
 			    padding: 1.1% 0;
-			    width: 44%;
+			    width: 580px;
 			    text-align: center;	
 			}
 		}
@@ -64,7 +71,8 @@
 }
 .wrapper-greeting-block {
 	.greeting-block {
-		@extend %top-margin-in-the-content;
+		padding: 5% 0 1%;
+		// @extend %top-margin-in-the-content;
 		background: url(/website/images/map.png) no-repeat center;
 		text-align: center;
 		.header1-greeting-block {
@@ -73,8 +81,10 @@
 		.header2-greeting-block {
 			font-weight: 600;
 			font-size: 21px;
+			clear: both;
+			padding: 1% 0;
 		}
-		.content-greeting-block {
+		.section-greeting-block {
 			padding-bottom: 4%;
 			.paragraph1-in-greeting-block {
 				font-size: 22px;
@@ -82,27 +92,31 @@
 			}
 			.paragraph2-in-greeting-block {
 				font-size: 19px;
+				font-family: WorkSans;
 			}
 			.paragraph1-in-greeting-block, .paragraph2-in-greeting-block {
 				padding: 1% 21%;
 			}
+		}
+		.first-block-greeting {
+			// margin-bottom: 5%;
 		}
 	}
 }	
 .message-block {
 	background: url(/website/images/parallax-1.jpg) fixed;
 	position: relative;
-	padding: 10% 5%;
+	padding: 6% 4%;
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	.wrapper-content-message-block {
 		@extend %quote-left;
 		@extend %quote-right;
+	.wrapper-content-message-block {
 		padding: 0;
 		.content-message-block {
-			/*margin: 7% 14%;*/
+			margin: 0% 14%;
 			background: $main-white-content;
 			border-radius: 20px;
 			.img-message-block {
@@ -158,7 +172,8 @@
 		padding-bottom: 4%;
 		p {
 			@extend %paragraph-patern;
-			margin-bottom: 4%;		
+			margin: 3% 0% 6%;
+			padding: 0% 15%;
 		}
 		.heading-strategy-block {
 			@extend %main-heading;
@@ -199,9 +214,10 @@
 .wrapper-footer-block {
 	background: $backgound-footer;
 	.footer-block {
-		padding-top: 5%;
+		// padding-top: 5%;
+		padding: 5% 0 4%;
 	    border-bottom: 2px solid $color-border-fotter-block;
-	    padding-bottom: 4%;		
+	    // padding-bottom: 4%;		
 		/*background: $footer-bg;*/
 		/*padding: 0% 2%;*/
 		.left-footer-block {
@@ -278,7 +294,7 @@
 					border-radius: 0;
 					border-color: $main-orange-content; 
 					background: $footer-bg;
-
+					color: $pure-white;
 				}
 				.btn-input-social-footer-column {
 					border-color: $main-orange-content;
