@@ -166,9 +166,9 @@
 		}
 }
 .wrapper-strategy-block {
+		background: $turquoise-gray;
 	.strategy-block {
 		@extend %top-margin-in-the-content;
-		background: $turquoise-gray;
 		padding-bottom: 4%;
 		p {
 			@extend %paragraph-patern;

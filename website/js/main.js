@@ -108,4 +108,28 @@ app.controller("strategyCtrl", function($scope) {
         {srcImg: "/website/images/page1_img3.jpg", header:"OUR KEY OFFERS:", item1:"Defining your objectives", item2: "Analysing your organisation business model", item3:"Identifying development opportunities",  item4:"Identifying the key factors for success"}
     ];
 });
+// ================VALIDATION===============================
+app.controller("validCtrl", function ($scope) {
+    $scope.newUser = [];
+    $scope.message = "";
+    $scope.addNewUser = function (userDetails) {
+        $scope.newUser.push({
+            user: userDetails.name,
+            email: userDetails.email,
+            pass: userDetails.userPass,
+            passCfm: userDetails.userPassCfm
+        });
+        $scope.message = "Registration successfully completed!";
+    }
+    $scope.validationError = function (error) {
+        if (angular.isDefined(error)) {
+            if (error.required) {
+                return "Field must not be empty!";
+            } else if (error.email) {
+                return "Please enter a valid email!";
+
+            }
+        }
+    }
+});
 
