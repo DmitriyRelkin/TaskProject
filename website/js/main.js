@@ -112,6 +112,7 @@ app.controller("strategyCtrl", function($scope) {
 app.controller("validCtrl", function ($scope) {
     $scope.newUser = [];
     $scope.message = "";
+    $scope.pattern = new RegExp("[a-z]");
     $scope.addNewUser = function (userDetails) {
         $scope.newUser.push({
             user: userDetails.name,
@@ -127,9 +128,15 @@ app.controller("validCtrl", function ($scope) {
                 return "Field must not be empty!";
             } else if (error.email) {
                 return "Please enter a valid email!";
-
+            } else if (error.password) {
+                return "Please enter a valid password!";
             }
         }
     }
+/*    $scope.patternValidate = function(sample) {
+        if (myForm.sample.$error.pattern && sample == userPass) {
+            return "OK!!"
+        }
+    }*/
 });
 
