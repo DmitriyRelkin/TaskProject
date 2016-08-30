@@ -112,31 +112,13 @@ app.controller("strategyCtrl", function($scope) {
 app.controller("validCtrl", function ($scope) {
     $scope.newUser = [];
     $scope.message = "";
-    $scope.pattern = new RegExp("[a-z]");
     $scope.addNewUser = function (userDetails) {
         $scope.newUser.push({
             user: userDetails.name,
             email: userDetails.email,
-            pass: userDetails.userPass,
+            pass: userDetails.password,
             passCfm: userDetails.userPassCfm
         });
         $scope.message = "Registration successfully completed!";
     }
-    $scope.validationError = function (error) {
-        if (angular.isDefined(error)) {
-            if (error.required) {
-                return "Field must not be empty!";
-            } else if (error.email) {
-                return "Please enter a valid email!";
-            } else if (error.password) {
-                return "Please enter a valid password!";
-            }
-        }
-    }
-/*    $scope.patternValidate = function(sample) {
-        if (myForm.sample.$error.pattern && sample == userPass) {
-            return "OK!!"
-        }
-    }*/
 });
-
