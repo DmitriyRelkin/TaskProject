@@ -33,7 +33,7 @@
 						<span ng-show="contactForm.message.$error.mandatory">This fullname format is invalid!</span>
 						<span ng-show="contactForm.message.$error.required && myForm.message.$dirty">This field is required</span>
 		     	</div>
-			     	<button type="submit" class="btn btn-default content-button">SEND MESSAGE</button>
+			     	<button type="submit" class="btn btn-default content-button" ng-disabled="contactForm.$invalid">SEND MESSAGE</button>
 				</form>
 
 			</div>
