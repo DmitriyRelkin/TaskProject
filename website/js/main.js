@@ -110,15 +110,12 @@ app.controller("strategyCtrl", function($scope) {
 });
 // ================VALIDATION===============================
 app.controller("validCtrl", function ($scope) {
-    $scope.newUser = [];
-    $scope.message = "";
-    $scope.addNewUser = function (userDetails) {
-        $scope.newUser.push({
-            user: userDetails.name,
-            email: userDetails.email,
-            pass: userDetails.password,
-            passCfm: userDetails.userPassCfm
-        });
-        $scope.message = "Registration successfully completed!";
+    $scope.messageReg = "";
+    $scope.messageMes = "";
+    $scope.messageLog = "";
+    $scope.addNewUser = function () {
+        $scope.messageReg = "Registration successfully completed!";
+        $scope.messageMes = "Message sent successfully!";
+        $scope.messageLog = "Login successfully completed!";
     }
 });

@@ -1,14 +1,11 @@
 .main-header {
-	border: none !important; 
+	border: none !important;
 	.content-main-header {
 		padding: 0px 16px;
 		width: 76%;
 		.header-logo {
 			color: $main-white-content;
 			font-size: 199%;
-/* 			&:hover {
-	color: darken($main-white-content, 5%);
-} */
 		}
 		.header-logo-piece {
 			color: $main-orange-content;
@@ -20,19 +17,17 @@
 		.links-main-header {
 			overflow: hidden;
 			li > a {
-				/*font: 700 14px/20px , sans-serif;*/
 				font-weight: bold;
 				transition: background .1s ease-in-out;
 			}
 		}
-		
+
 		.search-block-main-header {
-			padding: 0; 
+			padding: 0;
 			margin: 35px 0px 35px 0px;
 			position: relative;
 		 	a {
 			color: $pure-white;
-		    /*transition: color .2s ease-in-out;*/ 
 			position: absolute;
    				top: 18%;
    				right: 7%;
@@ -48,7 +43,7 @@
 				 		color: $main-orange-content;
 				 		cursor: pointer;
 				 	}
-				 } 
+				 }
 				.search-header-input {
 					/* &:hover {
 						border: 1px solid $main-orange-content;
@@ -68,6 +63,5 @@
 				} */
 			}
 		}
-	}	
+	}
 }
-				

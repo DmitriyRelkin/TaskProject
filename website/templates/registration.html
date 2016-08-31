@@ -3,37 +3,34 @@
 		<h2 class="header-registration">REGISTRATION FORM</h2>
 		<div class="col-sm-11 col-xs-10 col-xs-offset-1 content-registration">
 			<div class="col-sm-5 col-xs-10 col-xs-offset-1 col-sm-offset-3 wrapper-form-registration" ng-controller="validCtrl">
-				<form class="form-registration" name="myForm" novalidate ng-submit="addNewUser(user)">
+				<form class="form-registration" name="myForm" novalidate ng-submit="addNewUser()">
 			     	<div class="form-group">
 			     	    <label>Full Name</label>
 			     	    <input name="userName" placeholder="User Full Name" type="text" validate-fullname class="form-control" required ng-model="user.name">
-								<span ng-show="myForm.userName.$error.fullname">This fullname format is invalid!</span>
-								<span ng-show="myForm.userName.$error.required && myForm.userName.$dirty">This field is required</span>
+								<span class="error" ng-show="myForm.userName.$error.fullname">This fullname format is invalid!</span>
+								<span class="error" ng-show="myForm.userName.$error.required && myForm.userName.$dirty">This field is required</span>
 			     	</div>
 						<div class="form-group">
 			     	    <label>E-mail</label>
 			     	    <input name="userEmail" placeholder="User Email" type="email" validate-email class="form-control" required ng-model="user.email">
-								<span ng-show="myForm.userEmail.$error.email">This email format is invalid!</span>
-								<span ng-show="myForm.userEmail.$error.required && myForm.userEmail.$dirty">This field is required</span>
+								<span class="error" ng-show="myForm.userEmail.$error.email">This email format is invalid!</span>
+								<span class="error" ng-show="myForm.userEmail.$error.required && myForm.userEmail.$dirty">This field is required</span>
 			     	</div>
 						<div class="form-group">
 			     	    <label>Password</label>
-			     	    <!-- <input name="userPass" placeholder="User Password" type="password" class="form-control" ng-minlength="6" required ng-model="user.userPass"> -->
-								<input data-ng-model='user.password' type="password" name='password' class="form-control" ng-minlength="6" placeholder="User Password" required>
-								<div ng-show="myForm.password.$error.required && myForm.password.$dirty">Field required</div>
+								<input name='passUser' data-ng-model='user.password' type="password" class="form-control" ng-minlength="6" placeholder="User Password" required>
+								<span class="error" ng-show="myForm.passUser.$error.password">The password must be of 6 symbol</span>
+								<span class="error" ng-show="myForm.passUser.$error.required && myForm.passUser.$dirty">This field is required</span>
 			     	</div>
 			     	<div class="form-group">
 			     	    <label>Password (Confirm)</label>
-			     	    <!-- <input name="userPassCfm" placeholder="User Password Check" type="password" class="form-control" required ng-model="user.userPassCfm"> -->
 								<input ng-model='user.password_verify' type="password" name='confirm_password' class="form-control" ng-minlength="6" placeholder="User Password Confirm" required data-password-verify="user.password">
-								<div ng-show="myForm.confirm_password.$error.required && myForm.confirm_password.$dirty">
-					        Field required!</div>
-					      <div ng-show="myForm.confirm_password.$error.passwordVerify">
-					        Password does not match!</div>
+								<span class="error" ng-show="myForm.confirm_password.$error.required && myForm.confirm_password.$dirty">
+					        Field required!</span>
+					      <span class="error" ng-show="myForm.confirm_password.$error.passwordVerify">Password does not match!</span>
 			     	</div>
-
 			     	<button type="submit" class="btn btn-default content-button" ng-disabled="myForm.$invalid">Register</button>
-			     	<span>{{message}}</span>
+			     	<span>{{messageReg}}</span>
 				</form>
 			</div>
 		</div>

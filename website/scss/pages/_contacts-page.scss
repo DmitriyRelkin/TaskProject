@@ -9,7 +9,7 @@
 			}
 		}
 		.wrapper-columns-contacts {
-			padding: 0;		
+			padding: 0;
 			.form-column {
 				h2 {
 					padding-bottom: 3%;
@@ -35,8 +35,8 @@
 					color: $main-orange-content;
 					text-decoration: none;
 					&:hover {
-					color: $turquoise-gray;
-					/*color: darken ($turquoise-gray, 2%);*/
+						color: $turquoise-gray;
+						transition: color .2s ease-in-out;
 					}
 				}
 				.сontact-information {

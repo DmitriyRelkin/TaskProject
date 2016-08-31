@@ -7,3 +7,6 @@ form .ng-invalid.ng-dirty {
 form .ng-valid.ng-dirty {
   border: 1px solid rgba(110, 247, 85, 0.6);
 }
+.error {
+  color: red;
+}

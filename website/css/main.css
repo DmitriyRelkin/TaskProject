@@ -5946,10 +5946,7 @@ button.close {
     width: 76%; }
     .main-header .content-main-header .header-logo {
       color: #fff;
-      font-size: 199%;
-      /* 			&:hover {
-	color: darken($main-white-content, 5%);
-} */ }
+      font-size: 199%; }
     .main-header .content-main-header .header-logo-piece {
       color: #dc6226;
       font-size: 105%; }
@@ -5958,7 +5955,6 @@ button.close {
     .main-header .content-main-header .links-main-header {
       overflow: hidden; }
       .main-header .content-main-header .links-main-header li > a {
-        /*font: 700 14px/20px , sans-serif;*/
         font-weight: bold;
         transition: background .1s ease-in-out; }
     .main-header .content-main-header .search-block-main-header {
@@ -5967,7 +5963,6 @@ button.close {
       position: relative; }
       .main-header .content-main-header .search-block-main-header a {
         color: #fff;
-        /*transition: color .2s ease-in-out;*/
         position: absolute;
         top: 18%;
         right: 7%; }
@@ -12164,7 +12159,7 @@ h4 {
       text-decoration: none; }
       .wrapper-content-contacts .content-contacts .wrapper-columns-contacts .information-column a:hover {
         color: #e8eef2;
-        /*color: darken ($turquoise-gray, 2%);*/ }
+        transition: color .2s ease-in-out; }
     .wrapper-content-contacts .content-contacts .wrapper-columns-contacts .information-column .сontact-information {
       padding: 0; }
       .wrapper-content-contacts .content-contacts .wrapper-columns-contacts .information-column .сontact-information .left-column-сontact-information {
@@ -12238,6 +12233,11 @@ h4 {
     margin-top: 2%;
     margin-bottom: 11%;
     padding: 5% 0 5%; }
+    .wrapper-content-sig-in .wrapper-form-cig-in .form-sig-in {
+      border: solid 1px #E3E3E3;
+      background: #e8eef2;
+      padding: 2% 2%;
+      box-shadow: 0px 1px 13px -3px #000000; }
 
 form .ng-pristine {
   border: 1px solid rgba(128, 128, 128, 0.58); }
@@ -12247,3 +12247,6 @@ form .ng-invalid.ng-dirty {
 
 form .ng-valid.ng-dirty {
   border: 1px solid rgba(110, 247, 85, 0.6); }
+
+.error {
+  color: red; }
