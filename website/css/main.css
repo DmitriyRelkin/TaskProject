@@ -12230,18 +12230,6 @@ h4 {
       .wrapper-registration-page .wrapper-registration-content .content-registration .wrapper-form-registration .form-registration .error {
         color: red !important; }
 
-form .ng-pristine {
-  /*border: 1px solid $orangeSearchInput;*/
-  box-shadow: 0 3px 7px -1px rgba(128, 128, 128, 0.58); }
-
-form .ng-invalid.ng-dirty {
-  /*border: 1px solid red;*/
-  box-shadow: 0 3px 7px -1px rgba(255, 0, 0, 0.55); }
-
-form .ng-valid.ng-dirty {
-  /*border: 1px solid #6ef755;*/
-  box-shadow: 0 3px 7px -1px rgba(110, 247, 85, 0.6); }
-
 .wrapper-content-sig-in {
   background: url(/website/images/map.png) no-repeat center;
   margin-top: 3%;
@@ -12250,3 +12238,12 @@ form .ng-valid.ng-dirty {
     margin-top: 2%;
     margin-bottom: 11%;
     padding: 5% 0 5%; }
+
+form .ng-pristine {
+  border: 1px solid rgba(128, 128, 128, 0.58); }
+
+form .ng-invalid.ng-dirty {
+  border: 1px solid rgba(255, 0, 0, 0.55); }
+
+form .ng-valid.ng-dirty {
+  border: 1px solid rgba(110, 247, 85, 0.6); }

@@ -1,0 +1,9 @@
+form .ng-pristine {
+  border: 1px solid rgba(128, 128, 128, 0.58);
+}
+form .ng-invalid.ng-dirty {
+  border: 1px solid rgba(255, 0, 0, 0.55);
+}
+form .ng-valid.ng-dirty {
+  border: 1px solid rgba(110, 247, 85, 0.6);
+}
