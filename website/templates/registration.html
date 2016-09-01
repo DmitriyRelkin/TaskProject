@@ -18,13 +18,13 @@
 			     	</div>
 						<div class="form-group">
 			     	    <label>Password</label>
-								<input name='passUser' data-ng-model='user.password' type="password" class="form-control" ng-minlength="6" placeholder="User Password" required>
-								<span class="error" ng-show="myForm.passUser.$error.password">The password must be of 6 symbol</span>
+								<input name='passUser' ng-model='user.password' type="password" class="form-control" ng-minlength="6" placeholder="User Password" required>
+								<span class="error" ng-show="myForm.passUser.$error.minlength">The password must be of 6 symbol</span>
 								<span class="error" ng-show="myForm.passUser.$error.required && myForm.passUser.$dirty">This field is required</span>
 			     	</div>
 			     	<div class="form-group">
 			     	    <label>Password (Confirm)</label>
-								<input ng-model='user.password_verify' type="password" name='confirm_password' class="form-control" ng-minlength="6" placeholder="User Password Confirm" required data-password-verify="user.password">
+								<input ng-model='user.password_verify' type="password" name='confirm_password' class="form-control" ng-minlength="6" placeholder="User Password Confirm" required password-verify="user.password">
 								<span class="error" ng-show="myForm.confirm_password.$error.required && myForm.confirm_password.$dirty">
 					        Field required!</span>
 					      <span class="error" ng-show="myForm.confirm_password.$error.passwordVerify">Password does not match!</span>
