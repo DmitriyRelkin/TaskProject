@@ -1,7 +1,13 @@
-.main-fotter {
-	clear: both;
-	margin: 0;
-	border: none;
-	color: $main-white-content;
-	text-align: center;
+.footer {
+  padding: 46px 0px;
+	position: absolute;
+   bottom: 0;
+   width: 100%;
+   /* Set the fixed height of the footer here */
+   height: 110px;
+   background-color: $footer-bg;
+	 p {
+		color:$main-white-content;
+  	text-align: center;
+	 }
 }

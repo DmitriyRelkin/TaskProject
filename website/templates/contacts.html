@@ -7,28 +7,28 @@
 		<div class="col-sm-12 wrapper-columns-contacts">
 			<div class="col-sm-6 form-column" ng-controller="validCtrl">
 				<h2 class="header-contacts">CONTACT FORM</h2>
-				<form class="form-contact" name="contactForm" novalidate ng-submit="addNewUser()">
+				<form class="form-contact" name="contactForm" novalidate ng-submit="sendRequest()">
 		     	<div class="form-group form-contacts-name">
 	     	    <label>Your name</label>
-	     	    <input name="name" type="text" placeholder="Full Name" validate-fullname class="form-control" required ng-model="contact.name">
+	     	    <input name="name" type="text" placeholder="Full Name" validate-fullname class="form-control" required ng-model="mesData.contact.name">
 						<span class="error" ng-show="contactForm.name.$error.fullname">This fullname format is invalid!</span>
 						<span class="error" ng-show="contactForm.name.$error.required && contactForm.name.$dirty">This field is required</span>
 		     	</div>
 					<div class="form-group form-contacts-email">
 	     	    <label>Your e-mail address</label>
-	     	    <input name="emailUser" placeholder="Email" type="email" validate-email class="form-control" required ng-model="contact.email">
+	     	    <input name="emailUser" placeholder="Email" type="email" validate-email class="form-control" required ng-model="mesData.contact.email">
 						<span class="error" ng-show="contactForm.emailUser.$error.email">This email format is invalid!</span>
 						<span class="error" ng-show="contactForm.emailUser.$error.required && contactForm.emailUser.$dirty">This field is required</span>
 		     	</div>
 					<div class="form-group form-contacts-subject">
 	     	    <label>Subject</label>
-	     	    <input name="subject" placeholder="Your theme" type="text" validate-text class="form-control" required ng-model="contact.subject">
+	     	    <input name="subject" placeholder="Your theme" type="text" validate-text class="form-control" required ng-model="mesData.contact.subject">
 						<span class="error" ng-show="contactForm.subject.$error.mandatory">This format is invalid!</span>
 						<span class="error" ng-show="contactForm.subject.$error.required && contactForm.subject.$dirty">This field is required</span>
 		     	</div>
 					<div class="form-group form-contacts-message">
 						<label for="exampleTextarea">Message</label>
-						<textarea name="message" placeholder="Your message" validate-text class="form-control text-area-form-contacts-message" id="exampleTextarea" rows="4" required ng-model="contact.message"></textarea>
+						<textarea name="message" placeholder="Your message" validate-text class="form-control text-area-form-contacts-message" id="exampleTextarea" rows="4" required ng-model="mesData.contact.message"></textarea>
 						<span class="error" ng-show="contactForm.message.$error.mandatory">This format is invalid!</span>
 						<span class="error" ng-show="contactForm.message.$error.required && contactForm.message.$dirty">This field is required</span>
 		     	</div>

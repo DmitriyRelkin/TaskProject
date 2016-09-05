@@ -1,4 +1,4 @@
-var app = angular.module("sampleApp", ['ui.router']);
+var app = angular.module("sampleApp", ['ui.router', "requsetService"]);
 
 app.run(function ($state,$rootScope) {
     $rootScope.$state = $state;
@@ -6,16 +6,10 @@ app.run(function ($state,$rootScope) {
 app.controller("mainHeaderCtrl", function($scope) {
     $scope.headerView = "website/templates/components/header.html";
     $scope.url = $scope.headerView;
-/*    $scope.showHeader = function() {
-        $scope.url = $scope.headerView;
-    }*/
 });
 app.controller("mainFooterCtrl", function($scope) {
     $scope.footerView = "website/templates/components/footer.html";
     $scope.url = $scope.footerView;
-/*    $scope.showHeader = function() {
-        $scope.url = $scope.footerView;
-    }*/
 });
 // -=-=-=-=-=-=-=-=-=-=-Router=-=--=-=-=-=-=-=-=-=-=-=-
 app.run([
@@ -59,11 +53,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 app.controller("galaryCtrl", function($scope, $rootScope, $interval) {
     $scope.photos = [
-        {src: "website/images/slide-1.jpg", desc:"1", btnName: "BUSINES WORKS WITH TECNOLOGY", btnBanner: "We added technology to strategy. You get the multiplier effect"},
-        {src: "website/images/slide-2.jpg", desc:"2", btnName: "PROFESSIONAL CONSULTING SERVICES", btnBanner: "We are the trusted advisor to the world's leading businesses"},
-        {src: "website/images/slide-3.jpg", desc:"3", btnName: "BROADEN YOUR MARKET EDGE", btnBanner: "We work with our clients as we do with our colleagues"},
-        {src: "website/images/slide-4.jpg", desc:"4", btnName: "WE AREA NETWORK OF LEADERS", btnBanner: "We develop unparalleled management insights"}
+        {src: "website/images/slide-1.jpg", active : true , btnName: "BUSINES WORKS WITH TECNOLOGY", btnBanner: "We added technology to strategy. You get the multiplier effect"},
+        {src: "website/images/slide-2.jpg", active : false , btnName: "PROFESSIONAL CONSULTING SERVICES", btnBanner: "We are the trusted advisor to the world's leading businesses"},
+        {src: "website/images/slide-3.jpg", active : false , btnName: "BROADEN YOUR MARKET EDGE", btnBanner: "We work with our clients as we do with our colleagues"},
+        {src: "website/images/slide-4.jpg", active : false , btnName: "WE AREA NETWORK OF LEADERS", btnBanner: "We develop unparalleled management insights"}
     ];
+
+    $scope.photos.active = false;
+
     $scope.photoSrc = $scope.photos[0];
     $scope.btnSrc = $scope.photos[0];
     $scope.btnTitle = $scope.photos[0];
@@ -78,30 +75,15 @@ app.controller("galaryCtrl", function($scope, $rootScope, $interval) {
       $scope.photoSrc = $scope.photos[$scope.counter];
       $scope.btnSrc = $scope.photos[$scope.counter];
       $scope.btnTitle = $scope.photos[$scope.counter];
+      for(var i = 0; i<$scope.photos.length; i++) {
+           $scope.photos[i].active = false;
+      }
+      $scope.photos[$scope.counter].active = true;
       if ($scope.counter == 3) {
         $scope.counter = -1;
       }
     }, 3000);
 });
-// ======================NAV-SLIDER================================
-    app.controller('NavigationController', function ($scope) {
-        // Must use a wrapper object, otherwise "activeItem" won't work
-        $scope.states = {};
-        $scope.states.activeItem = 'item1';
-        $scope.items = [{
-            id: 'item1',
-            title: 'slide1'
-        }, {
-            id: 'item2',
-            title: 'slide2'
-        },{
-            id: 'item3',
-            title: 'slide3'
-        }, {
-            id: 'item4',
-            title: 'slide4'
-        }];
-    });
 // ==============BisinessBlock=============================
 
 app.controller("bisinessBlockCtrl", function($scope) {
@@ -124,30 +106,33 @@ app.controller("strategyCtrl", function($scope) {
     ];
 });
 // ================VALIDATION===============================
-app.controller("validCtrl", function ($scope, $location, $timeout, $http) {
-    $scope.formData = {};
+app.controller("validCtrl", function ($scope, $location, $timeout, sendRequest) {
+    $scope.regData = {};
+    $scope.logData = {};
+    $scope.mesData = {};
     $scope.messageReg = "";
     $scope.messageMes = "";
     $scope.messageLog = "";
 
-    $scope.addNewUser = function () {
-      var data = $scope.formData;
-      console.log(data);
-      $http.post('/reg', data)
-        .success(function(data) {
-          $scope.PostDataResponse = data;
-          console.log('Status: 200 OK');
-        })
-        .error(function(data) {
-          console.log('Status: 501');
-        });
-        $scope.messageReg = "Registration successfully completed!";
-        $scope.messageMes = "Message sent successfully!";
-        $scope.messageLog = "Login successfully completed!";
-    }
-    $scope.goToHome = function () {
+    $scope.sendRequest = function () {
+      var dataReg = $scope.regData;
+      var dataLog = $scope.logData;
+      var dataMes = $scope.mesData;
+
+      if (dataReg) {
+        sendRequest.send(dataReg,"/reg");
+      } else if (dataLog) {
+        sendRequest.send(dataLog,"/reg");
+      } else if (dataMes) {
+        sendRequest.send(dataMes,"/reg");
+      }
+      $scope.messageReg = "Registration successfully completed!";
+      $scope.messageMes = "Message sent successfully!";
+      $scope.messageLog = "Login successfully completed!";
+
       $timeout(function () {
         $location.path("/");
       }, 3000);
     }
+
 });

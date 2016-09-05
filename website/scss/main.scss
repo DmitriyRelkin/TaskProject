@@ -2,13 +2,7 @@
 @import "variables/appVariables";
 @import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 
-html, body {
-  height: 100%;
-}
-.content-wrapper {
-  box-sizing: border-box;
-  min-height: 100%;
-}
+
 
 @import "layouts/header";
 @import "mobile/mobile";
@@ -22,3 +16,11 @@ html, body {
 @import "pages/registration-page";
 @import "pages/sig-in";
 @import "components/form-validation";
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+.content-wrapper {
+
+}
