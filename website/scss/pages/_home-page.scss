@@ -1,6 +1,6 @@
 .wrapper-slider {
 	.slider-view {
-		padding: 0; 
+		padding: 0;
 		position: relative;
 		img {
 			width: 100%;
@@ -12,7 +12,6 @@
 				position: absolute;
 				z-index: 1;
 				bottom: 49%;
-				// left: 12%;
 				margin-bottom: 10px !important;
 				font-size: 33px;
 				font-family: Bebas;
@@ -35,7 +34,7 @@
 			    /*height: 11%;*/
 			    padding: 1.1% 0;
 			    width: 580px;
-			    text-align: center;	
+			    text-align: center;
 			}
 		}
 	}
@@ -51,22 +50,25 @@
 				background: $heading-color;
 				cursor: pointer;
 				list-style-type: none;
-			    width: 19%;
-			    overflow: hidden;
-			    margin: 0 10px;
-			    display: inline-block;
-			    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+				width: 19%;
+				overflow: hidden;
+				margin: 0 10px;
+				display: inline-block;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+				.active {
+					opacity: 1!important;
+				}
 				img {
 					position: relative;
-				    right: 54%;
-				    width: 154%;
-				    opacity: 0.8;
-			        background: black;
-			        &:hover {
-			        	opacity: 1;
-			        }
+					right: 54%;
+					width: 154%;
+					opacity: 0.8;
+					background: black;
+					&:hover {
+						opacity: 1;
+					}
 				}
-			}	
+			}
 		}
 	}
 }
@@ -103,7 +105,7 @@
 			// margin-bottom: 5%;
 		}
 	}
-}	
+}
 .message-block {
 	background: url(/website/images/parallax-1.jpg) fixed;
 	position: relative;
@@ -147,7 +149,7 @@
 				}
 			}
 		}
-	}	
+	}
 
 }
 .services-blocks {
@@ -159,7 +161,7 @@
 }
 .business-services-block {
 		.service-block {
-			margin: 5% 0; 
+			margin: 5% 0;
 			text-align: center;
 			h3 {
 				font: 200 25px/40px Bebas, sans-serif;
@@ -180,7 +182,7 @@
 			@extend %main-heading;
 		}
 		.content-strategy-block {
-			padding: 0; 
+			padding: 0;
 			.column-strategy-block {
 				text-align: center;
 				img {
@@ -218,7 +220,7 @@
 		// padding-top: 5%;
 		padding: 5% 0 4%;
 	    border-bottom: 2px solid $color-border-fotter-block;
-	    // padding-bottom: 4%;		
+	    // padding-bottom: 4%;
 		/*background: $footer-bg;*/
 		/*padding: 0% 2%;*/
 		.left-footer-block {
@@ -242,7 +244,7 @@
 						&:hover {
 							color: $main-orange-content;
 						}
-					} 
+					}
 				}
 			}
 			ul {
@@ -250,7 +252,7 @@
 			    padding: 0;
 				li {
 				    list-style: none;
-				    @extend %font-navigation-footer-block;	
+				    @extend %font-navigation-footer-block;
 					.active {
 						a {
 							@extend %content-links;
@@ -269,7 +271,7 @@
 			padding-left: 20px;
 			.header-footer-column {
 				@extend %header-footer-block;
-			
+
 			}
 			.social-icons {
 				margin-bottom: 10%;
@@ -280,7 +282,7 @@
 						margin-right: 15px;
 						transition: color 0.5s ease;
 						&:hover {
-							color: $main-orange-content;	
+							color: $main-orange-content;
 						}
 					}
 				}
@@ -294,7 +296,7 @@
 				}
 				.input-social-footer-column {
 					border-radius: 0;
-					border-color: $main-orange-content; 
+					border-color: $main-orange-content;
 					background: $footer-bg;
 					color: $pure-white;
 				}

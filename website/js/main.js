@@ -1,4 +1,8 @@
 var app = angular.module("sampleApp", ['ui.router']);
+
+app.run(function ($state,$rootScope) {
+    $rootScope.$state = $state;
+});
 app.controller("mainHeaderCtrl", function($scope) {
     $scope.headerView = "website/templates/components/header.html";
     $scope.url = $scope.headerView;
@@ -21,6 +25,7 @@ app.run([
     }
   ]);
 app.config(function($stateProvider, $urlRouterProvider) {
+
     $urlRouterProvider.otherwise('/');
     $stateProvider
         // ====Home====
@@ -52,7 +57,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 // -=-=-=-=-=-=-=-=-=-=-SLIDER=-=--=-=-=-=-=-=-=-=-=-=-
 
-app.controller("galaryCtrl", function($scope) {
+app.controller("galaryCtrl", function($scope, $rootScope, $interval) {
     $scope.photos = [
         {src: "website/images/slide-1.jpg", desc:"1", btnName: "BUSINES WORKS WITH TECNOLOGY", btnBanner: "We added technology to strategy. You get the multiplier effect"},
         {src: "website/images/slide-2.jpg", desc:"2", btnName: "PROFESSIONAL CONSULTING SERVICES", btnBanner: "We are the trusted advisor to the world's leading businesses"},
@@ -61,12 +66,22 @@ app.controller("galaryCtrl", function($scope) {
     ];
     $scope.photoSrc = $scope.photos[0];
     $scope.btnSrc = $scope.photos[0];
-    $scope.btnImplication = $scope.photos[0];
+    $scope.btnTitle = $scope.photos[0];
     $scope.showPhoto = function(index) {
         $scope.photoSrc = $scope.photos[index];
         $scope.btnSrc = $scope.photos[index];
-        $scope.btnImplication = $scope.photos[index];
+        $scope.btnTitle = $scope.photos[index];
     };
+    $scope.counter = 0;
+    $interval(function () {
+      $scope.counter++;
+      $scope.photoSrc = $scope.photos[$scope.counter];
+      $scope.btnSrc = $scope.photos[$scope.counter];
+      $scope.btnTitle = $scope.photos[$scope.counter];
+      if ($scope.counter == 3) {
+        $scope.counter = -1;
+      }
+    }, 3000);
 });
 // ======================NAV-SLIDER================================
     app.controller('NavigationController', function ($scope) {
@@ -109,13 +124,30 @@ app.controller("strategyCtrl", function($scope) {
     ];
 });
 // ================VALIDATION===============================
-app.controller("validCtrl", function ($scope) {
+app.controller("validCtrl", function ($scope, $location, $timeout, $http) {
+    $scope.formData = {};
     $scope.messageReg = "";
     $scope.messageMes = "";
     $scope.messageLog = "";
+
     $scope.addNewUser = function () {
+      var data = $scope.formData;
+      console.log(data);
+      $http.post('/reg', data)
+        .success(function(data) {
+          $scope.PostDataResponse = data;
+          console.log('Status: 200 OK');
+        })
+        .error(function(data) {
+          console.log('Status: 501');
+        });
         $scope.messageReg = "Registration successfully completed!";
         $scope.messageMes = "Message sent successfully!";
         $scope.messageLog = "Login successfully completed!";
+    }
+    $scope.goToHome = function () {
+      $timeout(function () {
+        $location.path("/");
+      }, 3000);
     }
 });
