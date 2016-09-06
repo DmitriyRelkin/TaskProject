@@ -1,4 +1,5 @@
-module.exports = function(vars) {
+module.exports = (function() {
+
   "use strict";
 
   var config          = require('./config/routerConfig.js');
@@ -28,4 +29,4 @@ module.exports = function(vars) {
   initDirectives(module);
 
   config(module);
-}
+}());
