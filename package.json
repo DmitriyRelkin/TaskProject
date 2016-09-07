@@ -17,17 +17,23 @@
   },
   "homepage": "https://github.com/DmitriyRelkin/TaskProject-V-2#readme",
   "devDependencies": {
+    "body-parser": "^1.15.2",
+    "connect": "^3.4.1",
+    "connect-gzip-static": "^1.0.0",
+    "connect-route": "^0.1.5",
     "gulp-browserify": "^0.5.1",
     "gulp-debug": "^2.1.2",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0",
     "gulp-watch": "^4.3.9",
+    "nodemailer": "^2.6.0",
     "var": "^0.2.0",
     "vinyl-source-stream": "latest",
     "watchify": "latest"
   },
   "dependencies": {
     "gulp": "^3.9.1",
+    "gulp-develop-server": "^0.5.2",
     "gulp-sass": "^2.3.2",
     "gulp-util": "^3.0.7",
     "vinyl-buffer": "^1.0.0"

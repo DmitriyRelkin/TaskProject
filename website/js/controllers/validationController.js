@@ -14,11 +14,11 @@ module.exports = function(module) {
         var dataMes = $scope.mesData;
 
         if (dataReg) {
-          sendRequest.send(dataReg,"/reg");
+          sendRequest.send("/contacts", dataReg);
         } else if (dataLog) {
-          sendRequest.send(dataLog,"/reg");
+          sendRequest.send("/sig-in", dataLog);
         } else if (dataMes) {
-          sendRequest.send(dataMes,"/reg");
+          sendRequest.send("/reg", dataMes);
         }
         $scope.messageReg = "Registration successfully completed!";
         $scope.messageMes = "Message sent successfully!";
