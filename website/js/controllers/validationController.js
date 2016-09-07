@@ -4,11 +4,11 @@ module.exports = function(module) {
       $scope.regData = {};
       $scope.logData = {};
       $scope.mesData = {};
-      $scope.messageReg = "";
-      $scope.messageMes = "";
-      $scope.messageLog = "";
 
       $scope.sendRequest = function () {
+
+        $scope.spinnerClass = "visible";
+
         var dataReg = $scope.regData;
         var dataLog = $scope.logData;
         var dataMes = $scope.mesData;
@@ -20,10 +20,7 @@ module.exports = function(module) {
         } else if (dataMes) {
           sendRequest.send("/reg", dataMes);
         }
-        $scope.messageReg = "Registration successfully completed!";
-        $scope.messageMes = "Message sent successfully!";
-        $scope.messageLog = "Login successfully completed!";
-
+        
         $timeout(function () {
           $location.path("/");
         }, 3000);

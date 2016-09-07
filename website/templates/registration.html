@@ -30,7 +30,11 @@
 					      <span class="error" ng-show="myForm.confirm_password.$error.passwordVerify">Password does not match!</span>
 			     	</div>
 			     	<button type="submit" class="btn btn-default content-button" ng-disabled="myForm.$invalid">Register</button>
-			     	<span>{{messageReg}}</span>
+						<span class="spinner" ng-class="spinnerClass">
+						  <div class="bounce1"></div>
+						  <div class="bounce2"></div>
+						  <div class="bounce3"></div>
+						</span>
 				</form>
 			</div>
 		</div>

@@ -12155,8 +12155,10 @@ h4 {
     padding: 0; }
     .wrapper-content-contacts .content-contacts .wrapper-columns-contacts .form-column h2 {
       padding-bottom: 3%; }
-    .wrapper-content-contacts .content-contacts .wrapper-columns-contacts .form-column form .form-contacts-message .text-area-form-contacts-message {
-      resize: vertical !important; }
+    .wrapper-content-contacts .content-contacts .wrapper-columns-contacts .form-column form {
+      position: relative; }
+      .wrapper-content-contacts .content-contacts .wrapper-columns-contacts .form-column form .form-contacts-message .text-area-form-contacts-message {
+        resize: vertical !important; }
     .wrapper-content-contacts .content-contacts .wrapper-columns-contacts .form-column label {
       margin: 0;
       position: relative; }
@@ -12230,8 +12232,10 @@ h4 {
       background: #e8eef2;
       padding: 2% 2%;
       box-shadow: 0px 1px 13px -3px #000000; }
-      .wrapper-registration-page .wrapper-registration-content .content-registration .wrapper-form-registration .form-registration .error {
-        color: red !important; }
+      .wrapper-registration-page .wrapper-registration-content .content-registration .wrapper-form-registration .form-registration {
+        position: relative; }
+        .wrapper-registration-page .wrapper-registration-content .content-registration .wrapper-form-registration .form-registration .error {
+          color: red !important; }
 
 .wrapper-content-sig-in {
   background: url(/website/images/map.png) no-repeat center;
@@ -12242,6 +12246,7 @@ h4 {
     margin-bottom: 11%;
     padding: 5% 0 5%; }
     .wrapper-content-sig-in .wrapper-form-cig-in .form-sig-in {
+      position: relative;
       border: solid 1px #E3E3E3;
       background: #e8eef2;
       padding: 2% 2%;
@@ -12282,6 +12287,48 @@ form .ng-valid.ng-dirty {
     font-size: 55px;
     color: aliceblue;
     padding: 0 8px; }
+
+.spinner {
+  display: none;
+  width: 70px;
+  text-align: center; }
+
+.visible {
+  display: block !important;
+  position: absolute;
+  bottom: 0;
+  left: 45%; }
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: #dc6226;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both; }
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s; }
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s; }
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0); }
+  40% {
+    -webkit-transform: scale(1); } }
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0); }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
 
 html {
   position: relative;

@@ -33,7 +33,11 @@
 						<span class="error" ng-show="contactForm.message.$error.required && contactForm.message.$dirty">This field is required</span>
 		     	</div>
 			     	<button type="submit" class="btn btn-default content-button" ng-disabled="contactForm.$invalid">SEND MESSAGE</button>
-						<span>{{messageMes}}</span>
+						<span class="spinner" ng-class="spinnerClass">
+						  <div class="bounce1"></div>
+						  <div class="bounce2"></div>
+						  <div class="bounce3"></div>
+						</span>
 				</form>
 			</div>
 			<div class="col-sm-6 information-column">
