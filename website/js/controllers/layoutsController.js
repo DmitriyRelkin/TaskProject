@@ -5,4 +5,7 @@ module.exports = function(module) {
   module.controller("mainFooterCtrl", function($scope) {
     $scope.url = "website/templates/components/footer.html";
   });
+  module.controller("goToTopCtrl", function($scope) {
+    $scope.url = "website/templates/components/backToTop.html";
+  });
 };

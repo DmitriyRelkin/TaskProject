@@ -1,13 +1,10 @@
 module.exports = (function() {
-
   "use strict";
 
   var config          = require('./config/routerConfig.js');
   var initServices    = require('./services/initServices.js');
 	var initControllers = require('./controllers/initControllers.js');
 	var initDirectives  = require('./directives/initDirectives.js');
-
-
 
   var module = angular.module("sampleApp", [
     'ui.router',
