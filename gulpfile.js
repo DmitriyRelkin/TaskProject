@@ -10,6 +10,7 @@ var buffer = require('vinyl-buffer');
 var debug = require('gulp-debug');
 var watch = require('gulp-watch');
 var uglify = require('gulp-uglify');
+var server = require('gulp-develop-server');
 
 var  sourceFile = './website/js/app.js';
 var  destFile = 'bundle.js';
@@ -35,6 +36,12 @@ gulp.task('browserify', function() {
     .pipe(buffer())
     // .pipe(uglify())
     .pipe(gulp.dest(destFolder));
+});
+
+gulp.task('server:start', function() {
+  server.listen({
+    path: './server.js',
+  });
 });
 
 gulp.task('watch', function () {

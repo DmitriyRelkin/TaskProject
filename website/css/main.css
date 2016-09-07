@@ -12260,7 +12260,7 @@ form .ng-valid.ng-dirty {
   color: red; }
 
 .goToTop {
-  display: none;
+  opacity: 0;
   background: #363636;
   border-radius: 50%;
   bottom: 30px;
@@ -12271,19 +12271,17 @@ form .ng-valid.ng-dirty {
   padding: 3px 0 7px;
   position: fixed;
   right: 40px !important;
-  text-align: center;
   text-decoration: none;
   width: 70px;
   height: 70px;
   z-index: 5; }
-  .goToTop #toTopHover {
-    background: transparent;
-    border: 0;
-    font-size: 100%;
-    margin: 0;
-    outline: 0;
-    padding: 0;
-    vertical-align: baseline; }
+  .goToTop:hover {
+    background: #dc6226;
+    transition: background 0.5s ease; }
+  .goToTop .scroll-icon {
+    font-size: 55px;
+    color: aliceblue;
+    padding: 0 8px; }
 
 html {
   position: relative;
