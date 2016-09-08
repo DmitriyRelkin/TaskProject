@@ -1,12 +1,13 @@
 <div class="container wrapper-content-blog-page">
 	<div class="hidden-xs goToTop" back-to-top ng-include="'website/templates/components/backToTop.html'"></div>
 	<div class="row content-blog-page">
-		<div class="col-sm-12 wrapper-columns">
+		<div class="col-sm-12 wrapper-columns" ng-controller="blogContentCtrl">
 			<div class="col-sm-8 blog-column">
 				<h2 class="header-blog">BLOG</h2>
 				<div class="col-sm-12 content-blog-column">
+
 					<div class="note-blog">
-						<h2>YOUTUBE VIDEO</h2>
+						<h2>{{blogContent[2].header}}</h2>
 						<div class="note-blog-property">
 							<span class="admin">admin</span><span class="date">April 29,2014</span><span class="views">136 view(s)</span><span class="comments">2 comment(s)</span>
 						</div>
@@ -15,43 +16,31 @@
 							  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/2kodXWejuy0"></iframe>
 							</div>
 						</div>
-						<p class="paragraph-note-blog">Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat.</p>
+						<p class="paragraph-note-blog">{{blogContent[2].paragraph}}</p>
 						<button type="button" class="btn btn-default content-button">READ MORE</button>
 						<button type="button" class="btn btn-default content-button">ADMIN'S BLOG</button>
 						<button type="button" class="btn btn-default content-button">2 COMMENTS</button>
 						<button type="button" class="btn btn-default content-button">LOG IN</button>
 					</div>
-					<div class="note-blog">
-						<h2>NULLA NEC LIGULA RISUS</h2>
+
+					<div class="note-blog" ng-repeat="block in blogContent |  limitTo : 2">
+						<h2>{{block.header}}</h2>
 						<div class="note-blog-property">
 							<span class="admin">admin</span><span class="date">April 29,2014</span><span class="views">136 view(s)</span><span class="comments">2 comment(s)</span>
 						</div>
 						<div class="note-depiction">
-							<img src="website/images/img-14.jpg" alt="">
+							<img src="{{block.depiction}}" alt="">
 						</div>
-						<p class="paragraph-note-blog">Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat.</p>
+						<p class="paragraph-note-blog">{{block.paragraph}}</p>
 						<button type="button" class="btn btn-default content-button">READ MORE</button>
 						<button type="button" class="btn btn-default content-button">ADMIN'S BLOG</button>
 						<button type="button" class="btn btn-default content-button">2 COMMENTS</button>
 						<button type="button" class="btn btn-default content-button">LOG IN</button>
 					</div>
-					<div class="note-blog">
-						<h2>ETIAM A ODIO NEC MI CONVALLIS MALESUADA</h2>
-						<div class="note-blog-property">
-							<span class="admin">admin</span><span class="date">April 29,2014</span><span class="views">136 view(s)</span><span class="comments">2 comment(s)</span>
-						</div>
-						<div class="note-depiction">
-							<img src="website/images/img-7.jpg" alt="">
-						</div>
-						<p class="paragraph-note-blog">Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat.</p>
-						<button type="button" class="btn btn-default content-button">READ MORE</button>
-						<button type="button" class="btn btn-default content-button">ADMIN'S BLOG</button>
-						<button type="button" class="btn btn-default content-button">2 COMMENTS</button>
-						<button type="button" class="btn btn-default content-button">LOG IN</button>
-					</div>
+
 				</div>
 				<div class="nav-blog">
-					<div class="col-sm-6">
+					<div class="col-sx-12 col-sm-12">
 						<button type="button" class="btn btn-default content-button">1</button>
 						<button type="button" class="btn btn-default content-button">2</button>
 						<button type="button" class="btn btn-default content-button">LAST <</button>

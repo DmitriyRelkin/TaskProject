@@ -20,7 +20,7 @@ module.exports = function(module) {
         } else if (dataMes) {
           sendRequest.send("/reg", dataMes);
         }
-        
+
         $timeout(function () {
           $location.path("/");
         }, 3000);

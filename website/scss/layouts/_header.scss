@@ -1,29 +1,27 @@
 .main-header {
 	border: none !important;
 	.content-main-header {
-		padding: 0px 16px;
-		width: 76%;
-		.header-logo {
-			color: $main-white-content;
-			font-size: 199%;
-		}
-		.header-logo-piece {
-			color: $main-orange-content;
-			font-size: 105%;
-			&:hover {
-				color: darken($main-orange-content, 5%);
+		padding: 0;
+		width: 1111px;
+		.wrapper-header-logo {
+			.header-logo {
+				color: $main-white-content;
+				font-size: 23px;
+			}
+			.header-logo-piece {
+				color: $main-orange-content;
+				font-size: 23px;
 			}
 		}
 		.links-main-header {
+			padding: 0 15px;
 			overflow: hidden;
 			li > a {
 				font-weight: bold;
 				transition: background .1s ease-in-out;
 			}
 		}
-
 		.search-block-main-header {
-			// padding: 0;
 			margin: 35px 0px 35px 0px;
 			position: relative;
 		 	a {
@@ -45,9 +43,6 @@
 				 	}
 				 }
 				.search-header-input {
-					/* &:hover {
-						border: 1px solid $main-orange-content;
-					} */
 					border-radius: 0px;
 					width: 132px;
 					height: 32px;
@@ -56,12 +51,19 @@
 					background: $header-background;
 					color: $pure-white;
 				}
-				/* .search-icon {
-					&:hover {
-						color: $main-orange-content;
-					}
-				} */
 			}
 		}
 	}
+}
+div.navbar-collapse.collapse {
+	display: block;
+	overflow: hidden;
+	max-height: 0px;
+	-webkit-transition: max-height .3s ease;
+	-moz-transition: max-height .3s ease;
+	-o-transition: max-height .3s ease;
+	transition: max-height .3s ease;
+}
+div.navbar-collapse.collapse.in {
+	max-height: 2000px;
 }

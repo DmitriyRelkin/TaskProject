@@ -17,7 +17,7 @@ $backgound-footer: #3d3d3d;
 	text-decoration: none;
 	&:hover {
 		color: $main-orange-content;
-	}	
+	}
 }
 %top-margin-in-the-content {
 	padding-top: 5%;
@@ -26,7 +26,7 @@ $backgound-footer: #3d3d3d;
 	font: 300 39px/40px Bebas, sans-serif;
 	// margin-bottom: 10%;
 	margin: 0;
-	padding: 0; 
+	padding: 0;
 	text-align: center;
 	color: $heading-color;
 	font-size: 35px;
@@ -36,7 +36,7 @@ $backgound-footer: #3d3d3d;
 	font: 300 39px/40px Bebas, sans-serif;
 	// margin-bottom: 3%;
 	margin: 0;
-	padding: 0; 
+	padding: 0;
 	color: $heading-color;
 	font-size: 30px;
 	word-spacing: 4px;
@@ -45,7 +45,7 @@ $backgound-footer: #3d3d3d;
 	color: $turquoise-gray;
 	padding-bottom: 12%;
 	font-weight: bold;
-	margin: 0; 
+	margin: 0;
 }
 %paragraph-patern {
 	font-size: 147%;
@@ -101,7 +101,7 @@ $backgound-footer: #3d3d3d;
 		position: absolute;
 		bottom: 4%;
 		right: 17%;
-	}	
+	}
 }
 %stars-contact-form-links {
 	&:after {
@@ -125,7 +125,7 @@ $backgound-footer: #3d3d3d;
 		font-size: 17px;
 		color: $main-orange-content;
 		padding: 0 10px;
-	}	
+	}
 }
 %calendar {
 	&:before {
@@ -136,7 +136,7 @@ $backgound-footer: #3d3d3d;
 		font-size: 17px;
 		color: $main-orange-content;
 		padding: 0 10px;
-	}	
+	}
 }
 %eye {
 	&:before {
@@ -147,7 +147,7 @@ $backgound-footer: #3d3d3d;
 		font-size: 17px;
 		color: $main-orange-content;
 		padding: 0 10px;
-	}	
+	}
 }
 %coment {
 	&:before {
@@ -158,7 +158,7 @@ $backgound-footer: #3d3d3d;
 		font-size: 17px;
 		color: $main-orange-content;
 		padding: 0 10px;
-	}	
+	}
 }
 %font-navigation-footer-block {
 	font-family: WorkSans;

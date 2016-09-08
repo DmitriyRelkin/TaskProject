@@ -3,4 +3,5 @@ module.exports = function(module) {
 	require('./layoutsController.js')(module);
 	require('./sliderController.js')(module);
 	require('./validationController.js')(module);
+	require('./blogPageController.js')(module);
 };

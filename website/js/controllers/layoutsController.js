@@ -8,4 +8,7 @@ module.exports = function(module) {
   module.controller("goToTopCtrl", function($scope) {
     $scope.url = "website/templates/components/backToTop.html";
   });
+  module.controller('navbarCtrl', function($scope) {
+    $scope.name = 'World';
+  });
 };

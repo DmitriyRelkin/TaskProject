@@ -9,7 +9,8 @@ module.exports = (function() {
 
   var module = angular.module("sampleApp", [
     'ui.router',
-    "requsetService"
+    "requsetService",
+    "ui.bootstrap"
   ]);
 
   module.run(function ($state,$rootScope) {
@@ -29,7 +30,7 @@ module.exports = (function() {
   config(module);
 }());
 
-},{"./config/routerConfig.js":2,"./controllers/initControllers.js":4,"./directives/initDirectives.js":11,"./services/initServices.js":14}],2:[function(require,module,exports){
+},{"./config/routerConfig.js":2,"./controllers/initControllers.js":5,"./directives/initDirectives.js":12,"./services/initServices.js":15}],2:[function(require,module,exports){
 module.exports = function(module) {
   "use strict";
   module.config(function($stateProvider, $urlRouterProvider) {
@@ -65,6 +66,17 @@ module.exports = function(module) {
 
 },{}],3:[function(require,module,exports){
 module.exports = function(module) {
+  module.controller("blogContentCtrl", function($scope) {
+      $scope.blogContent = [
+          {depiction: "website/images/img-14.jpg", header:"NULLA NEC LIGULA RISUS", paragraph: "Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat."},
+          {depiction: "website/images/img-7.jpg", header:"ETIAM A ODIO NEC MI CONVALLIS MALESUADA", paragraph: "Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat."},
+          {depiction: "https://www.youtube.com/embed/2kodXWejuy0", header:"YOUTUBE VIDEO", paragraph: "Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat."}
+      ];
+  });
+};
+
+},{}],4:[function(require,module,exports){
+module.exports = function(module) {
   // ==============BisinessBlock=============================
   module.controller("bisinessBlockCtrl", function($scope) {
       $scope.serviceBlock = [
@@ -87,15 +99,16 @@ module.exports = function(module) {
 
 };
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 module.exports = function(module) {
 	require('./homePageController.js')(module);
 	require('./layoutsController.js')(module);
 	require('./sliderController.js')(module);
 	require('./validationController.js')(module);
+	require('./blogPageController.js')(module);
 };
 
-},{"./homePageController.js":3,"./layoutsController.js":5,"./sliderController.js":6,"./validationController.js":7}],5:[function(require,module,exports){
+},{"./blogPageController.js":3,"./homePageController.js":4,"./layoutsController.js":6,"./sliderController.js":7,"./validationController.js":8}],6:[function(require,module,exports){
 module.exports = function(module) {
   module.controller("mainHeaderCtrl", function($scope) {
     $scope.url = "website/templates/components/header.html";
@@ -106,9 +119,12 @@ module.exports = function(module) {
   module.controller("goToTopCtrl", function($scope) {
     $scope.url = "website/templates/components/backToTop.html";
   });
+  module.controller('navbarCtrl', function($scope) {
+    $scope.name = 'World';
+  });
 };
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 module.exports = function(module) {
   module.controller("galaryCtrl", function($scope, $rootScope, $interval) {
       $scope.photos = [
@@ -143,7 +159,7 @@ module.exports = function(module) {
   });
 };
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 module.exports = function(module) {
   // ================VALIDATION===============================
   module.controller("validCtrl", function ($scope, $location, $timeout, sendRequest) {
@@ -166,7 +182,7 @@ module.exports = function(module) {
         } else if (dataMes) {
           sendRequest.send("/reg", dataMes);
         }
-        
+
         $timeout(function () {
           $location.path("/");
         }, 3000);
@@ -175,7 +191,7 @@ module.exports = function(module) {
 
 };
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 module.exports = function(module) {
 	'use strict';
 	module
@@ -203,7 +219,7 @@ module.exports = function(module) {
 	});
 };
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 module.exports = function(module) {
   'use strict';
   angular.module("sampleApp").directive('validateEmail', function() {
@@ -225,7 +241,7 @@ module.exports = function(module) {
   });
 }
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 module.exports = function(module) {
   'use strict';
   angular.module("sampleApp").directive('validateFullname', function() {
@@ -245,7 +261,7 @@ module.exports = function(module) {
   });
 };
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 module.exports = function(module) {
 	require('./email-directive.js')(module);
 	require('./fullName-directive.js')(module);
@@ -254,7 +270,7 @@ module.exports = function(module) {
 	require('./backToTop-directive.js')(module);
 };
 
-},{"./backToTop-directive.js":8,"./email-directive.js":9,"./fullName-directive.js":10,"./password-check-directive.js":12,"./required-text-directive.js":13}],12:[function(require,module,exports){
+},{"./backToTop-directive.js":9,"./email-directive.js":10,"./fullName-directive.js":11,"./password-check-directive.js":13,"./required-text-directive.js":14}],13:[function(require,module,exports){
 module.exports = function(module) {
   angular.module("sampleApp").directive("passwordVerify", function() {
      return {
@@ -289,7 +305,7 @@ module.exports = function(module) {
   });
 };
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 module.exports = function(module) {
   'use strict';
   angular.module("sampleApp").directive('validateText', function() {
@@ -308,12 +324,12 @@ module.exports = function(module) {
   });
 };
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 module.exports = function(module) {
 	require('./requestService.js')(module);
 };
 
-},{"./requestService.js":15}],15:[function(require,module,exports){
+},{"./requestService.js":16}],16:[function(require,module,exports){
 module.exports = function(module) {
   var module = angular.module("requsetService", []);
   module.factory("sendRequest", function ($http) {

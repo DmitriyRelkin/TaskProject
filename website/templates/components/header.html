@@ -1,8 +1,8 @@
-<nav class="navbar navbar-default navbar-fixed-top main-header">
+<nav class="navbar navbar-default navbar-fixed-top main-header" ng-controller="navbarCtrl" role="navigation">
   <div class="container-fluid content-main-header">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="container-fluid navbar-header wrapper-header-logo">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <button type="button" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -10,7 +10,7 @@
       </button>
       <a class="navbar-brand header-logo" href="#"><strong>CONSULTING <span class="header-logo-piece">CO.</span></strong></a>
     </div>
-    <div class="collapse navbar-collapse pull-right links-main-header" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse pull-right links-main-header" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed = true">
       <ul class="nav navbar-nav">
         <li ng-class="{active: $state.includes('home')}"><a ui-sref="home">HOME <span class="sr-only">(current)</span></a></li>
         <li ng-class="{active: $state.includes('contacts')}"><a ui-sref="contacts">CONTACTS</a></li>

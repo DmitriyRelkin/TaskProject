@@ -14,12 +14,14 @@
       <body>
          <header ng-include="'website/templates/components/header.html'"></header>
          <div class="content-wrapper" ui-view></div>
-         <footer ng-hide="$state.includes('home')" ng-include="'website/templates/components/footer.html'"></footer>
+         <footer ng-hide="$state.includes('home')" class="wrapper-footer" ng-include="'website/templates/components/footer.html'"></footer>
 
       </body>
          <script src="bower_components/angular/angular.min.js"></script>
          <script src="website/js/angular-ui-router.js"></script>
          <script src="website/js/bundle.js"></script>
+         <script data-require="ui-bootstrap@0.5.0" data-semver="0.5.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.js"></script>
          <script src="bower_components/jquery/dist/jquery.min.js"></script>
          <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
 </html>
