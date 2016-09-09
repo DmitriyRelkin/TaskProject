@@ -1,5 +1,14 @@
 module.exports = function(module) {
-  // ================VALIDATION===============================
+  /**
+  * @ngdoc controller
+  * @name module.controller:validCtrl
+  * @description
+  * This is the validation controller, and validation function
+  *
+  * @param {data}  data user input
+  *
+  * @return post requset
+  **/
   module.controller("validCtrl", function ($scope, $location, $timeout, sendRequest) {
       $scope.regData = {};
       $scope.logData = {};

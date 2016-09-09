@@ -1,6 +1,16 @@
 module.exports = function(module) {
-  angular.module("sampleApp").directive("passwordVerify", function() {
-     return {
+  /**
+  * @ngdoc directive
+  * @name module.directive:passwordVerify
+  *
+  *	@description
+  *	This is directive for validation confirm password
+  *
+  **/
+  'use strict';
+  module
+  .directive("passwordVerify", function() {
+    return {
         require: "ngModel",
         scope: {
           passwordVerify: '='

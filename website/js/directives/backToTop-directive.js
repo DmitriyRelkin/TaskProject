@@ -1,4 +1,12 @@
 module.exports = function(module) {
+	/**
+  * @ngdoc directive
+  * @name module.directive:backToTop
+  * @restrict A
+  *	@description
+	*	This is directive for scroll to top button
+	*
+  **/
 	'use strict';
 	module
 	.directive('backToTop', function() {

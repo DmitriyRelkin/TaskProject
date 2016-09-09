@@ -30,33 +30,33 @@ module.exports = (function() {
   config(module);
 }());
 
-},{"./config/routerConfig.js":2,"./controllers/initControllers.js":5,"./directives/initDirectives.js":12,"./services/initServices.js":15}],2:[function(require,module,exports){
+},{"./config/routerConfig.js":2,"./controllers/initControllers.js":7,"./directives/initDirectives.js":14,"./services/initServices.js":17}],2:[function(require,module,exports){
 module.exports = function(module) {
   "use strict";
   module.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
     $stateProvider
-        // ====Home====
+        /* HomePage */
         .state('home', {
             url: '/',
             templateUrl: 'website/templates/home.html'
         })
-       //====Contacts====
+        /* ContactPage */
         .state('contacts', {
             url: '/contacts',
             templateUrl: 'website/templates/contacts.html'
         })
-       //====Blog====
+        /* BlogPage */
         .state('blog', {
             url: '/blog',
             templateUrl: 'website/templates/blog.html'
         })
-        //====Registration====
+        /* RegistrationPage */
         .state('reg', {
             url: '/reg',
             templateUrl: 'website/templates/registration.html'
         })
-        //====Sig-in====
+        /* AuthorizationPage */
         .state('sig-in', {
             url: '/sig-in',
             templateUrl: 'website/templates/sig-in.html'
@@ -67,7 +67,7 @@ module.exports = function(module) {
 },{}],3:[function(require,module,exports){
 module.exports = function(module) {
   /**
-  * @ngdoc directive
+  * @ngdoc controller
   * @name module.controller:blogContentCtrl
   * @description
   * This is the blog content controller.
@@ -84,8 +84,43 @@ module.exports = function(module) {
 
 },{}],4:[function(require,module,exports){
 module.exports = function(module) {
-  // ==============BisinessBlock=============================
-  module.controller("bisinessBlockCtrl", function($scope) {
+  /**
+  * @ngdoc controller
+  * @name module.controller:mainFooterCtrl
+  * @description
+  * This is the footer controller.
+  *
+  **/
+  module.controller("mainFooterCtrl", function($scope) {
+    // $scope.url = "website/templates/components/footer.html";
+  });
+};
+
+},{}],5:[function(require,module,exports){
+module.exports = function(module) {
+  /**
+  * @ngdoc controller
+  * @name module.controller:HeaderCtrl
+  * @description
+  * This is the header controller.
+  *
+  **/
+  module.controller("HeaderCtrl", function($scope) {
+    // $scope.url = "website/templates/components/header.html";
+  });
+};
+
+},{}],6:[function(require,module,exports){
+module.exports = function(module) {
+
+  /**
+  * @ngdoc controller
+  * @name module.controller:bisinessBlockCtrl
+  * @description
+  * This is the home page content controller.
+  * He keeps the arrays, in which objects with links of pictures, headers, and paragraphs with text.
+  **/
+  module.controller("homePageCtrl", function($scope) {
       $scope.serviceBlock = [
           {srcImg: "/website/images/icon-service-1.png", header:"BUSINESS CONSULTING", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
           {srcImg: "/website/images/icon-service-2.png", header:"ENTERPRISE APPLICATION", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
@@ -94,9 +129,6 @@ module.exports = function(module) {
           {srcImg: "/website/images/icon-service-5.png", header:"OUTSOURSING", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
           {srcImg: "/website/images/icon-service-6.png", header:"SALES & MARKETING", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"}
       ];
-  });
-  // ==============Strategy-Block============================
-  module.controller("strategyCtrl", function($scope) {
       $scope.strategyBlock = [
           {srcImg: "/website/images/page1_img1.jpg", header:"QUESTIONS TO ASK:", item1:"Analysing your organisation business model", item2:"Identifying development opportunities", item3:"Defining your objectives", item4:"Identifying the key factors for success"},
           {srcImg: "/website/images/page1_img2.jpg", header:"THE COMPANY'S ROLE:", item1:"Identifying development opportunities", item2: "Analysing your organisation business model", item3:"Defining your objectives", item4:"Identifying the key factors for success"},
@@ -104,52 +136,67 @@ module.exports = function(module) {
       ];
   });
 
+
 };
 
-},{}],5:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 module.exports = function(module) {
 	require('./homePageController.js')(module);
-	require('./layoutsController.js')(module);
+	require('./headerController.js')(module);
+	require('./footerController.js')(module);
+	require('./scrollTopController.js')(module);
 	require('./sliderController.js')(module);
 	require('./validationController.js')(module);
 	require('./blogPageController.js')(module);
 };
 
-},{"./blogPageController.js":3,"./homePageController.js":4,"./layoutsController.js":6,"./sliderController.js":7,"./validationController.js":8}],6:[function(require,module,exports){
+},{"./blogPageController.js":3,"./footerController.js":4,"./headerController.js":5,"./homePageController.js":6,"./scrollTopController.js":8,"./sliderController.js":9,"./validationController.js":10}],8:[function(require,module,exports){
 module.exports = function(module) {
-  module.controller("mainHeaderCtrl", function($scope) {
-    $scope.url = "website/templates/components/header.html";
-  });
-  module.controller("mainFooterCtrl", function($scope) {
-    $scope.url = "website/templates/components/footer.html";
-  });
+  /**
+  * @ngdoc controller
+  * @name module.controller:goToTopCtrl
+  * @description
+  * This is the footer controller.
+  * In the property url stored link to html template scroll-top button.
+  *
+  **/
   module.controller("goToTopCtrl", function($scope) {
     $scope.url = "website/templates/components/backToTop.html";
   });
-  module.controller('navbarCtrl', function($scope) {
-    $scope.name = "";
-  });
 };
 
-},{}],7:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 module.exports = function(module) {
-  module.controller("galaryCtrl", function($scope, $rootScope, $interval) {
+  /**
+  * @ngdoc controller
+  * @name module.controller:galaryCtrl
+  * @description
+  * This is the slider controller, and slider function.
+  * The second function switch slides.
+  *
+  * @param index pressed slide
+  *
+  **/
+  module.controller("sliderCtrl", function($scope, $rootScope, $interval) {
       $scope.photos = [
           {src: "website/images/slide-1.jpg", active : true , btnName: "BUSINES WORKS WITH TECNOLOGY", btnBanner: "We added technology to strategy. You get the multiplier effect"},
           {src: "website/images/slide-2.jpg", active : false , btnName: "PROFESSIONAL CONSULTING SERVICES", btnBanner: "We are the trusted advisor to the world's leading businesses"},
           {src: "website/images/slide-3.jpg", active : false , btnName: "BROADEN YOUR MARKET EDGE", btnBanner: "We work with our clients as we do with our colleagues"},
           {src: "website/images/slide-4.jpg", active : false , btnName: "WE AREA NETWORK OF LEADERS", btnBanner: "We develop unparalleled management insights"}
       ];
-      $scope.photos.active = false;
+
       $scope.photoSrc = $scope.photos[0];
       $scope.btnSrc = $scope.photos[0];
       $scope.btnTitle = $scope.photos[0];
+
       $scope.showPhoto = function(index) {
           $scope.photoSrc = $scope.photos[index];
           $scope.btnSrc = $scope.photos[index];
           $scope.btnTitle = $scope.photos[index];
       };
+
       $scope.counter = 0;
+
       $interval(function () {
         $scope.counter++;
         $scope.photoSrc = $scope.photos[$scope.counter];
@@ -166,9 +213,18 @@ module.exports = function(module) {
   });
 };
 
-},{}],8:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 module.exports = function(module) {
-  // ================VALIDATION===============================
+  /**
+  * @ngdoc controller
+  * @name module.controller:validCtrl
+  * @description
+  * This is the validation controller, and validation function
+  *
+  * @param {data}  data user input
+  *
+  * @return post requset
+  **/
   module.controller("validCtrl", function ($scope, $location, $timeout, sendRequest) {
       $scope.regData = {};
       $scope.logData = {};
@@ -198,8 +254,16 @@ module.exports = function(module) {
 
 };
 
-},{}],9:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 module.exports = function(module) {
+	/**
+  * @ngdoc directive
+  * @name module.directive:backToTop
+  * @restrict A
+  *	@description
+	*	This is directive for scroll to top button
+	*
+  **/
 	'use strict';
 	module
 	.directive('backToTop', function() {
@@ -226,13 +290,23 @@ module.exports = function(module) {
 	});
 };
 
-},{}],10:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 module.exports = function(module) {
+  /**
+  * @ngdoc directive
+  * @name module.directive:validateEmail
+  * @restrict A
+  *	@description
+  *	This is directive for validation
+  *
+  **/
   'use strict';
-  angular.module("sampleApp").directive('validateEmail', function() {
+  module
+	.directive('validateEmail', function() {
     var EMAIL_REGEXP = /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
 
     return {
+      restrict: 'A',
       require: 'ngModel',
       link: function(scope, elm, attrs, ctrl) {
         // only apply the validator if ngModel is present and Angular has added the email validator
@@ -248,14 +322,24 @@ module.exports = function(module) {
   });
 }
 
-},{}],11:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 module.exports = function(module) {
+  /**
+  * @ngdoc directive
+  * @name module.directive:validateFullname
+  * @restrict A
+  *	@description
+  *	This is directive for validation full name
+  *
+  **/
   'use strict';
-  angular.module("sampleApp").directive('validateFullname', function() {
+  module
+	.directive('validateFullname', function() {
     var FULLNAME_REGEXP = /^[A-Z][a-zA-Z']+[ ]+[A-Z][a-zA-Z'\- ]*$/;
     // var FULLNAME_REGEXP = /^([a-zA-Z'-]+\s+){1,4}[a-zA-z'-]+$/;
 
     return {
+      restrict: 'A',
       require: 'ngModel',
       link: function(scope, elm, attrs, ctrl) {
 
@@ -268,7 +352,7 @@ module.exports = function(module) {
   });
 };
 
-},{}],12:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 module.exports = function(module) {
 	require('./email-directive.js')(module);
 	require('./fullName-directive.js')(module);
@@ -277,10 +361,20 @@ module.exports = function(module) {
 	require('./backToTop-directive.js')(module);
 };
 
-},{"./backToTop-directive.js":9,"./email-directive.js":10,"./fullName-directive.js":11,"./password-check-directive.js":13,"./required-text-directive.js":14}],13:[function(require,module,exports){
+},{"./backToTop-directive.js":11,"./email-directive.js":12,"./fullName-directive.js":13,"./password-check-directive.js":15,"./required-text-directive.js":16}],15:[function(require,module,exports){
 module.exports = function(module) {
-  angular.module("sampleApp").directive("passwordVerify", function() {
-     return {
+  /**
+  * @ngdoc directive
+  * @name module.directive:passwordVerify
+  *
+  *	@description
+  *	This is directive for validation confirm password
+  *
+  **/
+  'use strict';
+  module
+  .directive("passwordVerify", function() {
+    return {
         require: "ngModel",
         scope: {
           passwordVerify: '='
@@ -312,13 +406,23 @@ module.exports = function(module) {
   });
 };
 
-},{}],14:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 module.exports = function(module) {
+  /**
+  * @ngdoc directive
+  * @name module.directive:validateText
+  * @restrict A
+  *	@description
+  *	This is directive for validation mandatory text input
+  *
+  **/
   'use strict';
-  angular.module("sampleApp").directive('validateText', function() {
+  module
+  .directive('validateText', function() {
     var TEXT_REGEXP = /([A-Za-z])\w+/;
 
     return {
+      restrict: 'A',
       require: 'ngModel',
       link: function(scope, elm, attrs, ctrl) {
 
@@ -331,13 +435,21 @@ module.exports = function(module) {
   });
 };
 
-},{}],15:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 module.exports = function(module) {
 	require('./requestService.js')(module);
 };
 
-},{"./requestService.js":16}],16:[function(require,module,exports){
+},{"./requestService.js":18}],18:[function(require,module,exports){
 module.exports = function(module) {
+  /**
+  * @ngdoc service
+  * @name module.directive:requsetService
+  *
+  * @description
+  *	This is service for send request
+  *
+  **/
   var module = angular.module("requsetService", []);
   module.factory("sendRequest", function ($http) {
       var data;

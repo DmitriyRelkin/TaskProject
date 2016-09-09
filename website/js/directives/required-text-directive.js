@@ -1,9 +1,19 @@
 module.exports = function(module) {
+  /**
+  * @ngdoc directive
+  * @name module.directive:validateText
+  * @restrict A
+  *	@description
+  *	This is directive for validation mandatory text input
+  *
+  **/
   'use strict';
-  angular.module("sampleApp").directive('validateText', function() {
+  module
+  .directive('validateText', function() {
     var TEXT_REGEXP = /([A-Za-z])\w+/;
 
     return {
+      restrict: 'A',
       require: 'ngModel',
       link: function(scope, elm, attrs, ctrl) {
 

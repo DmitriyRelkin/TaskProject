@@ -1,5 +1,5 @@
 <div class="hidden-xs goToTop" back-to-top ng-include="'website/templates/components/backToTop.html'"></div>
-<div class="comtainer wrapper-slider" ng-controller="galaryCtrl">
+<div class="comtainer wrapper-slider" ng-controller="sliderCtrl">
 	<div class="col-xs-12 col-sm-12 slider-view">
 		<img ng-src="{{photoSrc.src}}">
 		<div class="hidden-xs wrapper-btn-slider">
@@ -16,7 +16,7 @@
 	</div>
 </div>
 
-<div class="col-xs-12 col-sm-12 hidden-sm hidden-md hidden-lg nav-btn-slider" ng-controller="galaryCtrl">
+<div class="col-xs-12 col-sm-12 hidden-sm hidden-md hidden-lg nav-btn-slider" ng-controller="sliderCtrl">
 	<div class="wrapper-slider-nav-btn">
 		<a href="#" class="slider-nav-btn">{{btnSrc.btnName}}</a>
 	</div>
@@ -53,7 +53,7 @@
 	</div>
 </div>
 <div class="container business-services-block">
-	<div class="col-xs-12  col-sm-12 wrapper-services-blocks services-blocks"  ng-controller="bisinessBlockCtrl">
+	<div class="col-xs-12  col-sm-12 wrapper-services-blocks services-blocks"  ng-controller="homePageCtrl">
 		<div class="col-xs-12 col-sm-4 service-block" ng-repeat="block in serviceBlock">
 			<img src="{{block.srcImg}}" alt="">
 			<h3>{{block.header}}</h3>
@@ -66,7 +66,7 @@
 	<div class="col-xs-12 col-sm-12 strategy-block">
 		<h3 class="heading-strategy-block">STRATEGY IS NOTHING WITHOUT EXECUTION</h3>
 		<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-		<div class="container content-strategy-block" ng-controller="strategyCtrl">
+		<div class="container content-strategy-block" ng-controller="homePageCtrl">
 			<div ng-repeat="list in strategyBlock" class="col-sm-4 column-strategy-block">
 				<img src="{{list.srcImg}}" alt="">
 				<h5 class="header-strategy-block">{{list.header}}</h5>
@@ -116,7 +116,7 @@
 				</ul>
 			</div>
 		</div>
-		<div class="col-sm-4 social-footer-column">
+		<div class="col-sm-4 social-footer-block">
 			<h4 class="header-footer-column">CONNECT ONLINE</h4>
 			<div class="social-icons">
 				<a href="#" id="faceBook"><i class="fa fa-facebook" aria-hidden="true"></i></a>

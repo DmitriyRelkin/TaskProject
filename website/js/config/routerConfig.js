@@ -3,27 +3,27 @@ module.exports = function(module) {
   module.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
     $stateProvider
-        // ====Home====
+        /* HomePage */
         .state('home', {
             url: '/',
             templateUrl: 'website/templates/home.html'
         })
-       //====Contacts====
+        /* ContactPage */
         .state('contacts', {
             url: '/contacts',
             templateUrl: 'website/templates/contacts.html'
         })
-       //====Blog====
+        /* BlogPage */
         .state('blog', {
             url: '/blog',
             templateUrl: 'website/templates/blog.html'
         })
-        //====Registration====
+        /* RegistrationPage */
         .state('reg', {
             url: '/reg',
             templateUrl: 'website/templates/registration.html'
         })
-        //====Sig-in====
+        /* AuthorizationPage */
         .state('sig-in', {
             url: '/sig-in',
             templateUrl: 'website/templates/sig-in.html'

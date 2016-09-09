@@ -5,6 +5,24 @@ NG_DOCS={
   "pages": [
     {
       "section": "api",
+      "id": "module.controller:bisinessBlockCtrl",
+      "shortName": "bisinessBlockCtrl",
+      "type": "directive",
+      "moduleName": "module",
+      "shortDescription": "This is the home page content controller.",
+      "keywords": "api arrays bisinessblockctrl content controller directive headers links module objects paragraphs pictures text"
+    },
+    {
+      "section": "api",
+      "id": "module.controller:bisinessBlockCtrl",
+      "shortName": "bisinessBlockCtrl",
+      "type": "directive",
+      "moduleName": "module",
+      "shortDescription": "This is the home page content controller.",
+      "keywords": "api arrays bisinessblockctrl content controller directive headers links module objects paragraphs pictures text"
+    },
+    {
+      "section": "api",
       "id": "module.controller:blogContentCtrl",
       "shortName": "blogContentCtrl",
       "type": "directive",

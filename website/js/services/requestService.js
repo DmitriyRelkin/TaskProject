@@ -1,4 +1,12 @@
 module.exports = function(module) {
+  /**
+  * @ngdoc service
+  * @name module.directive:requsetService
+  *
+  * @description
+  *	This is service for send request
+  *
+  **/
   var module = angular.module("requsetService", []);
   module.factory("sendRequest", function ($http) {
       var data;
