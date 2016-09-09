@@ -9,6 +9,6 @@ module.exports = function(module) {
     $scope.url = "website/templates/components/backToTop.html";
   });
   module.controller('navbarCtrl', function($scope) {
-    $scope.name = 'World';
+    $scope.name = "";
   });
 };

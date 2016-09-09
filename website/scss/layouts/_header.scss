@@ -39,11 +39,9 @@
 			}
 		}
 		.search-block-main-header {
-			position: relative;
 			overflow: auto;
-			width: 156px;
-			// margin: 35px 0px 35px 0px;
 			position: relative;
+	    padding: 0 8px;
 		 	a {
 			color: $pure-white;
 			position: absolute;
@@ -51,6 +49,8 @@
    				right: 7%;
 			}
 			.wrapper-input-search {
+
+        // outline: 0 !important;
 		    margin-left: 3%;
 				position: relative;
 				transition: color .2s ease-in-out;
@@ -66,7 +66,9 @@
 				 }
 				.search-header-input {
 					border-radius: 0px;
-					width: 132px;
+					@media (min-width: $screen-sm-min) {
+						width: 132px;
+					}
 					height: 32px;
 					border: $header-background;
 					background: $header-background;

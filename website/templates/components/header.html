@@ -10,8 +10,8 @@
       </button>
       <a class="navbar-brand header-logo" href="#"><strong>CONSULTING <span class="header-logo-piece">CO.</span></strong></a>
     </div>
-    <div class="collapse navbar-collapse links-main-header" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed = true">
-      <ul class="nav navbar-nav">
+    <div class="collapse navbar-collapse links-main-header" ng-class="!navCollapsed && 'in'" >
+      <ul class="nav navbar-nav" ng-click="navCollapsed = true">
         <li ng-class="{active: $state.includes('home')}"><a ui-sref="home">HOME <span class="sr-only">(current)</span></a></li>
         <li ng-class="{active: $state.includes('contacts')}"><a ui-sref="contacts">CONTACTS</a></li>
         <li ng-class="{active: $state.includes('blog')}"><a ui-sref="blog">BLOG</a></li>
@@ -20,7 +20,7 @@
       </ul>
       <form class="navbar-form search-block-main-header" role="search">
         <div class="form-group form-group-sm wrapper-input-search">
-          <input type="text" class="form-control  search-header-input">
+          <input type="text" class="form-control  search-header-input" required>
           <a><i class="glyphicon glyphicon-search search-icon"></i></a>
         </div>
       </form>

@@ -155,6 +155,7 @@
 	}
 }
 .message-block {
+
 	background: url(/website/images/parallax-1.jpg) fixed;
 	position: relative;
 	padding: 6% 4%;
@@ -167,6 +168,9 @@
 	.wrapper-content-message-block {
 		padding: 0;
 		.content-message-block {
+			@media (max-width: $screen-sm-min) {
+				margin: 22% 14% !important;
+			}
 			margin: 0% 14%;
 			background: $main-white-content;
 			border-radius: 20px;

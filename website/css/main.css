@@ -2444,10 +2444,10 @@ output {
   -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
   .form-control:focus {
-    border-color: #66afe9;
+    border-color: #404b52;
     outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(64, 75, 82, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(64, 75, 82, 0.6); }
   .form-control::-moz-placeholder {
     color: #999;
     opacity: 1; }
@@ -5973,10 +5973,9 @@ button.close {
         font-weight: bold;
         transition: background .1s ease-in-out; }
     .main-header .content-main-header .search-block-main-header {
-      position: relative;
       overflow: auto;
-      width: 156px;
-      position: relative; }
+      position: relative;
+      padding: 0 8px; }
       .main-header .content-main-header .search-block-main-header a {
         color: #fff;
         position: absolute;
@@ -5995,12 +5994,14 @@ button.close {
             cursor: pointer; }
         .main-header .content-main-header .search-block-main-header .wrapper-input-search .search-header-input {
           border-radius: 0px;
-          width: 132px;
           height: 32px;
           border: #404b52;
           background: #404b52;
           background: #404b52;
           color: #fff; }
+          @media (min-width: 768px) {
+            .main-header .content-main-header .search-block-main-header .wrapper-input-search .search-header-input {
+              width: 132px; } }
 
 div.navbar-collapse.collapse {
   display: block;
@@ -8334,10 +8335,10 @@ output {
   -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
   .form-control:focus {
-    border-color: #66afe9;
+    border-color: #404b52;
     outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(64, 75, 82, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(64, 75, 82, 0.6); }
   .form-control::-moz-placeholder {
     color: #999;
     opacity: 1; }
@@ -11833,15 +11834,13 @@ button.close {
 @media (max-width: 768px) {
   .main-header .content-main-header {
     width: 99% !important; }
-    .main-header .content-main-header .header-logo a {
-      font-size: 15px !important; }
-    .main-header .content-main-header .search-block-main-header {
-      widows: 136px !important; }
-      .main-header .content-main-header .search-block-main-header a {
-        padding: 9px 0 !important;
-        position: absolute;
-        top: 0%;
-        right: 14%; }
+    .main-header .content-main-header .search-block-main-header .wrapper-input-search {
+      margin: 0; }
+    .main-header .content-main-header .search-block-main-header a {
+      padding: 9px 0 !important;
+      position: absolute;
+      top: 0%;
+      right: 5%; }
   .wrapper-slider {
     padding-bottom: 50px; }
   .message-block .wrapper-content-massange-block .content-massange-block .img-massange-block img {
@@ -11894,7 +11893,7 @@ button.close {
   .message-block {
     padding: 10% 4% !important; }
     .message-block .content-message-block {
-      margin: 13% 14% !important; } }
+      margin: 1% 14% !important; } }
 
 .wrapper-slider {
   background: #e8eef2;
@@ -12032,6 +12031,9 @@ button.close {
       margin: 0% 14%;
       background: #fff;
       border-radius: 20px; }
+      @media (max-width: 768px) {
+        .message-block .wrapper-content-message-block .content-message-block {
+          margin: 22% 14% !important; } }
       .message-block .wrapper-content-message-block .content-message-block .img-message-block {
         text-align: center;
         margin: 0 auto;
