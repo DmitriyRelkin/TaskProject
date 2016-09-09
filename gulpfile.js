@@ -11,7 +11,7 @@ var debug      = require('gulp-debug');
 var watch      = require('gulp-watch');
 var uglify     = require('gulp-uglify');
 var server     = require('gulp-develop-server');
-var ngdocs     = require ('gulp-ngdocs');
+// var ngdocs     = require ('gulp-ngdocs');
 
 
 var  sourceFile = './website/js/app.js';
@@ -50,11 +50,11 @@ gulp.task('watch', function () {
   gulp.watch("website/js/**/*.js", ['browserify']);
 });
 
-gulp.task('ngdocs', [], function () {
-  var gulpDocs = require('gulp-ngdocs');
-  return gulp.src("website/js/**/*.js")
-    .pipe(gulpDocs.process())
-    .pipe(gulp.dest('./website/docs'));
-});
+// gulp.task('ngdocs', [], function () {
+//   var gulpDocs = require('gulp-ngdocs');
+//   return gulp.src("website/js/**/*.js")
+//     .pipe(gulpDocs.process())
+//     .pipe(gulp.dest('./website/docs'));
+// });
 
 gulp.task('default', ['browserify', 'watch', "sass:watch"]);

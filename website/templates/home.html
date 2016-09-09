@@ -9,7 +9,7 @@
 	</div>
 	<div class="col-xs-12  col-sm-12 wrapper-nav-slider">
 		<ul class="nav-galery hidden-xs">
-			<li  ng-repeat="photo in photos" class="slide-link" ng-click="showPhoto($index)">
+			<li  ng-repeat="photo in photos" class="slide-link" ng-click="showSlide($index)">
 				<img ng-src="{{photo.src}}" ng-class="{'active': photo.active}">
 			</li>
 		</ul>

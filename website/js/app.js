@@ -8,7 +8,7 @@ module.exports = (function() {
 
   var module = angular.module("sampleApp", [
     'ui.router',
-    "requsetService",
+    "sendDataService",
     "ui.bootstrap"
   ]);
 

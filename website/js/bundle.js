@@ -9,7 +9,7 @@ module.exports = (function() {
 
   var module = angular.module("sampleApp", [
     'ui.router',
-    "requsetService",
+    "sendDataService",
     "ui.bootstrap"
   ]);
 
@@ -71,9 +71,16 @@ module.exports = function(module) {
   * @name module.controller:blogContentCtrl
   * @description
   * This is the blog content controller.
-  * He keeps the array, in which objects with links of pictures, headers, and paragraphs with text.
+  *
   **/
   module.controller("blogContentCtrl", function($scope) {
+    /**
+    * @ngdoc property
+    * @name blogContent
+    * @description
+    * It keeps the array, in which objects with links of pictures, headers, text content.
+    *
+    **/
       $scope.blogContent = [
           {depiction: "website/images/img-14.jpg", header:"NULLA NEC LIGULA RISUS", paragraph: "Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat."},
           {depiction: "website/images/img-7.jpg", header:"ETIAM A ODIO NEC MI CONVALLIS MALESUADA", paragraph: "Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat."},
@@ -92,7 +99,6 @@ module.exports = function(module) {
   *
   **/
   module.controller("mainFooterCtrl", function($scope) {
-    // $scope.url = "website/templates/components/footer.html";
   });
 };
 
@@ -106,21 +112,25 @@ module.exports = function(module) {
   *
   **/
   module.controller("HeaderCtrl", function($scope) {
-    // $scope.url = "website/templates/components/header.html";
   });
 };
 
 },{}],6:[function(require,module,exports){
 module.exports = function(module) {
-
   /**
   * @ngdoc controller
   * @name module.controller:bisinessBlockCtrl
   * @description
   * This is the home page content controller.
-  * He keeps the arrays, in which objects with links of pictures, headers, and paragraphs with text.
+  *
   **/
   module.controller("homePageCtrl", function($scope) {
+      /**
+      * @ngdoc property
+      * @name serviceBlock
+      * @description
+      * It keeps the array, in which objects with links of pictures, headers, and paragraphs with text.
+      **/
       $scope.serviceBlock = [
           {srcImg: "/website/images/icon-service-1.png", header:"BUSINESS CONSULTING", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
           {srcImg: "/website/images/icon-service-2.png", header:"ENTERPRISE APPLICATION", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
@@ -129,6 +139,12 @@ module.exports = function(module) {
           {srcImg: "/website/images/icon-service-5.png", header:"OUTSOURSING", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
           {srcImg: "/website/images/icon-service-6.png", header:"SALES & MARKETING", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"}
       ];
+      /**
+      * @ngdoc property
+      * @name strategyBlock
+      * @description
+      * It keeps the array, in which objects with links of pictures, headers, items text.
+      **/
       $scope.strategyBlock = [
           {srcImg: "/website/images/page1_img1.jpg", header:"QUESTIONS TO ASK:", item1:"Analysing your organisation business model", item2:"Identifying development opportunities", item3:"Defining your objectives", item4:"Identifying the key factors for success"},
           {srcImg: "/website/images/page1_img2.jpg", header:"THE COMPANY'S ROLE:", item1:"Identifying development opportunities", item2: "Analysing your organisation business model", item3:"Defining your objectives", item4:"Identifying the key factors for success"},
@@ -156,12 +172,10 @@ module.exports = function(module) {
   * @ngdoc controller
   * @name module.controller:goToTopCtrl
   * @description
-  * This is the footer controller.
-  * In the property url stored link to html template scroll-top button.
+  * This is the scroll-top controller.
   *
   **/
   module.controller("goToTopCtrl", function($scope) {
-    $scope.url = "website/templates/components/backToTop.html";
   });
 };
 
@@ -178,38 +192,55 @@ module.exports = function(module) {
   *
   **/
   module.controller("sliderCtrl", function($scope, $rootScope, $interval) {
-      $scope.photos = [
-          {src: "website/images/slide-1.jpg", active : true , btnName: "BUSINES WORKS WITH TECNOLOGY", btnBanner: "We added technology to strategy. You get the multiplier effect"},
-          {src: "website/images/slide-2.jpg", active : false , btnName: "PROFESSIONAL CONSULTING SERVICES", btnBanner: "We are the trusted advisor to the world's leading businesses"},
-          {src: "website/images/slide-3.jpg", active : false , btnName: "BROADEN YOUR MARKET EDGE", btnBanner: "We work with our clients as we do with our colleagues"},
-          {src: "website/images/slide-4.jpg", active : false , btnName: "WE AREA NETWORK OF LEADERS", btnBanner: "We develop unparalleled management insights"}
-      ];
-
-      $scope.photoSrc = $scope.photos[0];
-      $scope.btnSrc = $scope.photos[0];
-      $scope.btnTitle = $scope.photos[0];
-
-      $scope.showPhoto = function(index) {
-          $scope.photoSrc = $scope.photos[index];
-          $scope.btnSrc = $scope.photos[index];
-          $scope.btnTitle = $scope.photos[index];
-      };
-
-      $scope.counter = 0;
-
-      $interval(function () {
-        $scope.counter++;
-        $scope.photoSrc = $scope.photos[$scope.counter];
-        $scope.btnSrc = $scope.photos[$scope.counter];
-        $scope.btnTitle = $scope.photos[$scope.counter];
-        for(var i = 0; i<$scope.photos.length; i++) {
-             $scope.photos[i].active = false;
-        }
-        $scope.photos[$scope.counter].active = true;
-        if ($scope.counter == 3) {
-          $scope.counter = -1;
-        }
-      }, 3000);
+    /**
+    * @ngdoc property
+    * @name photos
+    * @description
+    * It keeps the array, in which objects with links of pictures, headers, button name, and button text.
+    **/
+    $scope.photos = [
+        {src: "website/images/slide-1.jpg", active : true , btnName: "BUSINES WORKS WITH TECNOLOGY", btnBanner: "We added technology to strategy. You get the multiplier effect"},
+        {src: "website/images/slide-2.jpg", active : false , btnName: "PROFESSIONAL CONSULTING SERVICES", btnBanner: "We are the trusted advisor to the world's leading businesses"},
+        {src: "website/images/slide-3.jpg", active : false , btnName: "BROADEN YOUR MARKET EDGE", btnBanner: "We work with our clients as we do with our colleagues"},
+        {src: "website/images/slide-4.jpg", active : false , btnName: "WE AREA NETWORK OF LEADERS", btnBanner: "We develop unparalleled management insights"}
+    ];
+    /**
+    * @ngdoc function
+    * @name showSlide
+    * @description
+    * This function opens the selected slide by click
+    * @param [index]
+    **/
+    $scope.showSlide = function(index) {
+        $scope.photoSrc = $scope.photos[index];
+        $scope.btnSrc = $scope.photos[index];
+        $scope.btnTitle = $scope.photos[index];
+    };
+    /**
+    * @ngdoc property
+    * @name counter
+    * @description
+    * This property serves as a counter for the function, which switches the slides.
+    **/
+    $scope.counter = 0;
+    /**
+    * @ngdoc function
+    * @description
+    * This function which switches the slides
+    **/
+    $interval(function () {
+      $scope.counter++;
+      $scope.photoSrc = $scope.photos[$scope.counter];
+      $scope.btnSrc = $scope.photos[$scope.counter];
+      $scope.btnTitle = $scope.photos[$scope.counter];
+      for(var i = 0; i<$scope.photos.length; i++) {
+           $scope.photos[i].active = false;
+      }
+      $scope.photos[$scope.counter].active = true;
+      if ($scope.counter == 3) {
+        $scope.counter = -1;
+      }
+    }, 3000);
   });
 };
 
@@ -221,31 +252,38 @@ module.exports = function(module) {
   * @description
   * This is the validation controller, and validation function
   *
-  * @param {data}  data user input
-  *
-  * @return post requset
   **/
-  module.controller("validCtrl", function ($scope, $location, $timeout, sendRequest) {
-      $scope.regData = {};
-      $scope.logData = {};
-      $scope.mesData = {};
-
-      $scope.sendRequest = function () {
-
+  module.controller("validCtrl", function ($scope, $location, $timeout, sendData) {
+      /**
+      * @ngdoc function
+      * @name sendData
+      * @description
+      * This function send data, entered by the user in the form.
+      *
+      * @param {Object} data user entered by user in the form. 
+      *
+      **/
+      $scope.sendData = function (data) {
+        /**
+        * @ngdoc property
+        * @name serviceBlock
+        * @description
+        * This property holds the value for ng-class in the form
+        **/
         $scope.spinnerClass = "visible";
 
-        var dataReg = $scope.regData;
-        var dataLog = $scope.logData;
-        var dataMes = $scope.mesData;
-
-        if (dataReg) {
-          sendRequest.send("/contacts", dataReg);
-        } else if (dataLog) {
-          sendRequest.send("/sig-in", dataLog);
-        } else if (dataMes) {
-          sendRequest.send("/reg", dataMes);
+        if (data.user) {
+          sendData.send("/reg", data);
+        } else if (data.contact) {
+          sendData.send("/contacts", data);
+        } else if (data.login) {
+          sendData.send("/sig-in", data);
         }
-
+        /**
+        * @ngdoc function
+        * @description
+        * This function moves to the home page in three seconds
+        **/
         $timeout(function () {
           $location.path("/");
         }, 3000);
@@ -336,8 +374,6 @@ module.exports = function(module) {
   module
 	.directive('validateFullname', function() {
     var FULLNAME_REGEXP = /^[A-Z][a-zA-Z']+[ ]+[A-Z][a-zA-Z'\- ]*$/;
-    // var FULLNAME_REGEXP = /^([a-zA-Z'-]+\s+){1,4}[a-zA-z'-]+$/;
-
     return {
       restrict: 'A',
       require: 'ngModel',
@@ -437,10 +473,10 @@ module.exports = function(module) {
 
 },{}],17:[function(require,module,exports){
 module.exports = function(module) {
-	require('./requestService.js')(module);
+	require('./postService.js')(module);
 };
 
-},{"./requestService.js":18}],18:[function(require,module,exports){
+},{"./postService.js":18}],18:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc service
@@ -450,8 +486,8 @@ module.exports = function(module) {
   *	This is service for send request
   *
   **/
-  var module = angular.module("requsetService", []);
-  module.factory("sendRequest", function ($http) {
+  var module = angular.module("sendDataService", []);
+  module.factory("sendData", function ($http) {
       var data;
       return {
           send: function(url, data) {

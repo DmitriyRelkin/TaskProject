@@ -11,8 +11,6 @@ module.exports = function(module) {
   module
 	.directive('validateFullname', function() {
     var FULLNAME_REGEXP = /^[A-Z][a-zA-Z']+[ ]+[A-Z][a-zA-Z'\- ]*$/;
-    // var FULLNAME_REGEXP = /^([a-zA-Z'-]+\s+){1,4}[a-zA-z'-]+$/;
-
     return {
       restrict: 'A',
       require: 'ngModel',

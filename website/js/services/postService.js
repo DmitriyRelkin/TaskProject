@@ -7,8 +7,8 @@ module.exports = function(module) {
   *	This is service for send request
   *
   **/
-  var module = angular.module("requsetService", []);
-  module.factory("sendRequest", function ($http) {
+  var module = angular.module("sendDataService", []);
+  module.factory("sendData", function ($http) {
       var data;
       return {
           send: function(url, data) {

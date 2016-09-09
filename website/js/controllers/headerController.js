@@ -7,6 +7,5 @@ module.exports = function(module) {
   *
   **/
   module.controller("HeaderCtrl", function($scope) {
-    // $scope.url = "website/templates/components/header.html";
   });
 };
