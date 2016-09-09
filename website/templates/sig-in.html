@@ -8,7 +8,7 @@
 				    <label>Login</label>
 				    <input name="login" type="text" placeholder="Full Name" validate-fullname class="form-control" required ng-model="logData.loggin.name">
 						<span class="error" ng-show="sigInForm.login.$error.fullname">This Login format is invalid!</span>
-						<span class="error" ng-show="sigInForm.login.$error.required && contactForm.login.$dirty">This field is required</span>
+						<span class="error" ng-show="sigInForm.login.$error.required && sigInForm.login.$dirty">This field is required</span>
 		     	</div>
 					<div class="form-group form-sig-in-pass">
 					  <label>Password</label>

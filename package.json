@@ -23,6 +23,7 @@
     "connect-route": "^0.1.5",
     "gulp-browserify": "^0.5.1",
     "gulp-debug": "^2.1.2",
+    "gulp-ngdocs": "^0.3.0",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0",
     "gulp-watch": "^4.3.9",

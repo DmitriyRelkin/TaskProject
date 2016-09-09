@@ -11974,7 +11974,7 @@ button.close {
   padding-bottom: 3%;
   text-align: center;
   background: #e8eef2; }
-  .nav-btn-slider .nav-btn {
+  .nav-btn-slider .slider-nav-btn {
     text-decoration: none;
     background: #dc6226;
     margin-bottom: 10px !important;
@@ -11987,7 +11987,7 @@ button.close {
     height: 100px;
     border: none;
     transition: background 0.5s ease-in-out; }
-    .nav-btn-slider .nav-btn:hover {
+    .nav-btn-slider .slider-nav-btn:hover {
       background: #404b52; }
   .nav-btn-slider .nav-bottom-text-btn {
     font-family: sans-serif;
