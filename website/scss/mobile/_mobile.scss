@@ -4,8 +4,14 @@
 	.main-header {
 		.content-main-header {
 			width: 99% !important;
+			.header-logo {
+				a {
+					font-size: 15px!important;
 
+				}
+			}
 			.search-block-main-header {
+				widows: 136px!important;
 				a {
 					padding: 9px 0 !important;
 					position: absolute;
@@ -100,7 +106,7 @@
 				padding: 41px 0;
 			}
 			.links-main-header {
-				padding: 0;
+				// padding: 0;
 				li {
 					a {
 						font-size: 79%;

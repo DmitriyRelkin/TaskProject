@@ -4,16 +4,33 @@
 		padding: 0;
 		width: 1111px;
 		.wrapper-header-logo {
+
 			.header-logo {
 				color: $main-white-content;
+				@media (min-width: $screen-sm-min) {
+					font-size: 15px;
+				}
+				@media (min-width: $screen-md-min) {
+					font-size: 23px;
+				}
 				font-size: 23px;
 			}
 			.header-logo-piece {
 				color: $main-orange-content;
+				@media (min-width: $screen-sm-min) {
+					font-size: 15px;
+				}
+				@media (min-width: $screen-md-min) {
+					font-size: 23px;
+				}
 				font-size: 23px;
 			}
 		}
 		.links-main-header {
+			@media (min-width: $screen-sm-min) {
+				float: right;
+			}
+			position: relative;
 			padding: 0 15px;
 			overflow: hidden;
 			li > a {
@@ -22,15 +39,20 @@
 			}
 		}
 		.search-block-main-header {
-			margin: 35px 0px 35px 0px;
+			position: relative;
+			overflow: auto;
+			width: 156px;
+			// margin: 35px 0px 35px 0px;
 			position: relative;
 		 	a {
 			color: $pure-white;
 			position: absolute;
    				top: 18%;
-   				right: 14%;
+   				right: 7%;
 			}
 			.wrapper-input-search {
+		    margin-left: 3%;
+				position: relative;
 				transition: color .2s ease-in-out;
 				&:hover {
 				 	color: $main-orange-content;
