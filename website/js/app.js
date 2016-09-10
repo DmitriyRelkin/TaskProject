@@ -5,10 +5,10 @@ module.exports = (function() {
   var initServices    = require('./services/initServices.js');
 	var initControllers = require('./controllers/initControllers.js');
 	var initDirectives  = require('./directives/initDirectives.js');
+  var initFilters  = require('./filters/initFilters.js');
 
   var module = angular.module("sampleApp", [
     'ui.router',
-    "sendDataService",
     "ui.bootstrap"
   ]);
 
@@ -25,6 +25,7 @@ module.exports = (function() {
   initServices(module);
   initControllers(module);
   initDirectives(module);
+  initFilters(module);
 
   config(module);
 }());

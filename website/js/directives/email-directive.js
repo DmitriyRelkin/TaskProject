@@ -4,7 +4,7 @@ module.exports = function(module) {
   * @name module.directive:validateEmail
   * @restrict A
   *	@description
-  *	This is directive for validation
+  *	This is directive for email validation 
   *
   **/
   'use strict';

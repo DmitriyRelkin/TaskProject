@@ -6,10 +6,10 @@ module.exports = (function() {
   var initServices    = require('./services/initServices.js');
 	var initControllers = require('./controllers/initControllers.js');
 	var initDirectives  = require('./directives/initDirectives.js');
+  var initFilters  = require('./filters/initFilters.js');
 
   var module = angular.module("sampleApp", [
     'ui.router',
-    "sendDataService",
     "ui.bootstrap"
   ]);
 
@@ -26,11 +26,12 @@ module.exports = (function() {
   initServices(module);
   initControllers(module);
   initDirectives(module);
+  initFilters(module);
 
   config(module);
 }());
 
-},{"./config/routerConfig.js":2,"./controllers/initControllers.js":7,"./directives/initDirectives.js":14,"./services/initServices.js":17}],2:[function(require,module,exports){
+},{"./config/routerConfig.js":2,"./controllers/initControllers.js":7,"./directives/initDirectives.js":14,"./filters/initFilters.js":18,"./services/initServices.js":19}],2:[function(require,module,exports){
 module.exports = function(module) {
   "use strict";
   module.config(function($stateProvider, $urlRouterProvider) {
@@ -82,9 +83,9 @@ module.exports = function(module) {
     *
     **/
       $scope.blogContent = [
-          {depiction: "website/images/img-14.jpg", header:"NULLA NEC LIGULA RISUS", paragraph: "Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat."},
-          {depiction: "website/images/img-7.jpg", header:"ETIAM A ODIO NEC MI CONVALLIS MALESUADA", paragraph: "Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat."},
-          {depiction: "https://www.youtube.com/embed/2kodXWejuy0", header:"YOUTUBE VIDEO", paragraph: "Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat."}
+          {depiction: "https://www.youtube.com/embed/2kodXWejuy0", type: "video", header:"YOUTUBE VIDEO", paragraph: "Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat."},
+          {depiction: "website/images/img-7.jpg", type: "photo", header:"ETIAM A ODIO NEC MI CONVALLIS MALESUADA", paragraph: "Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat."},
+          {depiction: "website/images/img-14.jpg", type: "photo", header:"NULLA NEC LIGULA RISUS", paragraph: "Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat."}
       ];
   });
 };
@@ -248,7 +249,7 @@ module.exports = function(module) {
 module.exports = function(module) {
   /**
   * @ngdoc controller
-  * @name module.controller:validCtrl
+  * @name sampleApp:validCtrl
   * @description
   * This is the validation controller, and validation function
   *
@@ -260,7 +261,7 @@ module.exports = function(module) {
       * @description
       * This function send data, entered by the user in the form.
       *
-      * @param {Object} data user entered by user in the form. 
+      * @param {Object} data user entered by user in the form.
       *
       **/
       $scope.sendData = function (data) {
@@ -335,7 +336,7 @@ module.exports = function(module) {
   * @name module.directive:validateEmail
   * @restrict A
   *	@description
-  *	This is directive for validation
+  *	This is directive for email validation 
   *
   **/
   'use strict';
@@ -473,35 +474,51 @@ module.exports = function(module) {
 
 },{}],17:[function(require,module,exports){
 module.exports = function(module) {
+  module
+  .filter('trustAsResourceUrl', ['$sce', function($sce) {
+  return function(val) {
+      return $sce.trustAsResourceUrl(val);
+  };
+  }])
+};
+
+},{}],18:[function(require,module,exports){
+module.exports = function(module) {
+	require('./iframeFilter.js')(module);
+};
+
+},{"./iframeFilter.js":17}],19:[function(require,module,exports){
+module.exports = function(module) {
 	require('./postService.js')(module);
 };
 
-},{"./postService.js":18}],18:[function(require,module,exports){
+},{"./postService.js":20}],20:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc service
-  * @name module.directive:requsetService
+  * @name sampleApp:sendData
   *
   * @description
   *	This is service for send request
   *
   **/
-  var module = angular.module("sendDataService", []);
+
   module.factory("sendData", function ($http) {
       var data;
       return {
-          send: function(url, data) {
-             $http.post(url, data)
-              .success(function (data) {
-                  $scope.PostDataResponse = data;
-                  console.log('Status: 200 OK');
-              })
-              .error(function (data) {
-                  console.log('Status: 501');
-              });
-              console.log(data);
-          }
+          send: send
       };
+
+      function send(url, data) {
+         $http.post(url, data)
+          .success(function (data) {
+              console.log('Status: 200 OK');
+          })
+          .error(function (data) {
+              console.log('Status: 501');
+          });
+          console.log(data);
+      }
   });
 };
 

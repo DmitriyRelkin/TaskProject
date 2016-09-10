@@ -5,31 +5,16 @@
 			<div class="col-sm-8 blog-column">
 				<h2 class="header-blog">BLOG</h2>
 				<div class="col-sm-12 content-blog-column">
-
-					<div class="note-blog">
-						<h2>{{blogContent[2].header}}</h2>
-						<div class="note-blog-property">
-							<span class="admin">admin</span><span class="date">April 29,2014</span><span class="views">136 view(s)</span><span class="comments">2 comment(s)</span>
-						</div>
-						<div class="note-depiction">
-							<div class="embed-responsive embed-responsive-16by9">
-							  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/2kodXWejuy0"></iframe>
-							</div>
-						</div>
-						<p class="paragraph-note-blog">{{blogContent[2].paragraph}}</p>
-						<button type="button" class="btn btn-default content-button">READ MORE</button>
-						<button type="button" class="btn btn-default content-button">ADMIN'S BLOG</button>
-						<button type="button" class="btn btn-default content-button">2 COMMENTS</button>
-						<button type="button" class="btn btn-default content-button">LOG IN</button>
-					</div>
-
-					<div class="note-blog" ng-repeat="block in blogContent |  limitTo : 2">
+					<div class="note-blog" ng-repeat="block in blogContent">
 						<h2>{{block.header}}</h2>
 						<div class="note-blog-property">
 							<span class="admin">admin</span><span class="date">April 29,2014</span><span class="views">136 view(s)</span><span class="comments">2 comment(s)</span>
 						</div>
-						<div class="note-depiction">
+						<div ng-if="block.type == 'photo'" class="note-depiction">
 							<img src="{{block.depiction}}" alt="">
+						</div>
+						<div ng-if="block.type == 'video'" class="embed-responsive embed-responsive-16by9">
+							<iframe class="embed-responsive-item" ng-src="{{block.depiction | trustAsResourceUrl}}"></iframe>
 						</div>
 						<p class="paragraph-note-blog">{{block.paragraph}}</p>
 						<button type="button" class="btn btn-default content-button">READ MORE</button>
@@ -37,7 +22,6 @@
 						<button type="button" class="btn btn-default content-button">2 COMMENTS</button>
 						<button type="button" class="btn btn-default content-button">LOG IN</button>
 					</div>
-
 				</div>
 				<div class="nav-blog">
 					<div class="col-sx-12 col-sm-12">

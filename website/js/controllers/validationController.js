@@ -1,7 +1,7 @@
 module.exports = function(module) {
   /**
   * @ngdoc controller
-  * @name module.controller:validCtrl
+  * @name sampleApp:validCtrl
   * @description
   * This is the validation controller, and validation function
   *
@@ -13,7 +13,7 @@ module.exports = function(module) {
       * @description
       * This function send data, entered by the user in the form.
       *
-      * @param {Object} data user entered by user in the form. 
+      * @param {Object} data user entered by user in the form.
       *
       **/
       $scope.sendData = function (data) {
