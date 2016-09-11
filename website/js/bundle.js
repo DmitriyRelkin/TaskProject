@@ -423,7 +423,7 @@ module.exports = function(module) {
   'use strict';
   module
 	.directive('validateEmail', function() {
-    
+
     var EMAIL_REGEXP = /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
 
     return {
@@ -440,6 +440,7 @@ module.exports = function(module) {
 		*	@description
 		*	This is function for email validation.
 		*
+    * @return {Bolean}
 		**/
     function emailInspection(scope, elm, attrs, ctrl) {
       /* only apply the validator if ngModel is present and Angular has added the email validator */
@@ -531,6 +532,7 @@ module.exports = function(module) {
    		*	@description
    		*	This is function for password confirm inspection.
    		*
+      * @return {Bolean}
    		**/
       function passwordCheck(scope, element, attrs, ctrl) {
         scope.$watch(function() {
@@ -576,21 +578,50 @@ module.exports = function(module) {
     return {
       restrict: 'A',
       require: 'ngModel',
-      link: function(scope, elm, attrs, ctrl) {
-
-          ctrl.$validators['mandatory'] = function(modelValue) {
-
-            return ctrl.$isEmpty(modelValue) || TEXT_REGEXP.test(modelValue);
-          };
-        }
+      link: requiredText
       };
+      /**
+  		* @ngdoc function
+  		* @name requiredText
+  		*
+  		* @param ($scope, elm, attrs, ctrl)  house element to which it is connected directive, elements belonging to the attribute, and ngModelController
+  		*
+  		*	@description
+  		*	This is function for text validation.
+  		*
+      * @return {Bolean}
+  		**/
+      function requiredText(scope, elm, attrs, ctrl) {
+        ctrl.$validators['mandatory'] = function(modelValue) {
+          return ctrl.$isEmpty(modelValue) || TEXT_REGEXP.test(modelValue);
+        };
+      }
   });
 };
 
 },{}],17:[function(require,module,exports){
 module.exports = function(module) {
+  /**
+  * @ngdoc filter
+  * @name sampleApp:trustAsResourceUrl
+  * @restrict A
+  *	@description
+  *	This is filter for trust As resource Url, used in iframe.
+  *
+  * @param $sce - garter for the safe context
+  **/
   module
   .filter('trustAsResourceUrl', ['$sce', function($sce) {
+    /**
+    * @ngdoc function
+    *
+    * @param (url) for which the security context garter
+    *
+    *	@description
+    *	This is function for email validation.
+    *
+    * @return {Bolean}
+    **/
   return function(val) {
       return $sce.trustAsResourceUrl(val);
   };

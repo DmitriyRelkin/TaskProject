@@ -27,6 +27,7 @@ module.exports = function(module) {
    		*	@description
    		*	This is function for password confirm inspection.
    		*
+      * @return {Bolean}
    		**/
       function passwordCheck(scope, element, attrs, ctrl) {
         scope.$watch(function() {
