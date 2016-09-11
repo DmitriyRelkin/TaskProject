@@ -20,6 +20,14 @@ module.exports = function(module) {
         {src: "website/images/slide-4.jpg", active : false , btnName: "WE AREA NETWORK OF LEADERS", btnBanner: "We develop unparalleled management insights"}
     ];
     /**
+    * @ngdoc property
+    * @description
+    * For the initial display of the slider at the first page load
+    **/
+    $scope.photoSrc = $scope.photos[0];
+    $scope.btnSrc = $scope.photos[0];
+    $scope.btnTitle = $scope.photos[0];
+    /**
     * @ngdoc function
     * @name showSlide
     * @description

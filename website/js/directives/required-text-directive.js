@@ -1,7 +1,7 @@
 module.exports = function(module) {
   /**
   * @ngdoc directive
-  * @name module.directive:validateText
+  * @name sampleApp:validateText
   * @restrict A
   *	@description
   *	This is directive for validation mandatory text input

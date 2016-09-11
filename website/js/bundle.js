@@ -31,7 +31,7 @@ module.exports = (function() {
   config(module);
 }());
 
-},{"./config/routerConfig.js":2,"./controllers/initControllers.js":8,"./directives/initDirectives.js":15,"./filters/initFilters.js":19,"./services/initServices.js":21}],2:[function(require,module,exports){
+},{"./config/routerConfig.js":2,"./controllers/initControllers.js":7,"./directives/initDirectives.js":14,"./filters/initFilters.js":18,"./services/initServices.js":20}],2:[function(require,module,exports){
 module.exports = function(module) {
   "use strict";
   module.config(function($stateProvider, $urlRouterProvider) {
@@ -83,9 +83,9 @@ module.exports = function(module) {
     *
     **/
       $scope.blogContent = [
-          {depiction: "https://www.youtube.com/embed/2kodXWejuy0", type: "video", header:"YOUTUBE VIDEO", paragraph: "Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat."},
-          {depiction: "website/images/img-7.jpg", type: "photo", header:"ETIAM A ODIO NEC MI CONVALLIS MALESUADA", paragraph: "Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat."},
-          {depiction: "website/images/img-14.jpg", type: "photo", header:"NULLA NEC LIGULA RISUS", paragraph: "Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat."}
+        {depiction: "https://www.youtube.com/embed/2kodXWejuy0", type: "video", header:"YOUTUBE VIDEO", paragraph: "Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat."},
+        {depiction: "website/images/img-7.jpg", type: "photo", header:"ETIAM A ODIO NEC MI CONVALLIS MALESUADA", paragraph: "Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat."},
+        {depiction: "website/images/img-14.jpg", type: "photo", header:"NULLA NEC LIGULA RISUS", paragraph: "Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat."}
       ];
   });
 };
@@ -140,19 +140,6 @@ module.exports = function(module) {
 module.exports = function(module) {
   /**
   * @ngdoc controller
-  * @name module.controller:mainFooterCtrl
-  * @description
-  * This is the footer controller.
-  *
-  **/
-  module.controller("mainFooterCtrl", function($scope) {
-  });
-};
-
-},{}],6:[function(require,module,exports){
-module.exports = function(module) {
-  /**
-  * @ngdoc controller
   * @name module.controller:HeaderCtrl
   * @description
   * This is the header controller.
@@ -162,7 +149,7 @@ module.exports = function(module) {
   });
 };
 
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc controller
@@ -184,6 +171,14 @@ module.exports = function(module) {
         {src: "website/images/slide-3.jpg", active : false , btnName: "BROADEN YOUR MARKET EDGE", btnBanner: "We work with our clients as we do with our colleagues"},
         {src: "website/images/slide-4.jpg", active : false , btnName: "WE AREA NETWORK OF LEADERS", btnBanner: "We develop unparalleled management insights"}
     ];
+    /**
+    * @ngdoc property
+    * @description
+    * For the initial display of the slider at the first page load
+    **/
+    $scope.photoSrc = $scope.photos[0];
+    $scope.btnSrc = $scope.photos[0];
+    $scope.btnTitle = $scope.photos[0];
     /**
     * @ngdoc function
     * @name showSlide
@@ -249,10 +244,9 @@ module.exports = function(module) {
   });
 };
 
-},{}],8:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 module.exports = function(module) {
 	require('./headerController.js')(module);
-	require('./footerController.js')(module);
 	require('./scrollTopController.js')(module);
 	require('./homePageController.js')(module);
 	require('./contactsPageController.js')(module);
@@ -261,7 +255,7 @@ module.exports = function(module) {
 	require('./loginPageController.js')(module);
 };
 
-},{"./blogPageController.js":3,"./contactsPageController.js":4,"./footerController.js":5,"./headerController.js":6,"./homePageController.js":7,"./loginPageController.js":9,"./registrationPageController.js":10,"./scrollTopController.js":11}],9:[function(require,module,exports){
+},{"./blogPageController.js":3,"./contactsPageController.js":4,"./headerController.js":5,"./homePageController.js":6,"./loginPageController.js":8,"./registrationPageController.js":9,"./scrollTopController.js":10}],8:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc controller
@@ -308,7 +302,7 @@ module.exports = function(module) {
 
 };
 
-},{}],10:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc controller
@@ -354,7 +348,7 @@ module.exports = function(module) {
   });
 };
 
-},{}],11:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc controller
@@ -367,11 +361,11 @@ module.exports = function(module) {
   });
 };
 
-},{}],12:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 module.exports = function(module) {
 	/**
   * @ngdoc directive
-  * @name module.directive:backToTop
+  * @name sampleApp:backToTop
   * @restrict A
   *	@description
 	*	This is directive for scroll to top button
@@ -382,64 +376,88 @@ module.exports = function(module) {
 	.directive('backToTop', function() {
 		return {
 			restrict: 'A',
-			link: function($scope, element) {
-				var $window = $(window);
-				var $body = (window.opera) ? (document.compatMode == 'CSS1Compat' ? $('html') : $('body')) : $('html,body');
-				$window.scroll(function() {
-					if ($window.scrollTop() <= 0) {
-						$(element).css({opacity: 0 , visibility: 'hidden', cursor: 'initial'});
-						$(element).blur();
-					} else {
-						$(element).css({opacity: 1 , visibility: 'visible', cursor: 'pointer'});
-					}
-				});
 
-				element.bind('click', function() {
-					$body.animate({scrollTop: 0}, 'fast');
-				});
-
-			}
+			link: scrollTop
 		};
+		/**
+		* @ngdoc function
+		* @name scrollTop
+		*
+		*	@description
+		*	This is function for scroll to top button
+		*
+		* @param ($scope, element)  house element to which it is connected directive
+		*
+		*	@return zero value in the property.
+		**/
+		function scrollTop ($scope, element) {
+			var $window = $(window);
+			var $body = (window.opera) ? (document.compatMode == 'CSS1Compat' ? $('html') : $('body')) : $('html,body');
+			$window.scroll(function() {
+				if ($window.scrollTop() <= 0) {
+					$(element).css({opacity: 0 , visibility: 'hidden', cursor: 'initial'});
+					$(element).blur();
+				} else {
+					$(element).css({opacity: 1 , visibility: 'visible', cursor: 'pointer'});
+				}
+			});
+
+			element.bind('click', function() {
+				$body.animate({scrollTop: 0}, 'fast');
+			});
+
+		}
 	});
 };
 
-},{}],13:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc directive
-  * @name module.directive:validateEmail
+  * @name sampleApp:validateEmail
   * @restrict A
   *	@description
-  *	This is directive for email validation 
+  *	This is directive for email validation
   *
   **/
   'use strict';
   module
 	.directive('validateEmail', function() {
+    
     var EMAIL_REGEXP = /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
 
     return {
       restrict: 'A',
       require: 'ngModel',
-      link: function(scope, elm, attrs, ctrl) {
-        // only apply the validator if ngModel is present and Angular has added the email validator
-        if (ctrl && ctrl.$validators.email) {
-
-          // this will overwrite the default Angular email validator
-          ctrl.$validators.email = function(modelValue) {
-            return ctrl.$isEmpty(modelValue) || EMAIL_REGEXP.test(modelValue);
-          };
-        }
-      }
+      link: emailInspection
     };
+    /**
+		* @ngdoc function
+		* @name emailInspection
+		*
+		* @param ($scope, elm, attrs, ctrl)  house element to which it is connected directive, elements belonging to the attribute, and ngModelController
+		*
+		*	@description
+		*	This is function for email validation.
+		*
+		**/
+    function emailInspection(scope, elm, attrs, ctrl) {
+      /* only apply the validator if ngModel is present and Angular has added the email validator */
+      if (ctrl && ctrl.$validators.email) {
+        /* this will overwrite the default Angular email validator */
+        ctrl.$validators.email = function(modelValue) {
+          return ctrl.$isEmpty(modelValue) || EMAIL_REGEXP.test(modelValue);
+        };
+      }
+    }
   });
 }
 
-},{}],14:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc directive
-  * @name module.directive:validateFullname
+  * @name sampleApp:validateFullname
   * @restrict A
   *	@description
   *	This is directive for validation full name
@@ -448,22 +466,33 @@ module.exports = function(module) {
   'use strict';
   module
 	.directive('validateFullname', function() {
+
     var FULLNAME_REGEXP = /^[A-Z][a-zA-Z']+[ ]+[A-Z][a-zA-Z'\- ]*$/;
+
     return {
       restrict: 'A',
       require: 'ngModel',
-      link: function(scope, elm, attrs, ctrl) {
-
-          ctrl.$validators['fullname'] = function(modelValue) {
-
-            return ctrl.$isEmpty(modelValue) || FULLNAME_REGEXP.test(modelValue);
-          };
-        }
+      link: fullNameInspection
+    };
+    /**
+		* @ngdoc function
+		* @name fullNameInspection
+		*
+		* @param ($scope, elm, attrs, ctrl)  house element to which it is connected directive, elements belonging to the attribute, and ngModelController
+		*
+		*	@description
+		*	This is function for fullname validation.
+		*
+		**/
+    function fullNameInspection(scope, elm, attrs, ctrl) {
+      ctrl.$validators['fullname'] = function(modelValue) {
+        return ctrl.$isEmpty(modelValue) || FULLNAME_REGEXP.test(modelValue);
       };
+    }
   });
 };
 
-},{}],15:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 module.exports = function(module) {
 	require('./email-directive.js')(module);
 	require('./fullName-directive.js')(module);
@@ -472,15 +501,16 @@ module.exports = function(module) {
 	require('./backToTop-directive.js')(module);
 };
 
-},{"./backToTop-directive.js":12,"./email-directive.js":13,"./fullName-directive.js":14,"./password-check-directive.js":16,"./required-text-directive.js":17}],16:[function(require,module,exports){
+},{"./backToTop-directive.js":11,"./email-directive.js":12,"./fullName-directive.js":13,"./password-check-directive.js":15,"./required-text-directive.js":16}],15:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc directive
-  * @name module.directive:passwordVerify
+  * @name sampleApp:passwordVerify
   *
   *	@description
   *	This is directive for validation confirm password
   *
+  * @scope The data for which are taken through the two-way binding
   **/
   'use strict';
   module
@@ -490,38 +520,49 @@ module.exports = function(module) {
         scope: {
           passwordVerify: '='
         },
-        link: function(scope, element, attrs, ctrl) {
-          scope.$watch(function() {
-              var combined;
-
-              if (scope.passwordVerify || ctrl.$viewValue) {
-                 combined = scope.passwordVerify + '_' + ctrl.$viewValue;
-              }
-              return combined;
-          }, function(value) {
-              if (value) {
-                  ctrl.$parsers.unshift(function(viewValue) {
-                      var origin = scope.passwordVerify;
-                      if (origin !== viewValue) {
-                          ctrl.$setValidity("passwordVerify", false);
-                          return undefined;
-                      } else {
-                          ctrl.$setValidity("passwordVerify", true);
-                          return viewValue;
-                      }
-                  });
-              }
-          });
-       }
+        link: passwordCheck
      };
+     /**
+   		* @ngdoc function
+   		* @name passwordCheck
+   		*
+   		* @param ($scope, elm, attrs, ctrl)  house element to which it is connected directive, elements belonging to the attribute, and ngModelController
+   		*
+   		*	@description
+   		*	This is function for password confirm inspection.
+   		*
+   		**/
+      function passwordCheck(scope, element, attrs, ctrl) {
+        scope.$watch(function() {
+            var combined;
+
+            if (scope.passwordVerify || ctrl.$viewValue) {
+              combined = scope.passwordVerify + '_' + ctrl.$viewValue;
+            }
+             return combined;
+        }, function(value) {
+            if (value) {
+              ctrl.$parsers.unshift(function(viewValue) {
+                var origin = scope.passwordVerify;
+                if (origin !== viewValue) {
+                    ctrl.$setValidity("passwordVerify", false);
+                    return undefined;
+                } else {
+                    ctrl.$setValidity("passwordVerify", true);
+                    return viewValue;
+                }
+              });
+            }
+        });
+      }
   });
 };
 
-},{}],17:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc directive
-  * @name module.directive:validateText
+  * @name sampleApp:validateText
   * @restrict A
   *	@description
   *	This is directive for validation mandatory text input
@@ -546,7 +587,7 @@ module.exports = function(module) {
   });
 };
 
-},{}],18:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 module.exports = function(module) {
   module
   .filter('trustAsResourceUrl', ['$sce', function($sce) {
@@ -556,12 +597,12 @@ module.exports = function(module) {
   }])
 };
 
-},{}],19:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 module.exports = function(module) {
 	require('./iframeFilter.js')(module);
 };
 
-},{"./iframeFilter.js":18}],20:[function(require,module,exports){
+},{"./iframeFilter.js":17}],19:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc service
@@ -618,13 +659,13 @@ module.exports = function(module) {
   });
 };
 
-},{}],21:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 module.exports = function(module) {
 	require('./authService.js')(module);
 	require('./sendMessageService.js')(module);
 };
 
-},{"./authService.js":20,"./sendMessageService.js":22}],22:[function(require,module,exports){
+},{"./authService.js":19,"./sendMessageService.js":21}],21:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc service

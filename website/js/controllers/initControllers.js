@@ -1,6 +1,5 @@
 module.exports = function(module) {
 	require('./headerController.js')(module);
-	require('./footerController.js')(module);
 	require('./scrollTopController.js')(module);
 	require('./homePageController.js')(module);
 	require('./contactsPageController.js')(module);
