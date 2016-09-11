@@ -1,7 +1,7 @@
 module.exports = function(module) {
   /**
   * @ngdoc controller
-  * @name module.controller:blogContentCtrl
+  * @name sampleApp::blogContentCtrl
   * @description
   * This is the blog content controller.
   *

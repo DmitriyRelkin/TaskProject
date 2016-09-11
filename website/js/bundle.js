@@ -31,7 +31,7 @@ module.exports = (function() {
   config(module);
 }());
 
-},{"./config/routerConfig.js":2,"./controllers/initControllers.js":7,"./directives/initDirectives.js":14,"./filters/initFilters.js":18,"./services/initServices.js":19}],2:[function(require,module,exports){
+},{"./config/routerConfig.js":2,"./controllers/initControllers.js":8,"./directives/initDirectives.js":15,"./filters/initFilters.js":19,"./services/initServices.js":21}],2:[function(require,module,exports){
 module.exports = function(module) {
   "use strict";
   module.config(function($stateProvider, $urlRouterProvider) {
@@ -69,7 +69,7 @@ module.exports = function(module) {
 module.exports = function(module) {
   /**
   * @ngdoc controller
-  * @name module.controller:blogContentCtrl
+  * @name sampleApp::blogContentCtrl
   * @description
   * This is the blog content controller.
   *
@@ -94,6 +94,52 @@ module.exports = function(module) {
 module.exports = function(module) {
   /**
   * @ngdoc controller
+  * @name sampleApp:contactContentCtrl
+  * @description
+  * This is the contact content controller.
+  *
+  **/
+  module.controller("contactPageCtrl", function($scope, $location, $timeout, sendMessageData) {
+    /**
+    * @ngdoc function
+    * @name sendDataRegistration
+    * @description
+    * This function send data, entered by the user in the form contact-message.
+    *
+    * @param {Object} data user entered by user in the form.
+    *
+    **/
+    $scope.sendContactData = function (data) {
+      /**
+      * @ngdoc property
+      * @name spinnerClass
+      * @description
+      * This property holds the value for ng-class in the form
+      **/
+      $scope.spinnerClass = "loading";
+      /**
+      * @ngdoc authService
+      * @name spinnerClass
+      * @description
+      * This is service for to send post data
+      **/
+      sendMessageData.sendMessage(data);
+      /**
+      * @ngdoc function
+      * @description
+      * This function moves to the home page in three seconds
+      **/
+      $timeout(function () {
+        $location.path("/");
+      }, 3000);
+    }
+  });
+};
+
+},{}],5:[function(require,module,exports){
+module.exports = function(module) {
+  /**
+  * @ngdoc controller
   * @name module.controller:mainFooterCtrl
   * @description
   * This is the footer controller.
@@ -103,7 +149,7 @@ module.exports = function(module) {
   });
 };
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc controller
@@ -116,7 +162,7 @@ module.exports = function(module) {
   });
 };
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc controller
@@ -125,74 +171,7 @@ module.exports = function(module) {
   * This is the home page content controller.
   *
   **/
-  module.controller("homePageCtrl", function($scope) {
-      /**
-      * @ngdoc property
-      * @name serviceBlock
-      * @description
-      * It keeps the array, in which objects with links of pictures, headers, and paragraphs with text.
-      **/
-      $scope.serviceBlock = [
-          {srcImg: "/website/images/icon-service-1.png", header:"BUSINESS CONSULTING", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
-          {srcImg: "/website/images/icon-service-2.png", header:"ENTERPRISE APPLICATION", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
-          {srcImg: "/website/images/icon-service-3.png", header:"NEW STRATEGY", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
-          {srcImg: "/website/images/icon-service-4.png", header:"IT MANAGEMENT", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
-          {srcImg: "/website/images/icon-service-5.png", header:"OUTSOURSING", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
-          {srcImg: "/website/images/icon-service-6.png", header:"SALES & MARKETING", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"}
-      ];
-      /**
-      * @ngdoc property
-      * @name strategyBlock
-      * @description
-      * It keeps the array, in which objects with links of pictures, headers, items text.
-      **/
-      $scope.strategyBlock = [
-          {srcImg: "/website/images/page1_img1.jpg", header:"QUESTIONS TO ASK:", item1:"Analysing your organisation business model", item2:"Identifying development opportunities", item3:"Defining your objectives", item4:"Identifying the key factors for success"},
-          {srcImg: "/website/images/page1_img2.jpg", header:"THE COMPANY'S ROLE:", item1:"Identifying development opportunities", item2: "Analysing your organisation business model", item3:"Defining your objectives", item4:"Identifying the key factors for success"},
-          {srcImg: "/website/images/page1_img3.jpg", header:"OUR KEY OFFERS:", item1:"Defining your objectives", item2: "Analysing your organisation business model", item3:"Identifying development opportunities",  item4:"Identifying the key factors for success"}
-      ];
-  });
-
-
-};
-
-},{}],7:[function(require,module,exports){
-module.exports = function(module) {
-	require('./homePageController.js')(module);
-	require('./headerController.js')(module);
-	require('./footerController.js')(module);
-	require('./scrollTopController.js')(module);
-	require('./sliderController.js')(module);
-	require('./validationController.js')(module);
-	require('./blogPageController.js')(module);
-};
-
-},{"./blogPageController.js":3,"./footerController.js":4,"./headerController.js":5,"./homePageController.js":6,"./scrollTopController.js":8,"./sliderController.js":9,"./validationController.js":10}],8:[function(require,module,exports){
-module.exports = function(module) {
-  /**
-  * @ngdoc controller
-  * @name module.controller:goToTopCtrl
-  * @description
-  * This is the scroll-top controller.
-  *
-  **/
-  module.controller("goToTopCtrl", function($scope) {
-  });
-};
-
-},{}],9:[function(require,module,exports){
-module.exports = function(module) {
-  /**
-  * @ngdoc controller
-  * @name module.controller:galaryCtrl
-  * @description
-  * This is the slider controller, and slider function.
-  * The second function switch slides.
-  *
-  * @param index pressed slide
-  *
-  **/
-  module.controller("sliderCtrl", function($scope, $rootScope, $interval) {
+  module.controller("homePageCtrl", function($scope, $rootScope, $interval) {
     /**
     * @ngdoc property
     * @name photos
@@ -213,9 +192,9 @@ module.exports = function(module) {
     * @param [index]
     **/
     $scope.showSlide = function(index) {
-        $scope.photoSrc = $scope.photos[index];
-        $scope.btnSrc = $scope.photos[index];
-        $scope.btnTitle = $scope.photos[index];
+      $scope.photoSrc = $scope.photos[index];
+      $scope.btnSrc = $scope.photos[index];
+      $scope.btnTitle = $scope.photos[index];
     };
     /**
     * @ngdoc property
@@ -242,58 +221,153 @@ module.exports = function(module) {
         $scope.counter = -1;
       }
     }, 3000);
+    /**
+    * @ngdoc property
+    * @name serviceBlock
+    * @description
+    * It keeps the array, in which objects with links of pictures, headers, and paragraphs with text.
+    **/
+    $scope.serviceBlock = [
+      {srcImg: "/website/images/icon-service-1.png", header:"BUSINESS CONSULTING", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
+      {srcImg: "/website/images/icon-service-2.png", header:"ENTERPRISE APPLICATION", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
+      {srcImg: "/website/images/icon-service-3.png", header:"NEW STRATEGY", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
+      {srcImg: "/website/images/icon-service-4.png", header:"IT MANAGEMENT", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
+      {srcImg: "/website/images/icon-service-5.png", header:"OUTSOURSING", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
+      {srcImg: "/website/images/icon-service-6.png", header:"SALES & MARKETING", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"}
+    ];
+    /**
+    * @ngdoc property
+    * @name strategyBlock
+    * @description
+    * It keeps the array, in which objects with links of pictures, headers, items text.
+    **/
+    $scope.strategyBlock = [
+      {srcImg: "/website/images/page1_img1.jpg", header:"QUESTIONS TO ASK:", item1:"Analysing your organisation business model", item2:"Identifying development opportunities", item3:"Defining your objectives", item4:"Identifying the key factors for success"},
+      {srcImg: "/website/images/page1_img2.jpg", header:"THE COMPANY'S ROLE:", item1:"Identifying development opportunities", item2: "Analysing your organisation business model", item3:"Defining your objectives", item4:"Identifying the key factors for success"},
+      {srcImg: "/website/images/page1_img3.jpg", header:"OUR KEY OFFERS:", item1:"Defining your objectives", item2: "Analysing your organisation business model", item3:"Identifying development opportunities",  item4:"Identifying the key factors for success"}
+    ];
   });
+};
+
+},{}],8:[function(require,module,exports){
+module.exports = function(module) {
+	require('./headerController.js')(module);
+	require('./footerController.js')(module);
+	require('./scrollTopController.js')(module);
+	require('./homePageController.js')(module);
+	require('./contactsPageController.js')(module);
+	require('./blogPageController.js')(module);
+	require('./registrationPageController.js')(module);
+	require('./loginPageController.js')(module);
+};
+
+},{"./blogPageController.js":3,"./contactsPageController.js":4,"./footerController.js":5,"./headerController.js":6,"./homePageController.js":7,"./loginPageController.js":9,"./registrationPageController.js":10,"./scrollTopController.js":11}],9:[function(require,module,exports){
+module.exports = function(module) {
+  /**
+  * @ngdoc controller
+  * @name sampleApp:loginCtrl
+  * @description
+  * This is the login page controller
+  *
+  **/
+  module.controller("loginCtrl", function ($scope, $location, $timeout, authService) {
+    /**
+    * @ngdoc function
+    * @name sendDataLogin
+    * @description
+    * This function send data, entered by the user in the form login.
+    *
+    * @param {Object} data user entered by user in the form.
+    *
+    **/
+    $scope.sendDataLogin = function (data) {
+      /**
+      * @ngdoc property
+      * @name spinnerClass
+      * @description
+      * This property holds the value for ng-class in the form
+      **/
+      $scope.spinnerClass = "loading";
+      /**
+      * @ngdoc authService
+      * @name spinnerClass
+      * @description
+      * This is service for to send post data
+      **/
+      authService.sendLogin(data);
+      /**
+      * @ngdoc function
+      * @description
+      * This function moves to the home page in three seconds
+      **/
+      $timeout(function () {
+        $location.path("/");
+      }, 3000);
+    }
+  });
+
 };
 
 },{}],10:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc controller
-  * @name sampleApp:validCtrl
+  * @name sampleApp:registrationContentCtrl
   * @description
-  * This is the validation controller, and validation function
+  * This is the registration content controller.
   *
   **/
-  module.controller("validCtrl", function ($scope, $location, $timeout, sendData) {
+  module.controller("registrationContentCtrl", function($scope, $location, $timeout, authService) {
+    /**
+    * @ngdoc function
+    * @name sendDataRegistration
+    * @description
+    * This function send data, entered by the user in the form registration.
+    *
+    * @param {Object} data user entered by user in the form.
+    *
+    **/
+    $scope.sendDataRegistration = function (data) {
+      /**
+      * @ngdoc property
+      * @name spinnerClass
+      * @description
+      * This property holds the value for ng-class in the form
+      **/
+      $scope.spinnerClass = "loading";
+      /**
+      * @ngdoc authService
+      * @name spinnerClass
+      * @description
+      * This is service for to send post data
+      **/
+      authService.sendRegistration(data);
       /**
       * @ngdoc function
-      * @name sendData
       * @description
-      * This function send data, entered by the user in the form.
-      *
-      * @param {Object} data user entered by user in the form.
-      *
+      * This function moves to the home page in three seconds
       **/
-      $scope.sendData = function (data) {
-        /**
-        * @ngdoc property
-        * @name serviceBlock
-        * @description
-        * This property holds the value for ng-class in the form
-        **/
-        $scope.spinnerClass = "visible";
-
-        if (data.user) {
-          sendData.send("/reg", data);
-        } else if (data.contact) {
-          sendData.send("/contacts", data);
-        } else if (data.login) {
-          sendData.send("/sig-in", data);
-        }
-        /**
-        * @ngdoc function
-        * @description
-        * This function moves to the home page in three seconds
-        **/
-        $timeout(function () {
-          $location.path("/");
-        }, 3000);
-      }
+      $timeout(function () {
+        $location.path("/");
+      }, 3000);
+    }
   });
-
 };
 
 },{}],11:[function(require,module,exports){
+module.exports = function(module) {
+  /**
+  * @ngdoc controller
+  * @name module.controller:goToTopCtrl
+  * @description
+  * This is the scroll-top controller.
+  *
+  **/
+  module.controller("goToTopCtrl", function($scope) {
+  });
+};
+
+},{}],12:[function(require,module,exports){
 module.exports = function(module) {
 	/**
   * @ngdoc directive
@@ -329,7 +403,7 @@ module.exports = function(module) {
 	});
 };
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc directive
@@ -361,7 +435,7 @@ module.exports = function(module) {
   });
 }
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc directive
@@ -389,7 +463,7 @@ module.exports = function(module) {
   });
 };
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 module.exports = function(module) {
 	require('./email-directive.js')(module);
 	require('./fullName-directive.js')(module);
@@ -398,7 +472,7 @@ module.exports = function(module) {
 	require('./backToTop-directive.js')(module);
 };
 
-},{"./backToTop-directive.js":11,"./email-directive.js":12,"./fullName-directive.js":13,"./password-check-directive.js":15,"./required-text-directive.js":16}],15:[function(require,module,exports){
+},{"./backToTop-directive.js":12,"./email-directive.js":13,"./fullName-directive.js":14,"./password-check-directive.js":16,"./required-text-directive.js":17}],16:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc directive
@@ -443,7 +517,7 @@ module.exports = function(module) {
   });
 };
 
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc directive
@@ -472,7 +546,7 @@ module.exports = function(module) {
   });
 };
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 module.exports = function(module) {
   module
   .filter('trustAsResourceUrl', ['$sce', function($sce) {
@@ -482,42 +556,107 @@ module.exports = function(module) {
   }])
 };
 
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 module.exports = function(module) {
 	require('./iframeFilter.js')(module);
 };
 
-},{"./iframeFilter.js":17}],19:[function(require,module,exports){
-module.exports = function(module) {
-	require('./postService.js')(module);
-};
-
-},{"./postService.js":20}],20:[function(require,module,exports){
+},{"./iframeFilter.js":18}],20:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc service
-  * @name sampleApp:sendData
+  * @name sampleApp:authService
   *
   * @description
-  *	This is service for send request
+  *	This is service for to send post data, come to the registration page and login.
   *
   **/
-
-  module.factory("sendData", function ($http) {
+  module.factory("authService", function ($http) {
       var data;
       return {
-          send: send
+          sendRegistration: sendRegistration,
+          sendLogin: sendLogin
       };
+      /**
+      * @ngdoc function
+      * @name sendRegistration
+      * @description
+      * This function for to send post data, entered by the user in the form registration.
+      *
+      * @param {Object} data user entered by user in the form.
+      *
+      **/
+      function sendRegistration(data) {
+        $http.post("/reg", data)
+        .success(function (data) {
+          console.log('Status: 200 OK');
+        })
+        .error(function (data) {
+          console.log('Status: 501');
+        });
+        console.log(data);
+      }
+      /**
+      * @ngdoc function
+      * @name sendLogin
+      * @description
+      * This function for to send post data, entered by the user in the form login.
+      *
+      * @param {Object} data user entered by user in the form.
+      *
+      **/
+      function sendLogin(data) {
+        $http.post("/sig-in", data)
+        .success(function (data) {
+          console.log('Status: 200 OK');
+        })
+        .error(function (data) {
+          console.log('Status: 501');
+        });
+        console.log(data);
+      }
+  });
+};
 
-      function send(url, data) {
-         $http.post(url, data)
+},{}],21:[function(require,module,exports){
+module.exports = function(module) {
+	require('./authService.js')(module);
+	require('./sendMessageService.js')(module);
+};
+
+},{"./authService.js":20,"./sendMessageService.js":22}],22:[function(require,module,exports){
+module.exports = function(module) {
+  /**
+  * @ngdoc service
+  * @name sampleApp:sendMessageData
+  *
+  * @description
+  *	This is service for to send post data, come to the contact page
+  *
+  **/
+  module.factory("sendMessageData", function ($http) {
+      var data;
+      return {
+          sendMessage: sendMessage
+      };
+      /**
+      * @ngdoc function
+      * @name sendRegistration
+      * @description
+      * This function for to send post data, entered by the user in the form contact-message.
+      *
+      * @param {Object} data user entered by user in the form.
+      *
+      **/
+      function sendMessage(data) {
+        $http.post("/contacts", data)
           .success(function (data) {
-              console.log('Status: 200 OK');
+            console.log('Status: 200 OK');
           })
           .error(function (data) {
-              console.log('Status: 501');
+            console.log('Status: 501');
           });
-          console.log(data);
+        console.log(data);
       }
   });
 };

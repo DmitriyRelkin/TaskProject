@@ -1,3 +1,4 @@
 module.exports = function(module) {
-	require('./postService.js')(module);
+	require('./authService.js')(module);
+	require('./sendMessageService.js')(module);
 };

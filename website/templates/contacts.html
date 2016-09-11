@@ -1,13 +1,13 @@
-<div class="container wrapper-content-contacts">
+<div class="container wrapper-content-contacts" ng-controller="contactPageCtrl">
 	<div class="row content-contacts">
 		<div class="col-sm-12 wrapper-map-contacts">
 			<h2 class="header-contacts">OUR LOCATION</h2>
 			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3504958.519617769!2d-90.1488676!3d30.9199051!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x889cf1bffbc210eb%3A0x86e9d363d0ccba38!2z0JHRgNGD0LrQu9C40L0sINCc0LjRgdGB0LjRgdC40L_QuCAzOTQyNSwg0KHQqNCQ!5e0!3m2!1sru!2sua!4v1470065958589" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
 		</div>
 		<div class="col-sm-12 wrapper-columns-contacts">
-			<div class="col-sm-6 form-column" ng-controller="validCtrl">
+			<div class="col-sm-6 form-column">
 				<h2 class="header-contacts">CONTACT FORM</h2>
-				<form class="form-contact" name="contactForm" novalidate ng-submit="sendData(formData)">
+				<form class="form-contact" name="contactForm" novalidate ng-submit="sendContactData(formData)">
 		     	<div class="form-group form-contacts-name">
 	     	    <label>Your name</label>
 	     	    <input name="name" type="text" placeholder="Full Name" validate-fullname class="form-control" required ng-model="formData.contact.name">

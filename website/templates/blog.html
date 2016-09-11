@@ -13,8 +13,10 @@
 						<div ng-if="block.type == 'photo'" class="note-depiction">
 							<img src="{{block.depiction}}" alt="">
 						</div>
-						<div ng-if="block.type == 'video'" class="embed-responsive embed-responsive-16by9">
-							<iframe class="embed-responsive-item" ng-src="{{block.depiction | trustAsResourceUrl}}"></iframe>
+						<div ng-if="block.type == 'video'" class="note-depiction">
+							<div class="embed-responsive embed-responsive-16by9">
+								<iframe class="embed-responsive-item" ng-src="{{block.depiction | trustAsResourceUrl}}"></iframe>
+							</div>
 						</div>
 						<p class="paragraph-note-blog">{{block.paragraph}}</p>
 						<button type="button" class="btn btn-default content-button">READ MORE</button>

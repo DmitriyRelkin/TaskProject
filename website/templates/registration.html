@@ -1,9 +1,9 @@
-<div class="container wrapper-registration-page">
+<div class="container wrapper-registration-page" ng-controller="registrationContentCtrl">
 	<div class="row wrapper-registration-content">
 		<h2 class="header-registration">REGISTRATION FORM</h2>
 		<div class="col-sm-11 col-xs-10 col-xs-offset-1 content-registration">
-			<div class="col-sm-5 col-xs-10 col-xs-offset-1 col-sm-offset-3 wrapper-form-registration" ng-controller="validCtrl">
-				<form class="form-registration" name="myForm" novalidate ng-submit="sendData(formData)">
+			<div class="col-sm-5 col-xs-10 col-xs-offset-1 col-sm-offset-3 wrapper-form-registration">
+				<form class="form-registration" name="myForm" novalidate ng-submit="sendDataRegistration(formData)">
 			     	<div class="form-group">
 			     	    <label>Full Name</label>
 			     	    <input name="userName" placeholder="User Full Name" type="text" validate-fullname class="form-control" required ng-model="formData.user.name">
