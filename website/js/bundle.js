@@ -650,6 +650,7 @@ module.exports = function(module) {
           sendLogin: sendLogin
       };
       /**
+      *
       * @ngdoc function
       * @name sendRegistration
       * @description

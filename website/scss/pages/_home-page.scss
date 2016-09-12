@@ -91,27 +91,14 @@
   text-align: center;
 	background: $turquoise-gray;
 	.slider-nav-btn {
-		text-decoration: none;
-		background: $main-orange-content;
-		margin-bottom: 10px !important;
-		font-family: Bebas;
-		padding: 30px 44px;
-  	text-align: center;
-  	font-size: 21px;
-		color: $main-white-content;
-		width: 430px;
-		height: 100px;
-		border: none;
-		transition: background 0.5s ease-in-out;
-		&:hover {
-			background: $header-background;
-		}
+		width: 100%;
+		font-size: 100%;
 	}
 	.nav-bottom-text-btn {
 		font-family: sans-serif;
     margin: 0 auto;
 		background: $main-white-content;
-		margin-top: 33px;
+		margin-top: 9px;
 		// width: 430px;
 		padding: 1.1% 0;
 		text-align: center;
