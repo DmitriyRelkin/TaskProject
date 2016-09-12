@@ -19,18 +19,12 @@
 							</div>
 						</div>
 						<p class="paragraph-note-blog">{{block.paragraph}}</p>
-						<button type="button" class="btn btn-default content-button">READ MORE</button>
-						<button type="button" class="btn btn-default content-button">ADMIN'S BLOG</button>
-						<button type="button" class="btn btn-default content-button">2 COMMENTS</button>
-						<button type="button" class="btn btn-default content-button">LOG IN</button>
+						<button type="button" class="btn btn-default content-button" ng-repeat="name in btnBlog">{{name.nameBtn}}</button>
 					</div>
 				</div>
 				<div class="nav-blog">
 					<div class="col-sm-12">
-						<button type="button" class="btn btn-default content-button">1</button>
-						<button type="button" class="btn btn-default content-button">2</button>
-						<button type="button" class="btn btn-default content-button">LAST <</button>
-						<button type="button" class="btn btn-default content-button">NEXT ></button>
+						<button type="button" class="btn btn-default content-button nav-buttons-blog" ng-repeat="name in btnBlogNav">{{name.nameBtn}}</button>
 					</div>
 				</div>
 			</div>

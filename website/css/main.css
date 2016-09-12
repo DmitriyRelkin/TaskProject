@@ -11846,6 +11846,9 @@ button.close {
     padding-bottom: 12px; }
   .social-footer-block {
     border: none !important; }
+  .blog-column .nav-buttons-blog {
+    font-size: 13px;
+    margin-right: 1px; }
   .message-block .wrapper-content-massange-block .content-massange-block .img-massange-block img {
     width: 40%; }
   .message-block .wrapper-content-massange-block .content-massange-block .paragraph-massange-block {
