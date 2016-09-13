@@ -11847,8 +11847,10 @@ button.close {
   .social-footer-block {
     border: none !important; }
   .blog-column .nav-buttons-blog {
-    font-size: 13px;
+    font-size: 12px;
     margin-right: 1px; }
+  .footer {
+    font-size: 89%; }
   .message-block .wrapper-content-massange-block .content-massange-block .img-massange-block img {
     width: 40%; }
   .message-block .wrapper-content-massange-block .content-massange-block .paragraph-massange-block {
@@ -12246,7 +12248,9 @@ h4 {
     .wrapper-content-blog-page .content-blog-page .wrapper-columns .blog-column .content-blog-column .note-blog .paragraph-note-blog {
       padding: 2% 0 2% 0; }
     .wrapper-content-blog-page .content-blog-page .wrapper-columns .blog-column .content-blog-column .note-blog button {
-      margin-bottom: 5px; }
+      margin: 1px; }
+  .wrapper-content-blog-page .content-blog-page .wrapper-columns .blog-column button {
+    margin: 1px; }
   .wrapper-content-blog-page .content-blog-page .wrapper-columns .categories-column .blog-category {
     margin-top: 2%;
     padding: 0; }
