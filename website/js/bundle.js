@@ -31,7 +31,7 @@ module.exports = (function() {
   config(module);
 }());
 
-},{"./config/routerConfig.js":2,"./controllers/initControllers.js":7,"./directives/initDirectives.js":14,"./filters/initFilters.js":18,"./services/initServices.js":20}],2:[function(require,module,exports){
+},{"./config/routerConfig.js":2,"./controllers/initControllers.js":6,"./directives/initDirectives.js":12,"./filters/initFilters.js":16,"./services/initServices.js":18}],2:[function(require,module,exports){
 module.exports = function(module) {
   "use strict";
   module.config(function($stateProvider, $urlRouterProvider) {
@@ -69,7 +69,7 @@ module.exports = function(module) {
 module.exports = function(module) {
   /**
   * @ngdoc controller
-  * @name sampleApp::blogContentCtrl
+  * @name sampleApp:blogContentCtrl
   * @description
   * This is the blog content controller.
   *
@@ -112,12 +112,12 @@ module.exports = function(module) {
 module.exports = function(module) {
   /**
   * @ngdoc controller
-  * @name sampleApp:contactContentCtrl
+  * @name sampleApp:contactPageCtrl
   * @description
   * This is the contact content controller.
   *
   **/
-  module.controller("contactPageCtrl", function($scope, $location, $timeout, sendMessageData) {
+  module.controller("contactPageCtrl", function($scope, sendMessageData) {
     /**
     * @ngdoc function
     * @name sendDataRegistration
@@ -142,32 +142,12 @@ module.exports = function(module) {
       * This is service for to send post data
       **/
       sendMessageData.sendMessage(data);
-      /**
-      * @ngdoc function
-      * @description
-      * This function moves to the home page in three seconds
-      **/
-      $timeout(function () {
-        $location.path("/");
-      }, 3000);
+
     }
   });
 };
 
 },{}],5:[function(require,module,exports){
-module.exports = function(module) {
-  /**
-  * @ngdoc controller
-  * @name module.controller:HeaderCtrl
-  * @description
-  * This is the header controller.
-  *
-  **/
-  module.controller("HeaderCtrl", function($scope) {
-  });
-};
-
-},{}],6:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc controller
@@ -262,10 +242,8 @@ module.exports = function(module) {
   });
 };
 
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 module.exports = function(module) {
-	require('./headerController.js')(module);
-	require('./scrollTopController.js')(module);
 	require('./homePageController.js')(module);
 	require('./contactsPageController.js')(module);
 	require('./blogPageController.js')(module);
@@ -273,7 +251,7 @@ module.exports = function(module) {
 	require('./loginPageController.js')(module);
 };
 
-},{"./blogPageController.js":3,"./contactsPageController.js":4,"./headerController.js":5,"./homePageController.js":6,"./loginPageController.js":8,"./registrationPageController.js":9,"./scrollTopController.js":10}],8:[function(require,module,exports){
+},{"./blogPageController.js":3,"./contactsPageController.js":4,"./homePageController.js":5,"./loginPageController.js":7,"./registrationPageController.js":8}],7:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc controller
@@ -282,7 +260,7 @@ module.exports = function(module) {
   * This is the login page controller
   *
   **/
-  module.controller("loginCtrl", function ($scope, $location, $timeout, authService) {
+  module.controller("loginCtrl", function ($scope, authService) {
     /**
     * @ngdoc function
     * @name sendDataLogin
@@ -312,15 +290,14 @@ module.exports = function(module) {
       * @description
       * This function moves to the home page in three seconds
       **/
-      $timeout(function () {
-        $location.path("/");
-      }, 3000);
+      // $timeout(function () {
+      //   $location.path("/");
+      // }, 3000);
     }
   });
-
 };
 
-},{}],9:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc controller
@@ -329,7 +306,7 @@ module.exports = function(module) {
   * This is the registration content controller.
   *
   **/
-  module.controller("registrationContentCtrl", function($scope, $location, $timeout, authService) {
+  module.controller("registrationContentCtrl", function($scope, authService) {
     /**
     * @ngdoc function
     * @name sendDataRegistration
@@ -359,27 +336,11 @@ module.exports = function(module) {
       * @description
       * This function moves to the home page in three seconds
       **/
-      $timeout(function () {
-        $location.path("/");
-      }, 3000);
     }
   });
 };
 
-},{}],10:[function(require,module,exports){
-module.exports = function(module) {
-  /**
-  * @ngdoc controller
-  * @name module.controller:goToTopCtrl
-  * @description
-  * This is the scroll-top controller.
-  *
-  **/
-  module.controller("goToTopCtrl", function($scope) {
-  });
-};
-
-},{}],11:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 module.exports = function(module) {
 	/**
   * @ngdoc directive
@@ -428,7 +389,7 @@ module.exports = function(module) {
 	});
 };
 
-},{}],12:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc directive
@@ -472,7 +433,7 @@ module.exports = function(module) {
   });
 }
 
-},{}],13:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc directive
@@ -511,7 +472,7 @@ module.exports = function(module) {
   });
 };
 
-},{}],14:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 module.exports = function(module) {
 	require('./email-directive.js')(module);
 	require('./fullName-directive.js')(module);
@@ -520,7 +481,7 @@ module.exports = function(module) {
 	require('./backToTop-directive.js')(module);
 };
 
-},{"./backToTop-directive.js":11,"./email-directive.js":12,"./fullName-directive.js":13,"./password-check-directive.js":15,"./required-text-directive.js":16}],15:[function(require,module,exports){
+},{"./backToTop-directive.js":9,"./email-directive.js":10,"./fullName-directive.js":11,"./password-check-directive.js":13,"./required-text-directive.js":14}],13:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc directive
@@ -578,7 +539,7 @@ module.exports = function(module) {
   });
 };
 
-},{}],16:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc directive
@@ -617,7 +578,7 @@ module.exports = function(module) {
   });
 };
 
-},{}],17:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc filter
@@ -646,12 +607,12 @@ module.exports = function(module) {
   }])
 };
 
-},{}],18:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 module.exports = function(module) {
 	require('./iframeFilter.js')(module);
 };
 
-},{"./iframeFilter.js":17}],19:[function(require,module,exports){
+},{"./iframeFilter.js":15}],17:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc service
@@ -661,7 +622,7 @@ module.exports = function(module) {
   *	This is service for to send post data, come to the registration page and login.
   *
   **/
-  module.factory("authService", function ($http) {
+  module.factory("authService", function ($http, $timeout, $state) {
       var data;
       return {
           sendRegistration: sendRegistration,
@@ -705,17 +666,25 @@ module.exports = function(module) {
           console.log('Status: 501');
         });
         console.log(data);
+        /**
+        * @ngdoc function
+        * @description
+        * This function moves to the home page in three seconds
+        **/
+        $timeout(function () {
+          $state.go("home");
+        }, 3000);
       }
   });
 };
 
-},{}],20:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 module.exports = function(module) {
 	require('./authService.js')(module);
 	require('./sendMessageService.js')(module);
 };
 
-},{"./authService.js":19,"./sendMessageService.js":21}],21:[function(require,module,exports){
+},{"./authService.js":17,"./sendMessageService.js":19}],19:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc service
@@ -725,7 +694,8 @@ module.exports = function(module) {
   *	This is service for to send post data, come to the contact page
   *
   **/
-  module.factory("sendMessageData", function ($http) {
+  //$state.go('book.name'
+  module.factory("sendMessageData", function ($http, $timeout, $state) {
       var data;
       return {
           sendMessage: sendMessage
@@ -748,6 +718,14 @@ module.exports = function(module) {
             console.log('Status: 501');
           });
         console.log(data);
+        /**
+        * @ngdoc function
+        * @description
+        * This function moves to the home page in three seconds
+        **/
+        $timeout(function () {
+          $state.go("home");
+        }, 3000);
       }
   });
 };

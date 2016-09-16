@@ -1,12 +1,12 @@
 module.exports = function(module) {
   /**
   * @ngdoc controller
-  * @name sampleApp:contactContentCtrl
+  * @name sampleApp:contactPageCtrl
   * @description
   * This is the contact content controller.
   *
   **/
-  module.controller("contactPageCtrl", function($scope, $location, $timeout, sendMessageData) {
+  module.controller("contactPageCtrl", function($scope, sendMessageData) {
     /**
     * @ngdoc function
     * @name sendDataRegistration
@@ -31,14 +31,7 @@ module.exports = function(module) {
       * This is service for to send post data
       **/
       sendMessageData.sendMessage(data);
-      /**
-      * @ngdoc function
-      * @description
-      * This function moves to the home page in three seconds
-      **/
-      $timeout(function () {
-        $location.path("/");
-      }, 3000);
+
     }
   });
 };

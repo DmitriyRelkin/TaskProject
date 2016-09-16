@@ -7,7 +7,8 @@ module.exports = function(module) {
   *	This is service for to send post data, come to the contact page
   *
   **/
-  module.factory("sendMessageData", function ($http) {
+  //$state.go('book.name'
+  module.factory("sendMessageData", function ($http, $timeout, $state) {
       var data;
       return {
           sendMessage: sendMessage
@@ -30,6 +31,14 @@ module.exports = function(module) {
             console.log('Status: 501');
           });
         console.log(data);
+        /**
+        * @ngdoc function
+        * @description
+        * This function moves to the home page in three seconds
+        **/
+        $timeout(function () {
+          $state.go("home");
+        }, 3000);
       }
   });
 };

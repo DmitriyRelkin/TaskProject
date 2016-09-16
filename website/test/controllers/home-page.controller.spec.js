@@ -18,7 +18,7 @@ describe('Controller: homePageCtrl', function () {
       $interval = _$interval_;
   }));
 
-  it("availability controller", function () {
+  it("availability homePageCtrl", function () {
     expect(homePageCtrl).toBeDefined();
   });
 
@@ -31,13 +31,20 @@ describe('Controller: homePageCtrl', function () {
     expect($scope.showSlide()).toEqual($scope.photos.src);
   });
 
-  it("$scope.counter", function () {
-    expect($scope.counter).toBeDefined();
-    expect($scope.counter).toEqual(0);
+  // it("Change $scope.counter", function () {
+  //   expect($scope.counter).toBe(0);
+  //   $interval.flush(3);
+  //   expect($scope.counter).toBe(1);
+  // });
+
+  it("Availability of properties serviceBlock", function () {
+    expect($scope.serviceBlock).toBeDefined();
+    expect($scope.serviceBlock.length).toEqual(6);
   });
 
-  it("Change $scope.counter", function () {
-    expect($scope.counter).toEqual(0);
-    expect($scope.autoSlider).toHaveBeenCalled();
+  it("Availability of properties strategyBlock", function () {
+    expect($scope.strategyBlock).toBeDefined();
+    expect($scope.strategyBlock.length).toEqual(3);
   });
+
 });

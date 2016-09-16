@@ -6,7 +6,7 @@ module.exports = function(module) {
   * This is the login page controller
   *
   **/
-  module.controller("loginCtrl", function ($scope, $location, $timeout, authService) {
+  module.controller("loginCtrl", function ($scope, authService) {
     /**
     * @ngdoc function
     * @name sendDataLogin
@@ -36,10 +36,9 @@ module.exports = function(module) {
       * @description
       * This function moves to the home page in three seconds
       **/
-      $timeout(function () {
-        $location.path("/");
-      }, 3000);
+      // $timeout(function () {
+      //   $location.path("/");
+      // }, 3000);
     }
   });
-
 };
