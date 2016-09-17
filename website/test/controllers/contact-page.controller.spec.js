@@ -7,18 +7,16 @@ describe('Controller: contactPageCtrl', function () {
       $scope,
       contactPageCtrl,
       $state,
-      $timeout,
       sendMessageData;
 
   beforeEach(module('sampleApp'));
 
-  beforeEach(inject(function(_$controller_, _$rootScope_, _$state_, _$timeout_, _sendMessageData_) {
+  beforeEach(inject(function(_$controller_, _$rootScope_, _$state_, _sendMessageData_) {
       $controller = _$controller_;
       $rootScope = _$rootScope_;
       $scope = $rootScope.$new();
       contactPageCtrl = $controller('contactPageCtrl', {$scope: $scope});
       $state = _$state_;
-      $timeout = _$timeout_;
       sendMessageData = _sendMessageData_;
   }));
 

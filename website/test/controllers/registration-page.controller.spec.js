@@ -7,18 +7,16 @@ describe('Controller: registrationContentCtrl', function () {
       $scope,
       registrationContentCtrl,
       $state,
-      $timeout,
-      sendMessageData;
+      authService;
 
   beforeEach(module('sampleApp'));
 
-  beforeEach(inject(function(_$controller_, _$rootScope_, _$timeout_, _sendMessageData_) {
-      $controller = _$controller_;
-      $rootScope = _$rootScope_;
-      $scope = $rootScope.$new();
-      registrationContentCtrl = $controller('registrationContentCtrl', {$scope: $scope});
-      $timeout = _$timeout_;
-      sendMessageData = _sendMessageData_;
+  beforeEach(inject(function(_$controller_, _$rootScope_, _authService_) {
+    $controller = _$controller_;
+    $rootScope = _$rootScope_;
+    $scope = $rootScope.$new();
+    registrationContentCtrl = $controller('registrationContentCtrl', {$scope: $scope});
+    authService = _authService_;
   }));
 
   it("registrationContentCtrl", function () {
@@ -38,8 +36,8 @@ describe('Controller: registrationContentCtrl', function () {
 
   it("sevice send-data in function sendDataRegistration", function() {
     expect(authService).toBeDefined();
-    // spyOn(authService, 'sendRegistration');
-    // $scope.sendDataRegistration();
-    // expect(authService.sendRegistration).toHaveBeenCalled();
+    spyOn(authService, 'sendRegistration');
+    $scope.sendDataRegistration();
+    expect(authService.sendRegistration).toHaveBeenCalled();
   });
 });

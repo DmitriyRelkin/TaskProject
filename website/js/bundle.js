@@ -201,12 +201,12 @@ module.exports = function(module) {
     * @description
     * This function which switches the slides
     **/
-    $interval(function () {
+    $interval(function() {
       $scope.counter++;
       $scope.photoSrc = $scope.photos[$scope.counter];
       $scope.btnSrc = $scope.photos[$scope.counter];
       $scope.btnTitle = $scope.photos[$scope.counter];
-      for(var i = 0; i<$scope.photos.length; i++) {
+      for(var i = 0; i < $scope.photos.length; i++) {
            $scope.photos[i].active = false;
       }
       $scope.photos[$scope.counter].active = true;
@@ -647,6 +647,9 @@ module.exports = function(module) {
           console.log('Status: 501');
         });
         console.log(data);
+        $timeout(function () {
+          $state.go("home");
+        }, 3000);
       }
       /**
       * @ngdoc function
@@ -694,7 +697,6 @@ module.exports = function(module) {
   *	This is service for to send post data, come to the contact page
   *
   **/
-  //$state.go('book.name'
   module.factory("sendMessageData", function ($http, $timeout, $state) {
       var data;
       return {

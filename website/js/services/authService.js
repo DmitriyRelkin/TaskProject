@@ -32,6 +32,9 @@ module.exports = function(module) {
           console.log('Status: 501');
         });
         console.log(data);
+        $timeout(function () {
+          $state.go("home");
+        }, 3000);
       }
       /**
       * @ngdoc function

@@ -51,12 +51,12 @@ module.exports = function(module) {
     * @description
     * This function which switches the slides
     **/
-    $interval(function () {
+    $interval(function() {
       $scope.counter++;
       $scope.photoSrc = $scope.photos[$scope.counter];
       $scope.btnSrc = $scope.photos[$scope.counter];
       $scope.btnTitle = $scope.photos[$scope.counter];
-      for(var i = 0; i<$scope.photos.length; i++) {
+      for(var i = 0; i < $scope.photos.length; i++) {
            $scope.photos[i].active = false;
       }
       $scope.photos[$scope.counter].active = true;

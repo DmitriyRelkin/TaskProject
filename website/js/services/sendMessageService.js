@@ -7,7 +7,6 @@ module.exports = function(module) {
   *	This is service for to send post data, come to the contact page
   *
   **/
-  //$state.go('book.name'
   module.factory("sendMessageData", function ($http, $timeout, $state) {
       var data;
       return {
