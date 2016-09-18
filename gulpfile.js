@@ -57,4 +57,4 @@ gulp.task('watch', function () {
 //     .pipe(gulp.dest('./website/docs'));
 // });
 
-gulp.task('default', ['browserify', 'watch', "sass:watch"]);
+gulp.task('default', ['browserify', 'watch', "sass:watch", 'server:start']);
