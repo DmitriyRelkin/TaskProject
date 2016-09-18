@@ -2,7 +2,6 @@ var connect         = require('connect');
 var connectRouter   = require('connect-route');
 var connectStatic   = require('connect-gzip-static');
 var bodyParser      = require('body-parser');
-// var nodemailer      = require('nodemailer');
 var fs              = require('fs');
 var port            = process.env.PORT || 8000;
 var app             = connect();

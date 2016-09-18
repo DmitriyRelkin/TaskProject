@@ -21,20 +21,20 @@ describe('Controller: homePageCtrl', function () {
     $interval = _$interval_;
   }));
 
-  it("availability homePageCtrl", function () {
+  it("Having a home page controller", function () {
     expect(homePageCtrl).toBeDefined();
   });
 
-  it("Availability of properties photos", function () {
+  it("Having a properties photos", function () {
     expect($scope.photos).toBeDefined();
     expect($scope.photos.length).toEqual(4);
   });
 
-  it("argument function showSlide == properties photos.src", function () {
+  it("Argument function showSlide the is properties photos.src", function () {
     expect($scope.showSlide()).toEqual($scope.photos.src);
   });
 
-  it("Change $scope.counter", function () {
+  it("Counter change for changing slides", function () {
     expect($scope.counter).toBe(0);
     $interval.flush(3000);
     $scope.$digest();
@@ -43,12 +43,12 @@ describe('Controller: homePageCtrl', function () {
     $interval.flush(3000);
   });
 
-  it("Availability of properties serviceBlock", function () {
+  it("Having a properties serviceBlock", function () {
     expect($scope.serviceBlock).toBeDefined();
     expect($scope.serviceBlock.length).toEqual(6);
   });
 
-  it("Availability of properties strategyBlock", function () {
+  it("Having a properties strategyBlock", function () {
     expect($scope.strategyBlock).toBeDefined();
     expect($scope.strategyBlock.length).toEqual(3);
   });

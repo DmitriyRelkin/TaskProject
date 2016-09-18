@@ -19,22 +19,22 @@ describe('Controller: registrationContentCtrl', function () {
     authService = _authService_;
   }));
 
-  it("registrationContentCtrl", function () {
+  it("Having a registration page controller", function () {
     expect(registrationContentCtrl).toBeDefined();
   });
 
-  it("sendDataRegistration", function () {
+  it("Having a function sendDataRegistration for send data authorization", function () {
     expect($scope.sendDataRegistration).toBeDefined();
   });
 
-  it("work ng-Class in function sendDataRegistration", function() {
+  it("Class variable that stores the value of the class styles of animation,form is submitted", function() {
     expect($scope.sendDataRegistration).toBeDefined($scope.spinnerClass);
     expect($scope.spinnerClass).toBeUndefined("loading");
     $scope.sendDataRegistration();
     expect($scope.spinnerClass).toBeDefined("loading");
   });
 
-  it("sevice send-data in function sendDataRegistration", function() {
+  it("Having a sevice for send data, used in function sendDataRegistration", function() {
     expect(authService).toBeDefined();
     spyOn(authService, 'sendRegistration');
     $scope.sendDataRegistration();

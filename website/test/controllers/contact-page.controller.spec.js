@@ -20,22 +20,22 @@ describe('Controller: contactPageCtrl', function () {
       sendMessageData = _sendMessageData_;
   }));
 
-  it("contactPageCtrl", function () {
+  it("Having a contact page controller", function () {
     expect(contactPageCtrl).toBeDefined();
   });
 
-  it("sendContactData", function () {
+  it("Having a function sendContactData for send data authorization", function () {
     expect($scope.sendContactData).toBeDefined();
   });
 
-  it("work ng-Class in function sendContactData", function() {
+  it("Class variable that stores the value of the class styles of animation,form is submitted", function() {
     expect($scope.sendContactData).toBeDefined($scope.spinnerClass);
     expect($scope.spinnerClass).toBeUndefined("loading");
     $scope.sendContactData();
     expect($scope.spinnerClass).toBeDefined("loading");
   });
 
-  it("sevice send-data in function sendContactData", function() {
+  it("Having a sevice for send data, used in function sendContactData", function() {
     expect(sendMessageData).toBeDefined();
     spyOn(sendMessageData, 'sendMessage');
     $scope.sendContactData();

@@ -11844,6 +11844,8 @@ button.close {
       right: 5%; }
   .wrapper-slider {
     padding-bottom: 12px; }
+  .wrapper-message-block .content-message-block .paragraph-message-block {
+    text-align: center; }
   .social-footer-block {
     border: none !important; }
   .blog-column .nav-buttons-blog {
@@ -12105,6 +12107,9 @@ button.close {
     .wrapper-footer-block .footer-block .footer-column {
       margin-right: 3%;
       padding: 0; }
+      @media (max-width: 768px) {
+        .wrapper-footer-block .footer-block .footer-column .header-footer-column {
+          font-size: 15px; } }
       .wrapper-footer-block .footer-block .footer-column .contacts-footer-column li {
         color: #9c9d9e; }
         .wrapper-footer-block .footer-block .footer-column .contacts-footer-column li a {

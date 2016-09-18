@@ -19,22 +19,22 @@ describe('Controller: loginCtrl', function () {
     authService = _authService_;
   }));
 
-  it("loginCtrl", function () {
+  it("Having a log-in page controller", function () {
     expect(loginCtrl).toBeDefined();
   });
 
-  it("loginCtrl", function () {
+  it("Having a function sendDataLogin for send data authorization", function () {
     expect($scope.sendDataLogin).toBeDefined();
   });
 
-  it("work ng-Class in function sendDataRegistration", function() {
+  it("Class variable that stores the value of the class styles of animation,form is submitted", function() {
     expect($scope.sendDataLogin).toBeDefined($scope.spinnerClass);
     expect($scope.spinnerClass).toBeUndefined("loading");
     $scope.sendDataLogin();
     expect($scope.spinnerClass).toBeDefined("loading");
   });
 
-  it("sevice send-data in function sendDataLogin", function() {
+  it("Having a sevice for send data, used in function sendDataLogin", function() {
     expect(authService).toBeDefined();
     spyOn(authService, 'sendLogin');
     $scope.sendDataLogin();
