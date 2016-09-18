@@ -31,7 +31,6 @@ module.exports = function(module) {
       * This is service for to send post data
       **/
       sendMessageData.sendMessage(data);
-
     }
   });
 };

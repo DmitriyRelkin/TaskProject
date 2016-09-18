@@ -6,11 +6,12 @@ module.exports = (function() {
   var initServices    = require('./services/initServices.js');
 	var initControllers = require('./controllers/initControllers.js');
 	var initDirectives  = require('./directives/initDirectives.js');
-  var initFilters  = require('./filters/initFilters.js');
+  var initFilters     = require('./filters/initFilters.js');
 
   var module = angular.module("sampleApp", [
-    'ui.router',
-    "ui.bootstrap"
+    "ui.router",
+    "ui.bootstrap",
+    "ngNotify"
   ]);
 
   module.run(function ($state,$rootScope) {
@@ -142,7 +143,6 @@ module.exports = function(module) {
       * This is service for to send post data
       **/
       sendMessageData.sendMessage(data);
-
     }
   });
 };
@@ -285,14 +285,6 @@ module.exports = function(module) {
       * This is service for to send post data
       **/
       authService.sendLogin(data);
-      /**
-      * @ngdoc function
-      * @description
-      * This function moves to the home page in three seconds
-      **/
-      // $timeout(function () {
-      //   $location.path("/");
-      // }, 3000);
     }
   });
 };
@@ -306,7 +298,7 @@ module.exports = function(module) {
   * This is the registration content controller.
   *
   **/
-  module.controller("registrationContentCtrl", function($scope, authService) {
+  module.controller("registrationContentCtrl", function($scope, authService, ngNotify) {
     /**
     * @ngdoc function
     * @name sendDataRegistration
@@ -331,11 +323,16 @@ module.exports = function(module) {
       * This is service for to send post data
       **/
       authService.sendRegistration(data);
-      /**
-      * @ngdoc function
-      * @description
-      * This function moves to the home page in three seconds
-      **/
+      ngNotify.set('Registration is successful', 'success');
+      ngNotify.config({
+        theme: 'pure',
+        position: 'bottom',
+        duration: 3000,
+        type: 'Modular',
+        sticky: true,
+        button: true,
+        html: false
+      });
     }
   });
 };

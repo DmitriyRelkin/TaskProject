@@ -31,14 +31,6 @@ module.exports = function(module) {
       * This is service for to send post data
       **/
       authService.sendLogin(data);
-      /**
-      * @ngdoc function
-      * @description
-      * This function moves to the home page in three seconds
-      **/
-      // $timeout(function () {
-      //   $location.path("/");
-      // }, 3000);
     }
   });
 };

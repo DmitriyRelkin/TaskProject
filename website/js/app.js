@@ -5,11 +5,12 @@ module.exports = (function() {
   var initServices    = require('./services/initServices.js');
 	var initControllers = require('./controllers/initControllers.js');
 	var initDirectives  = require('./directives/initDirectives.js');
-  var initFilters  = require('./filters/initFilters.js');
+  var initFilters     = require('./filters/initFilters.js');
 
   var module = angular.module("sampleApp", [
-    'ui.router',
-    "ui.bootstrap"
+    "ui.router",
+    "ui.bootstrap",
+    "ngNotify"
   ]);
 
   module.run(function ($state,$rootScope) {

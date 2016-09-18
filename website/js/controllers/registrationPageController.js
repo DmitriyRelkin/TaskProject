@@ -6,7 +6,7 @@ module.exports = function(module) {
   * This is the registration content controller.
   *
   **/
-  module.controller("registrationContentCtrl", function($scope, authService) {
+  module.controller("registrationContentCtrl", function($scope, authService, ngNotify) {
     /**
     * @ngdoc function
     * @name sendDataRegistration
@@ -31,11 +31,16 @@ module.exports = function(module) {
       * This is service for to send post data
       **/
       authService.sendRegistration(data);
-      /**
-      * @ngdoc function
-      * @description
-      * This function moves to the home page in three seconds
-      **/
+      ngNotify.set('Registration is successful', 'success');
+      ngNotify.config({
+        theme: 'pure',
+        position: 'bottom',
+        duration: 3000,
+        type: 'Modular',
+        sticky: true,
+        button: true,
+        html: false
+      });
     }
   });
 };

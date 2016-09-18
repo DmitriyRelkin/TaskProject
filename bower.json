@@ -17,6 +17,7 @@
   "dependencies": {
     "bootstrap-sass": "^3.3.6",
     "angular": "^1.5.7",
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+    "ng-notify": "^0.8.0"
   }
 }
