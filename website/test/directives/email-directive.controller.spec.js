@@ -22,13 +22,13 @@ describe('directive email-validate', function() {
     form = $scope.form;
   }));
 
-  describe('Full Scan Directive validate-email', function() {
-    it('should pass with correct email', function() {
+  describe('Full scan directive validate-email', function() {
+    it('Should pass with correct email', function() {
       form.email.$setViewValue('mail@mail.com');
       $scope.$digest();
       expect(form.email.$valid).toBe(true);
     });
-    it('should not pass with incorrect email', function() {
+    it('Should not pass with incorrect email', function() {
       form.email.$setViewValue('m@m.com');
       $scope.$digest();
       expect(form.email.$valid).toBe(false);

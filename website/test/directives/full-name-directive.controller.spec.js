@@ -22,13 +22,13 @@ describe('directive fullname-validate', function() {
     form = $scope.form;
   }));
 
-  describe('Full Scan Directive validate-fullname', function() {
-    it('should pass with correct fullName', function() {
+  describe('Full scan directive validate-fullname', function() {
+    it('Should pass with correct full name', function() {
       form.fullName.$setViewValue('Din Vin');
       $scope.$digest();
       expect(form.fullName.$valid).toBe(true);
     });
-    it('should not pass with incorrect fullName', function() {
+    it('Should not pass with incorrect full name', function() {
       form.fullName.$setViewValue('vasia');
       $scope.$digest();
       expect(form.fullName.$valid).toBe(false);

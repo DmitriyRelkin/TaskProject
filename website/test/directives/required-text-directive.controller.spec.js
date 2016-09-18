@@ -22,13 +22,13 @@ describe('directive requiredText-validate', function() {
     form = $scope.form;
   }));
 
-  describe('Full Scan Directive validate-requiredText', function() {
-    it('should pass with correct requiredText', function() {
+  describe('Full scan directive required-text', function() {
+    it('should pass with correct required text', function() {
       form.requiredText.$setViewValue('Word');
       $scope.$digest();
       expect(form.requiredText.$valid).toBe(true);
     });
-    it('should not pass with incorrect requiredText', function() {
+    it('should not pass with incorrect required text', function() {
       form.requiredText.$setViewValue('a');
       $scope.$digest();
       expect(form.requiredText.$valid).toBe(false);
