@@ -1,4 +1,4 @@
-describe('directive email-validate', function() {
+describe('directive requiredText-validate', function() {
   var $rootScope,
       $scope,
       $httpBackend,
@@ -14,24 +14,24 @@ describe('directive email-validate', function() {
     $compile = _$compile_;
     element = angular.element(
       '<form name="form">' +
-        '<input ng-model="emailInput" type="email" name="email" validate-email >' +
+        '<input ng-model="textInput" type="text" name="requiredText" validate-text>' +
       '</form>'
     );
-    $scope.model = { emailInput: null }
+    $scope.model = { textInput: null }
     $compile(element)($scope);
     form = $scope.form;
   }));
 
-  describe('Full Scan Directive validate-email', function() {
-    it('should pass with correct email', function() {
-      form.email.$setViewValue('mail@mail.com');
+  describe('Full Scan Directive validate-requiredText', function() {
+    it('should pass with correct requiredText', function() {
+      form.requiredText.$setViewValue('Word');
       $scope.$digest();
-      expect(form.email.$valid).toBe(true);
+      expect(form.requiredText.$valid).toBe(true);
     });
-    it('should not pass with incorrect email', function() {
-      form.email.$setViewValue('m@m.com');
+    it('should not pass with incorrect requiredText', function() {
+      form.requiredText.$setViewValue('a');
       $scope.$digest();
-      expect(form.email.$valid).toBe(false);
+      expect(form.requiredText.$valid).toBe(false);
     });
   });
 });
