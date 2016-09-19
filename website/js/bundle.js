@@ -2,7 +2,7 @@
 module.exports = (function() {
   "use strict";
 
-  var config          = require('./config/routerConfig.js');
+  var config          = require('./config/initConfig.js');
   var initServices    = require('./services/initServices.js');
 	var initControllers = require('./controllers/initControllers.js');
 	var initDirectives  = require('./directives/initDirectives.js');
@@ -11,7 +11,7 @@ module.exports = (function() {
   var module = angular.module("sampleApp", [
     "ui.router",
     "ui.bootstrap",
-    "ngNotify"
+    "cgNotify"
   ]);
 
   module.run(function ($state,$rootScope) {
@@ -32,7 +32,12 @@ module.exports = (function() {
   config(module);
 }());
 
-},{"./config/routerConfig.js":2,"./controllers/initControllers.js":6,"./directives/initDirectives.js":12,"./filters/initFilters.js":16,"./services/initServices.js":18}],2:[function(require,module,exports){
+},{"./config/initConfig.js":2,"./controllers/initControllers.js":7,"./directives/initDirectives.js":13,"./filters/initFilters.js":17,"./services/initServices.js":19}],2:[function(require,module,exports){
+module.exports = function(module) {
+	require('./routerConfig.js')(module);
+};
+
+},{"./routerConfig.js":3}],3:[function(require,module,exports){
 module.exports = function(module) {
   "use strict";
   module.config(function($stateProvider, $urlRouterProvider) {
@@ -66,7 +71,7 @@ module.exports = function(module) {
   });
 };
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc controller
@@ -109,7 +114,7 @@ module.exports = function(module) {
   });
 };
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc controller
@@ -118,7 +123,7 @@ module.exports = function(module) {
   * This is the contact content controller.
   *
   **/
-  module.controller("contactPageCtrl", function($scope, sendMessageData) {
+  module.controller("contactPageCtrl", function($scope, sendMessageData, notify) {
     /**
     * @ngdoc function
     * @name sendDataRegistration
@@ -143,11 +148,12 @@ module.exports = function(module) {
       * This is service for to send post data
       **/
       sendMessageData.sendMessage(data);
+       notify({ message:'Your message has been successfully sent', duration: '2000', position: "center"});
     }
   });
 };
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc controller
@@ -242,7 +248,7 @@ module.exports = function(module) {
   });
 };
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 module.exports = function(module) {
 	require('./homePageController.js')(module);
 	require('./contactsPageController.js')(module);
@@ -251,7 +257,7 @@ module.exports = function(module) {
 	require('./loginPageController.js')(module);
 };
 
-},{"./blogPageController.js":3,"./contactsPageController.js":4,"./homePageController.js":5,"./loginPageController.js":7,"./registrationPageController.js":8}],7:[function(require,module,exports){
+},{"./blogPageController.js":4,"./contactsPageController.js":5,"./homePageController.js":6,"./loginPageController.js":8,"./registrationPageController.js":9}],8:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc controller
@@ -289,7 +295,7 @@ module.exports = function(module) {
   });
 };
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc controller
@@ -298,7 +304,7 @@ module.exports = function(module) {
   * This is the registration content controller.
   *
   **/
-  module.controller("registrationContentCtrl", function($scope, authService, ngNotify) {
+  module.controller("registrationContentCtrl", function($scope, authService) {
     /**
     * @ngdoc function
     * @name sendDataRegistration
@@ -323,21 +329,11 @@ module.exports = function(module) {
       * This is service for to send post data
       **/
       authService.sendRegistration(data);
-      ngNotify.set('Registration is successful', 'success');
-      ngNotify.config({
-        theme: 'pure',
-        position: 'bottom',
-        duration: 3000,
-        type: 'Modular',
-        sticky: true,
-        button: true,
-        html: false
-      });
     }
   });
 };
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 module.exports = function(module) {
 	/**
   * @ngdoc directive
@@ -386,7 +382,7 @@ module.exports = function(module) {
 	});
 };
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc directive
@@ -430,7 +426,7 @@ module.exports = function(module) {
   });
 }
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc directive
@@ -469,7 +465,7 @@ module.exports = function(module) {
   });
 };
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 module.exports = function(module) {
 	require('./email-directive.js')(module);
 	require('./fullName-directive.js')(module);
@@ -478,7 +474,7 @@ module.exports = function(module) {
 	require('./backToTop-directive.js')(module);
 };
 
-},{"./backToTop-directive.js":9,"./email-directive.js":10,"./fullName-directive.js":11,"./password-check-directive.js":13,"./required-text-directive.js":14}],13:[function(require,module,exports){
+},{"./backToTop-directive.js":10,"./email-directive.js":11,"./fullName-directive.js":12,"./password-check-directive.js":14,"./required-text-directive.js":15}],14:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc directive
@@ -536,7 +532,7 @@ module.exports = function(module) {
   });
 };
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc directive
@@ -575,7 +571,7 @@ module.exports = function(module) {
   });
 };
 
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc filter
@@ -604,12 +600,12 @@ module.exports = function(module) {
   }])
 };
 
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 module.exports = function(module) {
 	require('./iframeFilter.js')(module);
 };
 
-},{"./iframeFilter.js":15}],17:[function(require,module,exports){
+},{"./iframeFilter.js":16}],18:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc service
@@ -678,13 +674,13 @@ module.exports = function(module) {
   });
 };
 
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 module.exports = function(module) {
 	require('./authService.js')(module);
 	require('./sendMessageService.js')(module);
 };
 
-},{"./authService.js":17,"./sendMessageService.js":19}],19:[function(require,module,exports){
+},{"./authService.js":18,"./sendMessageService.js":20}],20:[function(require,module,exports){
 module.exports = function(module) {
   /**
   * @ngdoc service

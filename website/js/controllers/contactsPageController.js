@@ -6,7 +6,7 @@ module.exports = function(module) {
   * This is the contact content controller.
   *
   **/
-  module.controller("contactPageCtrl", function($scope, sendMessageData) {
+  module.controller("contactPageCtrl", function($scope, sendMessageData, notify) {
     /**
     * @ngdoc function
     * @name sendDataRegistration
@@ -31,6 +31,7 @@ module.exports = function(module) {
       * This is service for to send post data
       **/
       sendMessageData.sendMessage(data);
+       notify({ message:'Your message has been successfully sent', duration: '2000', position: "center"});
     }
   });
 };

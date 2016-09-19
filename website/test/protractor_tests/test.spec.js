@@ -1,6 +1,6 @@
 describe('CONSULTING CO. homepage', function() {
   it('Open CONSULTING CO.', function() {
-    
+
     browser.get('http://localhost:8000');
     // element(by.model('yourName')).sendKeys('Julie');
     // var greeting = element(by.binding('yourName'));

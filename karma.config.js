@@ -17,7 +17,7 @@ module.exports = function(config) {
     files: [
       'bower_components/angular/angular.min.js',
       'http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.js',
-      // 'cdn.jsdelivr.net/angular.ng-notify/0.6.0/ng-notify.min.js',
+      'bower_components/angular-notify/dist/angular-notify.js',
       'website/js/angular-mocks.js',
       'website/js/angular-ui-router.js',
       'website/js/bundle.js',
