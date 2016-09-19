@@ -29,6 +29,7 @@
     "gulp-watch": "^4.3.9",
     "nodemailer": "^2.6.0",
     "protractor-console": "^2.0.1",
+    "protractor-console-plugin": "^0.1.1",
     "var": "^0.2.0",
     "vinyl-source-stream": "latest",
     "watchify": "latest"

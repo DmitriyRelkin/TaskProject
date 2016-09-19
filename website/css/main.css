@@ -9,7 +9,7 @@
 .wrapper-strategy-block .strategy-block {
   padding-top: 5%; }
 
-.wrapper-greeting-block .greeting-block .header1-greeting-block, .wrapper-strategy-block .strategy-block .heading-strategy-block, .wrapper-content-contacts .content-contacts .header-contacts, .header-blog, .wrapper-registration-page .wrapper-registration-content .header-registration, .wrapper-content-sig-in .header-sig-in {
+.wrapper-greeting-block .greeting-block .header1-greeting-block, .wrapper-strategy-block .strategy-block .heading-strategy-block, .wrapper-content-contacts .content-contacts .header-contacts, .wrapper-content-contacts .content-contacts .article-contacts, .header-blog, .wrapper-registration-page .wrapper-registration-content .header-registration, .wrapper-content-sig-in .header-sig-in {
   font: 300 39px/40px Bebas, sans-serif;
   margin: 0;
   padding: 0;
