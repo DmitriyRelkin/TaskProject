@@ -15,7 +15,7 @@
 					  <input name="pasword" placeholder="Your pasword" type="password" class="form-control" required ng-model="formData.login.pasword">
 						<span class="error" ng-show="sigInForm.pasword.$error.required && sigInForm.pasword.$dirty">You haven't entered a password</span>
 					</div>
-			     	<button type="submit" class="btn btn-default content-button" ng-disabled="sigInForm.$invalid">Sig In</button>
+			     	<button type="submit" class="btn btn-default content-button sendTest" ng-disabled="sigInForm.$invalid">Sig In</button>
 						<span class="spinner" ng-class="spinnerClass">
 						  <div class="bounce1"></div>
 						  <div class="bounce2"></div>

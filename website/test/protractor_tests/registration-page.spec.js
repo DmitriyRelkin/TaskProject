@@ -1,12 +1,11 @@
 describe('Check RegistrationPage', function() {
   var title = element(by.css(".header-registration"));
-  var name = element(by.model('formData.contact.name'));
-   var name = element(by.model('formData.user.name'));
-   var email = element(by.model('formData.user.email'));
-   var password = element(by.model('formData.user.password'));
-   var passwordConfirm = element(by.model('user.password_verify'));
-   var submit = element(by.css(".send"));
-   var params = {login: {user: 'Niko Belik',password: '123456', email: 'mail@mail.com'}}
+  var name = element(by.model('formData.user.name'));
+  var email = element(by.model('formData.user.email'));
+  var password = element(by.model('formData.user.password'));
+  var passwordConfirm = element(by.model('user.password_verify'));
+  var submit = element(by.css(".sendTest"));
+  var params = {login: {user: 'Niko Belik',password: '123456', email: 'mail@mail.com'}}
 
   beforeEach(function() {
     browser.get('http://localhost:8000/#/reg');
@@ -23,5 +22,4 @@ describe('Check RegistrationPage', function() {
     expect(passwordConfirm.sendKeys(params.login.password));
     expect(submit.click());
   });
-
- });
+});
