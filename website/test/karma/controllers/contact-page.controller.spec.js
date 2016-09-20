@@ -7,13 +7,17 @@ describe('Controller: contactPageCtrl', function () {
       $scope,
       contactPageCtrl,
       $state,
+      $q,
+      deferred,
       sendMessageData;
 
   beforeEach(module('sampleApp'));
 
-  beforeEach(inject(function(_$controller_, _$rootScope_, _$state_, _sendMessageData_) {
+  beforeEach(inject(function(_$controller_, _$rootScope_, _$state_, _sendMessageData_, _$q_) {
       $controller = _$controller_;
       $rootScope = _$rootScope_;
+      $q = _$q_;
+      deferred = $q.defer();
       $scope = $rootScope.$new();
       contactPageCtrl = $controller('contactPageCtrl', {$scope: $scope});
       $state = _$state_;
@@ -37,7 +41,7 @@ describe('Controller: contactPageCtrl', function () {
 
   it("Having a sevice for send data, used in function sendContactData", function() {
     expect(sendMessageData).toBeDefined();
-    spyOn(sendMessageData, 'sendMessage');
+    spyOn(sendMessageData, 'sendMessage').and.returnValue(deferred.promise);
     $scope.sendContactData();
     expect(sendMessageData.sendMessage).toHaveBeenCalled();
   });

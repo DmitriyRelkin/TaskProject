@@ -7,13 +7,17 @@ describe('Controller: registrationContentCtrl', function () {
       $scope,
       registrationContentCtrl,
       $state,
+      $q,
+      deferred,
       authService;
 
   beforeEach(module('sampleApp'));
 
-  beforeEach(inject(function(_$controller_, _$rootScope_, _authService_) {
+  beforeEach(inject(function(_$controller_, _$rootScope_, _authService_, _$q_) {
     $controller = _$controller_;
     $rootScope = _$rootScope_;
+    $q = _$q_;
+    deferred = $q.defer();
     $scope = $rootScope.$new();
     registrationContentCtrl = $controller('registrationContentCtrl', {$scope: $scope});
     authService = _authService_;
@@ -36,7 +40,7 @@ describe('Controller: registrationContentCtrl', function () {
 
   it("Having a sevice for send data, used in function sendDataRegistration", function() {
     expect(authService).toBeDefined();
-    spyOn(authService, 'sendRegistration');
+    spyOn(authService, 'sendRegistration').and.returnValue(deferred.promise);
     $scope.sendDataRegistration();
     expect(authService.sendRegistration).toHaveBeenCalled();
   });
