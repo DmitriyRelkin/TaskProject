@@ -6,7 +6,7 @@ module.exports = function(module) {
   * This is the contact content controller.
   *
   **/
-  module.controller("contactPageCtrl", function($scope, sendMessageData, notify) {
+  module.controller("contactPageCtrl", function($scope, sendMessageData, notify, $state) {
     /**
     * @ngdoc function
     * @name sendDataRegistration
@@ -25,13 +25,17 @@ module.exports = function(module) {
       **/
       $scope.spinnerClass = "loading";
       /**
-      * @ngdoc authService
-      * @name spinnerClass
+      * @ngdoc service
+      * @name sendMessageData
       * @description
       * This is service for to send post data
       **/
-      sendMessageData.sendMessage(data);
-       notify({ message:'Your message has been successfully sent', duration: '2000', position: "center"});
+      sendMessageData.sendMessage(data).then(function () {
+        $state.go("home");
+      },function () {
+        notify({ message:'An error occurred on the server!', duration: '2000', position: "center", classes: "alert-danger"});
+      });
+       notify({ message:'Your message has been successfully sent', duration: '2000', position: "center", classes: "alert-success"});
     }
   });
 };

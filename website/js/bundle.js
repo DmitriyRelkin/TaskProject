@@ -123,7 +123,7 @@ module.exports = function(module) {
   * This is the contact content controller.
   *
   **/
-  module.controller("contactPageCtrl", function($scope, sendMessageData, notify) {
+  module.controller("contactPageCtrl", function($scope, sendMessageData, notify, $state) {
     /**
     * @ngdoc function
     * @name sendDataRegistration
@@ -142,13 +142,17 @@ module.exports = function(module) {
       **/
       $scope.spinnerClass = "loading";
       /**
-      * @ngdoc authService
-      * @name spinnerClass
+      * @ngdoc service
+      * @name sendMessageData
       * @description
       * This is service for to send post data
       **/
-      sendMessageData.sendMessage(data);
-       notify({ message:'Your message has been successfully sent', duration: '2000', position: "center"});
+      sendMessageData.sendMessage(data).then(function () {
+        $state.go("home");
+      },function () {
+        notify({ message:'An error occurred on the server!', duration: '2000', position: "center", classes: "alert-danger"});
+      });
+       notify({ message:'Your message has been successfully sent', duration: '2000', position: "center", classes: "alert-success"});
     }
   });
 };
@@ -266,7 +270,7 @@ module.exports = function(module) {
   * This is the login page controller
   *
   **/
-  module.controller("loginCtrl", function ($scope, authService) {
+  module.controller("loginCtrl", function ($scope, authService, $state) {
     /**
     * @ngdoc function
     * @name sendDataLogin
@@ -285,12 +289,16 @@ module.exports = function(module) {
       **/
       $scope.spinnerClass = "loading";
       /**
-      * @ngdoc authService
-      * @name spinnerClass
+      * @ngdoc service
+      * @name authService
       * @description
       * This is service for to send post data
       **/
-      authService.sendLogin(data);
+      authService.sendLogin(data).then(function () {
+        $state.go("home");
+      },function () {
+        notify({ message:'An error occurred on the server!', duration: '2000', position: "center", classes: "alert-danger"});
+      });
     }
   });
 };
@@ -304,7 +312,7 @@ module.exports = function(module) {
   * This is the registration content controller.
   *
   **/
-  module.controller("registrationContentCtrl", function($scope, authService) {
+  module.controller("registrationContentCtrl", function($scope, authService, $state) {
     /**
     * @ngdoc function
     * @name sendDataRegistration
@@ -323,12 +331,16 @@ module.exports = function(module) {
       **/
       $scope.spinnerClass = "loading";
       /**
-      * @ngdoc authService
-      * @name spinnerClass
+      * @ngdoc service
+      * @name authService
       * @description
       * This is service for to send post data
       **/
-      authService.sendRegistration(data);
+      authService.sendRegistration(data).then(function () {
+        $state.go("home");
+      },function () {
+        notify({ message:'An error occurred on the server!', duration: '2000', position: "center", classes: "alert-danger"});
+      });
     }
   });
 };
@@ -615,7 +627,7 @@ module.exports = function(module) {
   *	This is service for to send post data, come to the registration page and login.
   *
   **/
-  module.factory("authService", function ($http, $timeout, $state) {
+  module.factory("authService", function ($http) {
       var data;
       return {
           sendRegistration: sendRegistration,
@@ -632,17 +644,7 @@ module.exports = function(module) {
       *
       **/
       function sendRegistration(data) {
-        $http.post("/reg", data)
-        .success(function (data) {
-          console.log('Status: 200 OK');
-        })
-        .error(function (data) {
-          console.log('Status: 501');
-        });
-        console.log(data);
-        $timeout(function () {
-          $state.go("home");
-        }, 3000);
+        return $http.post("/reg", data);
       }
       /**
       * @ngdoc function
@@ -654,22 +656,7 @@ module.exports = function(module) {
       *
       **/
       function sendLogin(data) {
-        $http.post("/sig-in", data)
-        .success(function (data) {
-          console.log('Status: 200 OK');
-        })
-        .error(function (data) {
-          console.log('Status: 501');
-        });
-        console.log(data);
-        /**
-        * @ngdoc function
-        * @description
-        * This function moves to the home page in three seconds
-        **/
-        $timeout(function () {
-          $state.go("home");
-        }, 3000);
+        return $http.post("/sig-in", data);
       }
   });
 };
@@ -690,7 +677,7 @@ module.exports = function(module) {
   *	This is service for to send post data, come to the contact page
   *
   **/
-  module.factory("sendMessageData", function ($http, $timeout, $state) {
+  module.factory("sendMessageData", function ($http) {
       var data;
       return {
           sendMessage: sendMessage
@@ -705,22 +692,7 @@ module.exports = function(module) {
       *
       **/
       function sendMessage(data) {
-        $http.post("/contacts", data)
-          .success(function (data) {
-            console.log('Status: 200 OK');
-          })
-          .error(function (data) {
-            console.log('Status: 501');
-          });
-        console.log(data);
-        /**
-        * @ngdoc function
-        * @description
-        * This function moves to the home page in three seconds
-        **/
-        $timeout(function () {
-          $state.go("home");
-        }, 3000);
+        return  $http.post("/contacts", data);
       }
   });
 };

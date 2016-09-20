@@ -6,7 +6,7 @@ module.exports = function(module) {
   * This is the login page controller
   *
   **/
-  module.controller("loginCtrl", function ($scope, authService) {
+  module.controller("loginCtrl", function ($scope, authService, $state) {
     /**
     * @ngdoc function
     * @name sendDataLogin
@@ -25,12 +25,16 @@ module.exports = function(module) {
       **/
       $scope.spinnerClass = "loading";
       /**
-      * @ngdoc authService
-      * @name spinnerClass
+      * @ngdoc service
+      * @name authService
       * @description
       * This is service for to send post data
       **/
-      authService.sendLogin(data);
+      authService.sendLogin(data).then(function () {
+        $state.go("home");
+      },function () {
+        notify({ message:'An error occurred on the server!', duration: '2000', position: "center", classes: "alert-danger"});
+      });
     }
   });
 };

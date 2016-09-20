@@ -7,7 +7,7 @@ module.exports = function(module) {
   *	This is service for to send post data, come to the registration page and login.
   *
   **/
-  module.factory("authService", function ($http, $timeout, $state) {
+  module.factory("authService", function ($http) {
       var data;
       return {
           sendRegistration: sendRegistration,
@@ -24,17 +24,7 @@ module.exports = function(module) {
       *
       **/
       function sendRegistration(data) {
-        $http.post("/reg", data)
-        .success(function (data) {
-          console.log('Status: 200 OK');
-        })
-        .error(function (data) {
-          console.log('Status: 501');
-        });
-        console.log(data);
-        $timeout(function () {
-          $state.go("home");
-        }, 3000);
+        return $http.post("/reg", data);
       }
       /**
       * @ngdoc function
@@ -46,22 +36,7 @@ module.exports = function(module) {
       *
       **/
       function sendLogin(data) {
-        $http.post("/sig-in", data)
-        .success(function (data) {
-          console.log('Status: 200 OK');
-        })
-        .error(function (data) {
-          console.log('Status: 501');
-        });
-        console.log(data);
-        /**
-        * @ngdoc function
-        * @description
-        * This function moves to the home page in three seconds
-        **/
-        $timeout(function () {
-          $state.go("home");
-        }, 3000);
+        return $http.post("/sig-in", data);
       }
   });
 };

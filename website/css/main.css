@@ -4493,13 +4493,13 @@ a.thumbnail.active {
     color: inherit; }
 
 .alert-success {
-  background-color: #dc6226;
-  border-color: #d6e9c6;
-  color: #3c763d; }
+  background-color: #DC6226;
+  border-color: #dc6226;
+  color: #ffffff; }
   .alert-success hr {
-    border-top-color: #c9e2b3; }
+    border-top-color: #c85820; }
   .alert-success .alert-link {
-    color: #2b542c; }
+    color: #e6e6e6; }
 
 .alert-info {
   background-color: #d9edf7;
@@ -10385,13 +10385,13 @@ a.thumbnail.active {
     color: inherit; }
 
 .alert-success {
-  background-color: #dc6226;
-  border-color: #d6e9c6;
-  color: #3c763d; }
+  background-color: #DC6226;
+  border-color: #dc6226;
+  color: #ffffff; }
   .alert-success hr {
-    border-top-color: #c9e2b3; }
+    border-top-color: #c85820; }
   .alert-success .alert-link {
-    color: #2b542c; }
+    color: #e6e6e6; }
 
 .alert-info {
   background-color: #d9edf7;
