@@ -31,54 +31,15 @@
 			<div class="col-sm-4 categories-column">
 				<h2 class="header-blog">CATEGORIES</h2>
 				<ul class="blog-category">
-					<li><a href="#">Condimentum tellus tellus</a></li>
-					<li><a href="#">Duis vel nisifes</a></li>
-					<li><a href="#">Lorem ipsum dolor sit amet</a></li>
-					<li><a href="#">Lorem ipsum dolor sit amet</a></li>
-					<li><a href="#">Netus et malesuada fames</a></li>
-					<li><a href="#">Pellentesque habitant morbi</a></li>
-					<li><a href="#">Quisque viverra leo id tincidunt</a></li>
-					<li><a href="#">Tincidunt tellus id euismod</a></li>
-					<li><a href="#">Tristique senectus et</a></li>
-					<li><a href="#">Vestibulum ullamcorpermoles</a></li>
+					<li ng-repeat="name in pollCategory"><a href="#">{{name.category}}</a></li>
 				</ul>
 				<h2 class="header-blog">POLL</h2>
 				<div class="poll-level">
-
-					<div class="wrapper-poll-progress">
-						<span class="state-level-poll-progress">Super</span>
-						<span class="percentage-score">39%</span>
+					<div class="wrapper-poll-progress" ng-repeat="meter in pollLevel">
+						<span class="state-level-poll-progress">{{meter.progress}}</span>
+						<span class="percentage-score">{{meter.percentage}}%</span>
 						<div class="progress poll-progress">
-						  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 39%">
-						    <span class="sr-only">39% Complete (success)</span>
-						  </div>
-						</div>
-					</div>
-					<div class="wrapper-poll-progress">
-						<span class="state-level-poll-progress">God</span>
-						<span class="percentage-score">31%</span>
-						<div class="progress poll-progress">
-						  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 31%">
-						    <span class="sr-only">39% Complete (success)</span>
-						  </div>
-						</div>
-					</div>
-					<div class="wrapper-poll-progress">
-						<span class="state-level-poll-progress">Normal</span>
-						<span class="percentage-score">20%</span>
-						<div class="progress poll-progress">
-						  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-						    <span class="sr-only">39% Complete (success)</span>
-						  </div>
-						</div>
-					</div>
-					<div class="wrapper-poll-progress">
-						<span class="state-level-poll-progress">Bad</span>
-						<span class="percentage-score">11%</span>
-						<div class="progress poll-progress">
-						  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 11%">
-
-						    <span class="sr-only">39% Complete (success)</span>
+						  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{meter.width}}%">
 						  </div>
 						</div>
 					</div>

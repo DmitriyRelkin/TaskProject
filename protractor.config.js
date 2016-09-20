@@ -21,14 +21,7 @@ exports.config = {
     showColors: true,
     defaultTimeoutInterval: 30000
   },
-  params: {
-    login: {
-      user: 'Niko Belik',
-      password: '123456',
-      subject: 'subject',
-      message: 'message'
-    }
-  },
+
   plugins: [{
     package: 'protractor-console',
     logLevels: ['debug', 'info']

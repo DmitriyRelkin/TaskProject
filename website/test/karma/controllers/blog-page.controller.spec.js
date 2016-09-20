@@ -20,9 +20,19 @@ describe('Controller: blogContentCtrl', function () {
     expect(blogContentCtrl).toBeDefined();
   });
 
-  it("Having a blogContent property", function() {
+  it("Having a category property", function() {
+    expect($scope.pollCategory).toBeDefined();
+    expect($scope.pollCategory.length).toEqual(10);
+  });
+
+  it("Having a blog category property", function() {
     expect($scope.blogContent).toBeDefined();
     expect($scope.blogContent.length).toEqual(3);
+  });
+
+  it("Having a poll level property", function() {
+    expect($scope.pollLevel).toBeDefined();
+    expect($scope.pollLevel.length).toEqual(4);
   });
 
   it("Having a btnBlog property", function() {

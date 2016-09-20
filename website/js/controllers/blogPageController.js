@@ -21,6 +21,38 @@ module.exports = function(module) {
     ];
     /**
     * @ngdoc property
+    * @name pollCategory
+    * @description
+    * It keeps the array, in which objects with text category.
+    *
+    **/
+    $scope.pollCategory = [
+      {category: "Condimentum tellus tellus"},
+      {category: "Condimentum tellus tellus"},
+      {category: "Lorem ipsum dolor sit amet"},
+      {category: "Lorem ipsum dolor sit amet"},
+      {category: "Netus et malesuada fames"},
+      {category: "Pellentesque habitant morbi"},
+      {category: "Quisque viverra leo id tincidunt"},
+      {category: "Tincidunt tellus id euismod"},
+      {category: "Tristique senectus et"},
+      {category: "Vestibulum ullamcorpermoles"}
+    ];
+    /**
+    * @ngdoc property
+    * @name pollLevel
+    * @description
+    * It keeps the array, parameters are stored for meters.
+    *
+    **/
+    $scope.pollLevel = [
+      {progress: "Super", percentage: 39, width: 39},
+      {progress: "God", percentage: 31, width: 31},
+      {progress: "Normal", percentage: 20, width: 20},
+      {progress: "Bad", percentage: 11, width: 11}
+    ];
+    /**
+    * @ngdoc property
     * @name btnBlog
     * @description
     * It keeps the array, in which objects with buttons names.
@@ -35,7 +67,6 @@ module.exports = function(module) {
     *
     **/
     $scope.btnBlogNav = [{nameBtn: "1"},{nameBtn: "2"},{nameBtn: "LAST"},{nameBtn: "NEXT"}];
-
 
   });
 };
