@@ -8,11 +8,9 @@
 					<div class="note-blog" ng-repeat="block in blogContent">
 						<h2>{{block.header}}</h2>
 						<div class="note-blog-property">
-							<div class="row">
-								<ul class="blog-social-properties">
-									<li ng-repeat="link in socialProperties" ng-class="{'active': photo.active}" class="{{link.view}}" >{{link.text}}</li>
-								</ul>
-							</div>
+							<ul class="blog-social-properties">
+								<li ng-repeat="link in socialProperties" ng-class="{'active': photo.active}" class="{{link.view}}" >{{link.text}}</li>
+							</ul>
 						</div>
 						<div ng-if="block.type == 'photo'" class="note-depiction">
 							<img src="{{block.depiction}}" alt="">

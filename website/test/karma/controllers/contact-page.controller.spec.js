@@ -45,4 +45,5 @@ describe('Controller: contactPageCtrl', function () {
     $scope.sendContactData();
     expect(sendMessageData.sendMessage).toHaveBeenCalled();
   });
+
 });

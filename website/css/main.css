@@ -5977,6 +5977,9 @@ button.close {
       overflow: auto;
       position: relative;
       padding: 0 8px; }
+      @media (max-width: 768px) {
+        .main-header .content-main-header .search-block-main-header {
+          padding: 0 13px; } }
       .main-header .content-main-header .search-block-main-header a {
         color: #fff;
         position: absolute;
@@ -12243,6 +12246,8 @@ h4 {
     .wrapper-content-blog-page .content-blog-page .wrapper-columns .blog-column .content-blog-column .note-blog .note-blog-property {
       margin: 2% 0 3% 0; }
       .wrapper-content-blog-page .content-blog-page .wrapper-columns .blog-column .content-blog-column .note-blog .note-blog-property .blog-social-properties {
+        margin: 0;
+        padding: 0;
         list-style: none; }
         .wrapper-content-blog-page .content-blog-page .wrapper-columns .blog-column .content-blog-column .note-blog .note-blog-property .blog-social-properties li {
           display: inline-block; }

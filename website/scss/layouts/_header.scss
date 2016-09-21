@@ -43,6 +43,9 @@
 			overflow: auto;
 			position: relative;
 	    padding: 0 8px;
+			@media (max-width: $screen-sm-min) {
+				padding: 0 13px;
+			}
 		 	a {
 			color: $pure-white;
 			position: absolute;
