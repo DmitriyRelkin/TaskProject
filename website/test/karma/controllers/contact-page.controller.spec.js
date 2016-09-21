@@ -5,7 +5,7 @@ describe('Controller: contactPageCtrl', function () {
   var $controller,
       $rootScope,
       $scope,
-      contactPageCtrl,
+      contactCtrl,
       $state,
       $q,
       deferred,
@@ -19,30 +19,30 @@ describe('Controller: contactPageCtrl', function () {
       $q = _$q_;
       deferred = $q.defer();
       $scope = $rootScope.$new();
-      contactPageCtrl = $controller('contactPageCtrl', {$scope: $scope});
+      contactCtrl = $controller('contactPageCtrl', {$scope: $scope});
       $state = _$state_;
       sendMessageData = _sendMessageData_;
   }));
 
   it("Having a contact page controller", function () {
-    expect(contactPageCtrl).toBeDefined();
+    expect(contactCtrl).toBeDefined();
   });
 
   it("Having a function sendContactData for send data authorization", function () {
-    expect($scope.sendContactData).toBeDefined();
+    expect(contactCtrl.sendContactData).toBeDefined();
   });
 
   it("Class variable that stores the value of the class styles of animation,form is submitted", function() {
-    expect($scope.sendContactData).toBeDefined($scope.spinnerClass);
-    expect($scope.spinnerClass).toBeUndefined("loading");
-    $scope.sendContactData();
-    expect($scope.spinnerClass).toBeDefined("loading");
+    expect(contactCtrl.sendContactData).toBeDefined(contactCtrl.spinnerClass);
+    expect(contactCtrl.spinnerClass).toBeUndefined("loading");
+    contactCtrl.sendContactData();
+    expect(contactCtrl.spinnerClass).toBeDefined("loading");
   });
 
   it("Having a sevice for send data, used in function sendContactData", function() {
     expect(sendMessageData).toBeDefined();
     spyOn(sendMessageData, 'sendMessage').and.returnValue(deferred.promise);
-    $scope.sendContactData();
+    contactCtrl.sendContactData();
     expect(sendMessageData.sendMessage).toHaveBeenCalled();
   });
 

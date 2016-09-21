@@ -6,7 +6,19 @@ module.exports = function(module) {
   * This is the contact content controller.
   *
   **/
-  module.controller("contactPageCtrl", function($scope, sendMessageData, notify, $state) {
+  // angular
+  module
+  .controller('contactPageCtrl', contactPageCtrl);
+  contactPageCtrl.$inject = ['sendMessageData','notify','$state'];
+  function contactPageCtrl(sendMessageData, notify, $state) {
+    /**
+     * @ngdoc property
+     * @name vm
+     *
+     * @description
+     * vm is an instance of the current controller.
+     */
+    var vm = this;
     /**
     * @ngdoc function
     * @name sendDataRegistration
@@ -16,14 +28,14 @@ module.exports = function(module) {
     * @param {Object} data user entered by user in the form.
     *
     **/
-    $scope.sendContactData = function (data) {
+    vm.sendContactData = function(data) {
       /**
       * @ngdoc property
       * @name spinnerClass
       * @description
       * This property holds the value for ng-class in the form
       **/
-      $scope.spinnerClass = "loading";
+      vm.spinnerClass = "loading";
       /**
       * @ngdoc service
       * @name sendMessageData
@@ -35,7 +47,7 @@ module.exports = function(module) {
       },function () {
         notify({ message:'An error occurred on the server!', duration: '2000', position: "center", classes: "alert-danger"});
       });
-       notify({ message:'Your message has been successfully sent', position: "center", classes: "alert-success"});
-    }
-  });
+        notify({ message:'Your message has been successfully sent', duration: '2000', position: "center", classes: "alert-success"});
+    };
+  }
 };

@@ -2,11 +2,11 @@ describe('Check HomePage', function() {
   var buttonSlide = element(by.css('.btn-slider'));
   var namesButtonSlide = element.all(by.binding('btnSrc.btnName'));
   var bannerButtonSlide = element.all(by.binding('btnTitle.btnBanner'));
-  var linksSlider = element.all(by.repeater('photo in photos'));
+  var linksSlider = element.all(by.repeater('photo in vm.photos'));
   var headerGreeting = element(by.css('.header1-greeting-block'));
-  var servicesBlocks = element.all(by.repeater('block in serviceBlock'));
+  var servicesBlocks = element.all(by.repeater('block in vm.serviceBlock'));
   var headerStrategyBlock = element(by.css('.heading-strategy-block'));
-  var strategyBlock = element.all(by.repeater('list in strategyBlock'));
+  var strategyBlock = element.all(by.repeater('list in vm.strategyBlock'));
 
   var headersFooterBlock = element.all(by.css('.header-footer-column'));
 

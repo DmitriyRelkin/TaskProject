@@ -40,47 +40,56 @@ module.exports = function(module) {
 },{"./routerConfig.js":3}],3:[function(require,module,exports){
 module.exports = function(module) {
   "use strict";
-  module.config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/');
-    $stateProvider
-        /* HomePage */
-        .state('home', {
-            url: '/',
-            templateUrl: 'website/templates/home.html'
-        })
-        /* ContactPage */
-        .state('contacts', {
-            url: '/contacts',
-            templateUrl: 'website/templates/contacts.html'
-        })
-        /* BlogPage */
-        .state('blog', {
-            url: '/blog',
-            templateUrl: 'website/templates/blog.html'
-        })
-        /* RegistrationPage */
-        .state('reg', {
-            url: '/reg',
-            templateUrl: 'website/templates/registration.html'
-        })
-        /* AuthorizationPage */
-        .state('sig-in', {
-            url: '/sig-in',
-            templateUrl: 'website/templates/sig-in.html'
-        });
-  });
+
+// angular
+module
+.config(config);
+
+function config($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise('/');
+  $stateProvider
+    /* HomePage */
+    .state('home', {
+        url: '/',
+        templateUrl: 'website/templates/home.html',
+        controller: 'homePageCtrl',
+        controllerAs: 'vm'
+    })
+    /* ContactPage */
+    .state('contacts', {
+        url: '/contacts',
+        templateUrl: 'website/templates/contacts.html',
+        controller: 'contactPageCtrl',
+        controllerAs: 'vm'
+    })
+    /* BlogPage */
+    .state('blog', {
+        url: '/blog',
+        templateUrl: 'website/templates/blog.html',
+        controller: 'blogContentCtrl',
+        controllerAs: 'vm'
+    })
+    /* RegistrationPage */
+    .state('reg', {
+        url: '/reg',
+        templateUrl: 'website/templates/registration.html',
+        controller: 'registrationContentCtrl',
+        controllerAs: 'vm'
+    })
+    /* AuthorizationPage */
+    .state('sig-in', {
+        url: '/sig-in',
+        templateUrl: 'website/templates/sig-in.html',
+        controller: 'loginCtrl',
+        controllerAs: 'vm'
+    });
+  };
 };
 
 },{}],4:[function(require,module,exports){
 module.exports = function(module) {
-  /**
-  * @ngdoc controller
-  * @name sampleApp:blogContentCtrl
-  * @description
-  * This is the blog content controller.
-  *
-  **/
-  module.controller("blogContentCtrl", function($scope) {
+  // angular
+  // module.controller("blogContentCtrl", function($scope) {
     /**
     * @ngdoc property
     * @name blogContent
@@ -88,74 +97,93 @@ module.exports = function(module) {
     * It keeps the array, in which objects with links of pictures, headers, text content.
     *
     **/
-    $scope.blogContent = [
-      {depiction: "https://www.youtube.com/embed/2kodXWejuy0", type: "video", header:"YOUTUBE VIDEO", paragraph: "Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat."},
-      {depiction: "website/images/img-7.jpg", type: "photo", header:"ETIAM A ODIO NEC MI CONVALLIS MALESUADA", paragraph: "Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat."},
-      {depiction: "website/images/img-14.jpg", type: "photo", header:"NULLA NEC LIGULA RISUS", paragraph: "Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat."}
-    ];
-    /**
-    * @ngdoc property
-    * @name socialProperties
-    * @description
-    * It keeps the array, in which objects with links of text, and classes.
-    *
-    **/
-    $scope.socialProperties = [
-      {view: "admin", text: "admin"},
-      {view: "date", text: "April 29,2014"},
-      {view: "views", text: "136 view(s)"},
-      {view: "comments", text: "2 comment(s)"}
-    ];
-    /**
-    * @ngdoc property
-    * @name pollCategory
-    * @description
-    * It keeps the array, in which objects with text category.
-    *
-    **/
-    $scope.pollCategory = [
-      {category: "Condimentum tellus tellus"},
-      {category: "Condimentum tellus tellus"},
-      {category: "Lorem ipsum dolor sit amet"},
-      {category: "Lorem ipsum dolor sit amet"},
-      {category: "Netus et malesuada fames"},
-      {category: "Pellentesque habitant morbi"},
-      {category: "Quisque viverra leo id tincidunt"},
-      {category: "Tincidunt tellus id euismod"},
-      {category: "Tristique senectus et"},
-      {category: "Vestibulum ullamcorpermoles"}
-    ];
-    /**
-    * @ngdoc property
-    * @name pollLevel
-    * @description
-    * It keeps the array, parameters are stored for meters.
-    *
-    **/
-    $scope.pollLevel = [
-      {progress: "Super", percentage: 39, width: 39},
-      {progress: "God", percentage: 31, width: 31},
-      {progress: "Normal", percentage: 20, width: 20},
-      {progress: "Bad", percentage: 11, width: 11}
-    ];
-    /**
-    * @ngdoc property
-    * @name btnBlog
-    * @description
-    * It keeps the array, in which objects with buttons names.
-    *
-    **/
-    $scope.btnBlog = [{nameBtn: "READ MORE"},{nameBtn: "ADMIN'S BLOG"},{nameBtn: "2 COMMENTS"},{nameBtn: "LOG IN"}];
-    /**
-    * @ngdoc property
-    * @name btnBlogNav
-    * @description
-    * It keeps the array, in which objects with buttons navigation names.
-    *
-    **/
-    $scope.btnBlogNav = [{nameBtn: "1"},{nameBtn: "2"},{nameBtn: "LAST"},{nameBtn: "NEXT"}];
+    module
+    .controller('blogContentCtrl', blogContentCtrl);
+      function blogContentCtrl() {
+        /**
+    		 * @ngdoc property
+    		 * @name vm
+    		 *
+    		 * @description
+    		 * vm is an instance of the current controller.
+    		 */
+        var vm = this;
+        /**
+        * @ngdoc controller
+        * @name sampleApp:blogContentCtrl
+        * @description
+        * This is the blog content controller.
+        *
+        **/
+          vm.blogContent = [
+            {depiction: "https://www.youtube.com/embed/2kodXWejuy0", type: "video", header:"YOUTUBE VIDEO", paragraph: "Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat."},
+            {depiction: "website/images/img-7.jpg", type: "photo", header:"ETIAM A ODIO NEC MI CONVALLIS MALESUADA", paragraph: "Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat."},
+            {depiction: "website/images/img-14.jpg", type: "photo", header:"NULLA NEC LIGULA RISUS", paragraph: "Praesent sit amet ligula in ante aliquam pulvinar ac sit amet magna. Sed ut nisi at neque faucibus vehicula ut scelerisque justo. Phasellus semper faucibus tellus in lobortis. Nam odio metus, lacinia nec tristique ut, rutrum non mi. Aliquam suscipit consequat nibh, vel egestas dolor interdum nec. Praesent mattis odio mi, at vulputate ligula varius sed. Nulla a nulla viverra, ullamcorper orci vitae, tempor felis. In tempus justo vel felis posuere, a hendrerit nisi tincidunt. Aenean lobortis luctus orci, vitae euismod purus imperdiet placerat."}
+          ];
+          /**
+          * @ngdoc property
+          * @name socialProperties
+          * @description
+          * It keeps the array, in which objects with links of text, and classes.
+          *
+          **/
+          vm.socialProperties = [
+            {view: "admin", text: "admin"},
+            {view: "date", text: "April 29,2014"},
+            {view: "views", text: "136 view(s)"},
+            {view: "comments", text: "2 comment(s)"}
+          ];
+          /**
+          * @ngdoc property
+          * @name pollCategory
+          * @description
+          * It keeps the array, in which objects with text category.
+          *
+          **/
+          vm.pollCategory = [
+            {category: "Condimentum tellus tellus"},
+            {category: "Condimentum tellus tellus"},
+            {category: "Lorem ipsum dolor sit amet"},
+            {category: "Lorem ipsum dolor sit amet"},
+            {category: "Netus et malesuada fames"},
+            {category: "Pellentesque habitant morbi"},
+            {category: "Quisque viverra leo id tincidunt"},
+            {category: "Tincidunt tellus id euismod"},
+            {category: "Tristique senectus et"},
+            {category: "Vestibulum ullamcorpermoles"}
+          ];
+          /**
+          * @ngdoc property
+          * @name pollLevel
+          * @description
+          * It keeps the array, parameters are stored for meters.
+          *
+          **/
+          vm.pollLevel = [
+            {progress: "Super", percentage: 39, width: 39},
+            {progress: "God", percentage: 31, width: 31},
+            {progress: "Normal", percentage: 20, width: 20},
+            {progress: "Bad", percentage: 11, width: 11}
+          ];
+          /**
+          * @ngdoc property
+          * @name btnBlog
+          * @description
+          * It keeps the array, in which objects with buttons names.
+          *
+          **/
+          vm.btnBlog = [{nameBtn: "READ MORE"},{nameBtn: "ADMIN'S BLOG"},{nameBtn: "2 COMMENTS"},{nameBtn: "LOG IN"}];
+          /**
+          * @ngdoc property
+          * @name btnBlogNav
+          * @description
+          * It keeps the array, in which objects with buttons navigation names.
+          *
+          **/
+          vm.btnBlogNav = [{nameBtn: "1"},{nameBtn: "2"},{nameBtn: "LAST"},{nameBtn: "NEXT"}];
 
-  });
+        // });
+        }
 };
 
 },{}],5:[function(require,module,exports){
@@ -167,7 +195,19 @@ module.exports = function(module) {
   * This is the contact content controller.
   *
   **/
-  module.controller("contactPageCtrl", function($scope, sendMessageData, notify, $state) {
+  // angular
+  module
+  .controller('contactPageCtrl', contactPageCtrl);
+  contactPageCtrl.$inject = ['sendMessageData','notify','$state'];
+  function contactPageCtrl(sendMessageData, notify, $state) {
+    /**
+     * @ngdoc property
+     * @name vm
+     *
+     * @description
+     * vm is an instance of the current controller.
+     */
+    var vm = this;
     /**
     * @ngdoc function
     * @name sendDataRegistration
@@ -177,14 +217,14 @@ module.exports = function(module) {
     * @param {Object} data user entered by user in the form.
     *
     **/
-    $scope.sendContactData = function (data) {
+    vm.sendContactData = function(data) {
       /**
       * @ngdoc property
       * @name spinnerClass
       * @description
       * This property holds the value for ng-class in the form
       **/
-      $scope.spinnerClass = "loading";
+      vm.spinnerClass = "loading";
       /**
       * @ngdoc service
       * @name sendMessageData
@@ -196,9 +236,9 @@ module.exports = function(module) {
       },function () {
         notify({ message:'An error occurred on the server!', duration: '2000', position: "center", classes: "alert-danger"});
       });
-       notify({ message:'Your message has been successfully sent', position: "center", classes: "alert-success"});
-    }
-  });
+        notify({ message:'Your message has been successfully sent', duration: '2000', position: "center", classes: "alert-success"});
+    };
+  }
 };
 
 },{}],6:[function(require,module,exports){
@@ -210,90 +250,104 @@ module.exports = function(module) {
   * This is the home page content controller.
   *
   **/
-  module.controller("homePageCtrl", function($scope, $rootScope, $interval) {
-    /**
-    * @ngdoc property
-    * @name photos
-    * @description
-    * It keeps the array, in which objects with links of pictures, headers, button name, and button text.
-    **/
-    $scope.photos = [
+  // angular
+    module
+    .controller('homePageCtrl', homePageCtrl);
+
+    homePageCtrl.$inject = ['$rootScope', '$interval'];
+
+    function homePageCtrl($rootScope, $interval) {
+      /**
+       * @ngdoc property
+       * @name vm
+       *
+       * @description
+       * vm is an instance of the current controller.
+       */
+      var vm = this;
+      /**
+      * @ngdoc property
+      * @name photos
+      * @description
+      * It keeps the array, in which objects with links of pictures, headers, button name, and button text.
+      **/
+      vm.photos = [
         {src: "website/images/slide-1.jpg", active : true , btnName: "BUSINES WORKS WITH TECNOLOGY", btnBanner: "We added technology to strategy. You get the multiplier effect"},
         {src: "website/images/slide-2.jpg", active : false , btnName: "PROFESSIONAL CONSULTING SERVICES", btnBanner: "We are the trusted advisor to the world's leading businesses"},
         {src: "website/images/slide-3.jpg", active : false , btnName: "BROADEN YOUR MARKET EDGE", btnBanner: "We work with our clients as we do with our colleagues"},
         {src: "website/images/slide-4.jpg", active : false , btnName: "WE AREA NETWORK OF LEADERS", btnBanner: "We develop unparalleled management insights"}
-    ];
-    /**
-    * @ngdoc property
-    * @description
-    * For the initial display of the slider at the first page load
-    **/
-    $scope.photoSrc = $scope.photos[0];
-    $scope.btnSrc = $scope.photos[0];
-    $scope.btnTitle = $scope.photos[0];
-    /**
-    * @ngdoc function
-    * @name showSlide
-    * @description
-    * This function opens the selected slide by click
-    * @param [index]
-    **/
-    $scope.showSlide = function(index) {
-      $scope.photoSrc = $scope.photos[index];
-      $scope.btnSrc = $scope.photos[index];
-      $scope.btnTitle = $scope.photos[index];
-    };
-    /**
-    * @ngdoc property
-    * @name counter
-    * @description
-    * This property serves as a counter for the function, which switches the slides.
-    **/
-    $scope.counter = 0;
-    /**
-    * @ngdoc function
-    * @description
-    * This function which switches the slides
-    **/
-    $interval(function() {
-      $scope.counter++;
-      $scope.photoSrc = $scope.photos[$scope.counter];
-      $scope.btnSrc = $scope.photos[$scope.counter];
-      $scope.btnTitle = $scope.photos[$scope.counter];
-      for(var i = 0; i < $scope.photos.length; i++) {
-           $scope.photos[i].active = false;
-      }
-      $scope.photos[$scope.counter].active = true;
-      if ($scope.counter == 3) {
-        $scope.counter = -1;
-      }
-    }, 3000);
-    /**
-    * @ngdoc property
-    * @name serviceBlock
-    * @description
-    * It keeps the array, in which objects with links of pictures, headers, and paragraphs with text.
-    **/
-    $scope.serviceBlock = [
-      {srcImg: "/website/images/icon-service-1.png", header:"BUSINESS CONSULTING", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
-      {srcImg: "/website/images/icon-service-2.png", header:"ENTERPRISE APPLICATION", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
-      {srcImg: "/website/images/icon-service-3.png", header:"NEW STRATEGY", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
-      {srcImg: "/website/images/icon-service-4.png", header:"IT MANAGEMENT", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
-      {srcImg: "/website/images/icon-service-5.png", header:"OUTSOURSING", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
-      {srcImg: "/website/images/icon-service-6.png", header:"SALES & MARKETING", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"}
-    ];
-    /**
-    * @ngdoc property
-    * @name strategyBlock
-    * @description
-    * It keeps the array, in which objects with links of pictures, headers, items text.
-    **/
-    $scope.strategyBlock = [
-      {srcImg: "/website/images/page1_img1.jpg", header:"QUESTIONS TO ASK:", item1:"Analysing your organisation business model", item2:"Identifying development opportunities", item3:"Defining your objectives", item4:"Identifying the key factors for success"},
-      {srcImg: "/website/images/page1_img2.jpg", header:"THE COMPANY'S ROLE:", item1:"Identifying development opportunities", item2: "Analysing your organisation business model", item3:"Defining your objectives", item4:"Identifying the key factors for success"},
-      {srcImg: "/website/images/page1_img3.jpg", header:"OUR KEY OFFERS:", item1:"Defining your objectives", item2: "Analysing your organisation business model", item3:"Identifying development opportunities",  item4:"Identifying the key factors for success"}
-    ];
-  });
+      ];
+      /**
+      * @ngdoc property
+      * @description
+      * For the initial display of the slider at the first page load
+      **/
+      vm.photoSrc = vm.photos[0];
+      vm.btnSrc = vm.photos[0];
+      vm.btnTitle = vm.photos[0];
+      /**
+      * @ngdoc function
+      * @name showSlide
+      * @description
+      * This function opens the selected slide by click
+      * @param [index]
+      **/
+      vm.showSlide = function(index) {
+        vm.photoSrc = vm.photos[index];
+        vm.btnSrc = vm.photos[index];
+        vm.btnTitle = vm.photos[index];
+      };
+      /**
+      * @ngdoc property
+      * @name counter
+      * @description
+      * This property serves as a counter for the function, which switches the slides.
+      **/
+      vm.counter = 0;
+      /**
+      * @ngdoc function
+      * @description
+      * This function which switches the slides
+      **/
+      $interval(function() {
+        vm.counter++;
+        vm.photoSrc = vm.photos[vm.counter];
+        vm.btnSrc = vm.photos[vm.counter];
+        vm.btnTitle = vm.photos[vm.counter];
+        for(var i = 0; i < vm.photos.length; i++) {
+             vm.photos[i].active = false;
+        }
+        vm.photos[vm.counter].active = true;
+        if (vm.counter == 3) {
+          vm.counter = -1;
+        }
+      }, 3000);
+      /**
+      * @ngdoc property
+      * @name serviceBlock
+      * @description
+      * It keeps the array, in which objects with links of pictures, headers, and paragraphs with text.
+      **/
+      vm.serviceBlock = [
+        {srcImg: "/website/images/icon-service-1.png", header:"BUSINESS CONSULTING", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
+        {srcImg: "/website/images/icon-service-2.png", header:"ENTERPRISE APPLICATION", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
+        {srcImg: "/website/images/icon-service-3.png", header:"NEW STRATEGY", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
+        {srcImg: "/website/images/icon-service-4.png", header:"IT MANAGEMENT", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
+        {srcImg: "/website/images/icon-service-5.png", header:"OUTSOURSING", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"},
+        {srcImg: "/website/images/icon-service-6.png", header:"SALES & MARKETING", paragraph: "Vestibulum quis felis ut enim aliquam iaculis. Nullam pharetra tortor at quam viverra volutpat. Phasellus vel faucibus dolor. Curabitur"}
+      ];
+      /**
+      * @ngdoc property
+      * @name strategyBlock
+      * @description
+      * It keeps the array, in which objects with links of pictures, headers, items text.
+      **/
+      vm.strategyBlock = [
+        {srcImg: "/website/images/page1_img1.jpg", header:"QUESTIONS TO ASK:", item1:"Analysing your organisation business model", item2:"Identifying development opportunities", item3:"Defining your objectives", item4:"Identifying the key factors for success"},
+        {srcImg: "/website/images/page1_img2.jpg", header:"THE COMPANY'S ROLE:", item1:"Identifying development opportunities", item2: "Analysing your organisation business model", item3:"Defining your objectives", item4:"Identifying the key factors for success"},
+        {srcImg: "/website/images/page1_img3.jpg", header:"OUR KEY OFFERS:", item1:"Defining your objectives", item2: "Analysing your organisation business model", item3:"Identifying development opportunities",  item4:"Identifying the key factors for success"}
+      ];
+    }
 };
 
 },{}],7:[function(require,module,exports){
@@ -314,7 +368,19 @@ module.exports = function(module) {
   * This is the login page controller
   *
   **/
-  module.controller("loginCtrl", function ($scope, authService, $state) {
+  // angular
+  module
+  .controller('loginCtrl', loginCtrl);
+  loginCtrl.$inject = ['authService', '$state'];
+  function loginCtrl(authService, $state) {
+    /**
+     * @ngdoc property
+     * @name vm
+     *
+     * @description
+     * vm is an instance of the current controller.
+     */
+    var vm = this;
     /**
     * @ngdoc function
     * @name sendDataLogin
@@ -324,14 +390,14 @@ module.exports = function(module) {
     * @param {Object} data user entered by user in the form.
     *
     **/
-    $scope.sendDataLogin = function (data) {
+    vm.sendDataLogin = function(data) {
       /**
       * @ngdoc property
       * @name spinnerClass
       * @description
       * This property holds the value for ng-class in the form
       **/
-      $scope.spinnerClass = "loading";
+      vm.spinnerClass = "loading";
       /**
       * @ngdoc service
       * @name authService
@@ -344,7 +410,7 @@ module.exports = function(module) {
         notify({ message:'An error occurred on the server!', duration: '2000', position: "center", classes: "alert-danger"});
       });
     }
-  });
+  }
 };
 
 },{}],9:[function(require,module,exports){
@@ -356,37 +422,49 @@ module.exports = function(module) {
   * This is the registration content controller.
   *
   **/
-  module.controller("registrationContentCtrl", function($scope, authService, $state) {
-    /**
-    * @ngdoc function
-    * @name sendDataRegistration
-    * @description
-    * This function send data, entered by the user in the form registration.
-    *
-    * @param {Object} data user entered by user in the form.
-    *
-    **/
-    $scope.sendDataRegistration = function (data) {
+  // angular
+    module
+    .controller('registrationContentCtrl', registrationContentCtrl);
+    registrationContentCtrl.$inject = ['authService', '$state'];
+    function registrationContentCtrl(authService, $state) {
       /**
-      * @ngdoc property
-      * @name spinnerClass
-      * @description
-      * This property holds the value for ng-class in the form
-      **/
-      $scope.spinnerClass = "loading";
+       * @ngdoc property
+       * @name vm
+       *
+       * @description
+       * vm is an instance of the current controller.
+       */
+      var vm = this;
       /**
-      * @ngdoc service
-      * @name authService
+      * @ngdoc function
+      * @name sendDataRegistration
       * @description
-      * This is service for to send post data
+      * This function send data, entered by the user in the form registration.
+      *
+      * @param {Object} data user entered by user in the form.
+      *
       **/
-      authService.sendRegistration(data).then(function () {
-        $state.go("home");
-      },function () {
-        notify({ message:'An error occurred on the server!', duration: '2000', position: "center", classes: "alert-danger"});
-      });
+        vm.sendDataRegistration = function(data) {
+          /**
+          * @ngdoc property
+          * @name spinnerClass
+          * @description
+          * This property holds the value for ng-class in the form
+          **/
+          vm.spinnerClass = "loading";
+          /**
+          * @ngdoc service
+          * @name authService
+          * @description
+          * This is service for to send post data
+          **/
+          authService.sendRegistration(data).then(function () {
+            $state.go("home");
+          },function () {
+            notify({ message:'An error occurred on the server!', duration: '2000', position: "center", classes: "alert-danger"});
+          });
+      }
     }
-  });
 };
 
 },{}],10:[function(require,module,exports){
@@ -671,7 +749,10 @@ module.exports = function(module) {
   *	This is service for to send post data, come to the registration page and login.
   *
   **/
-  module.factory("authService", function ($http) {
+  module
+  .factory('authService', authService);
+    authService.$inject = ['$http'];
+    function authService($http) {
       var data;
       return {
           sendRegistration: sendRegistration,
@@ -702,7 +783,7 @@ module.exports = function(module) {
       function sendLogin(data) {
         return $http.post("/sig-in", data);
       }
-  });
+    }
 };
 
 },{}],19:[function(require,module,exports){
@@ -721,7 +802,10 @@ module.exports = function(module) {
   *	This is service for to send post data, come to the contact page
   *
   **/
-  module.factory("sendMessageData", function ($http) {
+  module
+  .factory('sendMessageData', sendMessageData);
+    sendMessageData.$inject = ['$http'];
+    function sendMessageData($http) {
       var data;
       return {
           sendMessage: sendMessage
@@ -738,7 +822,7 @@ module.exports = function(module) {
       function sendMessage(data) {
         return  $http.post("/contacts", data);
       }
-  });
+  }
 };
 
 },{}]},{},[1])

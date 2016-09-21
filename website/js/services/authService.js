@@ -7,7 +7,10 @@ module.exports = function(module) {
   *	This is service for to send post data, come to the registration page and login.
   *
   **/
-  module.factory("authService", function ($http) {
+  module
+  .factory('authService', authService);
+    authService.$inject = ['$http'];
+    function authService($http) {
       var data;
       return {
           sendRegistration: sendRegistration,
@@ -38,5 +41,5 @@ module.exports = function(module) {
       function sendLogin(data) {
         return $http.post("/sig-in", data);
       }
-  });
+    }
 };

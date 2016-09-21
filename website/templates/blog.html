@@ -1,15 +1,15 @@
 <div class="container wrapper-content-blog-page">
 	<div class="hidden-xs goToTop" back-to-top ng-include="'website/templates/components/backToTop.html'"></div>
 	<div class="row content-blog-page">
-		<div class="col-sm-12 wrapper-columns" ng-controller="blogContentCtrl">
+		<div class="col-sm-12 wrapper-columns">
 			<div class="col-sm-8 blog-column">
 				<h2 class="header-blog">BLOG</h2>
 				<div class="col-sm-12 content-blog-column">
-					<div class="note-blog" ng-repeat="block in blogContent">
+					<div class="note-blog" ng-repeat="block in vm.blogContent">
 						<h2>{{block.header}}</h2>
 						<div class="note-blog-property">
 							<ul class="blog-social-properties">
-								<li ng-repeat="link in socialProperties" ng-class="{'active': photo.active}" class="{{link.view}}" >{{link.text}}</li>
+								<li ng-repeat="link in vm.socialProperties" ng-class="{'active': photo.active}" class="{{link.view}}" >{{link.text}}</li>
 							</ul>
 						</div>
 						<div ng-if="block.type == 'photo'" class="note-depiction">
@@ -21,23 +21,23 @@
 							</div>
 						</div>
 						<p class="paragraph-note-blog">{{block.paragraph}}</p>
-						<button type="button" class="btn btn-default content-button" ng-repeat="name in btnBlog">{{name.nameBtn}}</button>
+						<button type="button" class="btn btn-default content-button" ng-repeat="name in vm.btnBlog">{{name.nameBtn}}</button>
 					</div>
 				</div>
 				<div class="nav-blog">
 					<div class="col-sm-12">
-						<button type="button" class="btn btn-default content-button nav-buttons-blog" ng-repeat="name in btnBlogNav">{{name.nameBtn}}</button>
+						<button type="button" class="btn btn-default content-button nav-buttons-blog" ng-repeat="name in vm.btnBlogNav">{{name.nameBtn}}</button>
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-4 categories-column">
 				<h2 class="header-blog">CATEGORIES</h2>
 				<ul class="blog-category">
-					<li ng-repeat="name in pollCategory"><a href="#">{{name.category}}</a></li>
+					<li ng-repeat="name in vm.pollCategory"><a href="#">{{name.category}}</a></li>
 				</ul>
 				<h2 class="header-blog">POLL</h2>
 				<div class="poll-level">
-					<div class="wrapper-poll-progress" ng-repeat="meter in pollLevel">
+					<div class="wrapper-poll-progress" ng-repeat="meter in vm.pollLevel">
 						<span class="state-level-poll-progress">{{meter.progress}}</span>
 						<span class="percentage-score">{{meter.percentage}}%</span>
 						<div class="progress poll-progress">

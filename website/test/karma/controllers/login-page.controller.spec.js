@@ -28,20 +28,20 @@ describe('Controller: loginCtrl', function () {
   });
 
   it("Having a function sendDataLogin for send data authorization", function () {
-    expect($scope.sendDataLogin).toBeDefined();
+    expect(loginCtrl.sendDataLogin).toBeDefined();
   });
 
   it("Class variable that stores the value of the class styles of animation,form is submitted", function() {
-    expect($scope.sendDataLogin).toBeDefined($scope.spinnerClass);
-    expect($scope.spinnerClass).toBeUndefined("loading");
-    $scope.sendDataLogin();
-    expect($scope.spinnerClass).toBeDefined("loading");
+    expect(loginCtrl.sendDataLogin).toBeDefined(loginCtrl.spinnerClass);
+    expect(loginCtrl.spinnerClass).toBeUndefined("loading");
+    loginCtrl.sendDataLogin();
+    expect(loginCtrl.spinnerClass).toBeDefined("loading");
   });
 
   it("Having a sevice for send data, used in function sendDataLogin", function() {
     expect(authService).toBeDefined();
     spyOn(authService, 'sendLogin').and.returnValue(deferred.promise);
-    $scope.sendDataLogin();
+    loginCtrl.sendDataLogin();
     expect(authService.sendLogin).toHaveBeenCalled();
   });
 });

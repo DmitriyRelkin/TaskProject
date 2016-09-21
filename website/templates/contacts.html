@@ -1,4 +1,4 @@
-<div class="container wrapper-content-contacts" ng-controller="contactPageCtrl">
+<div class="container wrapper-content-contacts">
 	<div class="row content-contacts">
 		<div class="col-sm-12 wrapper-map-contacts">
 			<h2 class="header-contacts">OUR LOCATION</h2>
@@ -7,7 +7,7 @@
 		<div class="col-sm-12 wrapper-columns-contacts">
 			<div class="col-sm-6 form-column">
 				<h2 class="article-contacts">CONTACT FORM</h2>
-				<form class="form-contact" name="contactForm" novalidate ng-submit="sendContactData(formData)">
+				<form class="form-contact" name="contactForm" novalidate ng-submit="vm.sendContactData(formData)">
 		     	<div class="form-group form-contacts-name">
 	     	    <label>Your name</label>
 	     	    <input name="name" type="text" placeholder="Full Name" validate-fullname class="form-control" required ng-model="formData.contact.name">

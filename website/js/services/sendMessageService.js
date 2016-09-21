@@ -7,7 +7,10 @@ module.exports = function(module) {
   *	This is service for to send post data, come to the contact page
   *
   **/
-  module.factory("sendMessageData", function ($http) {
+  module
+  .factory('sendMessageData', sendMessageData);
+    sendMessageData.$inject = ['$http'];
+    function sendMessageData($http) {
       var data;
       return {
           sendMessage: sendMessage
@@ -24,5 +27,5 @@ module.exports = function(module) {
       function sendMessage(data) {
         return  $http.post("/contacts", data);
       }
-  });
+  }
 };

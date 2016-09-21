@@ -12128,6 +12128,7 @@ button.close {
           .wrapper-footer-block .footer-block .footer-column ul li a {
             color: #858686; }
     .wrapper-footer-block .footer-block .social-footer-block {
+      overflow: hidden;
       border-left: 1px solid #5b5b5b;
       padding: 0;
       padding-left: 20px; }

@@ -5,7 +5,7 @@ describe('Controller: homePageCtrl', function () {
   var $controller,
       $rootScope,
       $scope,
-      homePageCtrl,
+      homeCtrl,
       $httpBackend,
       $interval;
 
@@ -17,40 +17,40 @@ describe('Controller: homePageCtrl', function () {
     $controller = _$controller_;
     $rootScope = _$rootScope_;
     $scope = $rootScope.$new();
-    homePageCtrl = $controller('homePageCtrl', {$scope: $scope});
+    homeCtrl = $controller('homePageCtrl', {$scope: $scope});
     $interval = _$interval_;
   }));
 
   it("Having a home page controller", function () {
-    expect(homePageCtrl).toBeDefined();
+    expect(homeCtrl).toBeDefined();
   });
 
   it("Having a properties photos", function () {
-    expect($scope.photos).toBeDefined();
-    expect($scope.photos.length).toEqual(4);
+    expect(homeCtrl.photos).toBeDefined();
+    expect(homeCtrl.photos.length).toEqual(4);
   });
 
   it("Argument function showSlide the is properties photos.src", function () {
-    expect($scope.showSlide()).toEqual($scope.photos.src);
+    expect(homeCtrl.showSlide()).toEqual(homeCtrl.photos.src);
   });
 
   it("Counter change for changing slides", function () {
-    expect($scope.counter).toBe(0);
+    expect(homeCtrl.counter).toBe(0);
     $interval.flush(3000);
     $scope.$digest();
-    expect($scope.counter).toBe(1);
+    expect(homeCtrl.counter).toBe(1);
     $scope.$digest();
     $interval.flush(3000);
   });
 
   it("Having a properties serviceBlock", function () {
-    expect($scope.serviceBlock).toBeDefined();
-    expect($scope.serviceBlock.length).toEqual(6);
+    expect(homeCtrl.serviceBlock).toBeDefined();
+    expect(homeCtrl.serviceBlock.length).toEqual(6);
   });
 
   it("Having a properties strategyBlock", function () {
-    expect($scope.strategyBlock).toBeDefined();
-    expect($scope.strategyBlock.length).toEqual(3);
+    expect(homeCtrl.strategyBlock).toBeDefined();
+    expect(homeCtrl.strategyBlock.length).toEqual(3);
   });
 
 });

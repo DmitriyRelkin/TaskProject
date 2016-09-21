@@ -1,9 +1,9 @@
 describe('Check BlogPage', function() {
   var titles = element.all(by.css(".header-blog"));
   var socialProp = element.all(by.css(".blog-social-properties li"));
-  var themeBlog = element.all(by.repeater('block in blogContent'));
-  var blogCategory = element.all(by.repeater('name in pollCategory'));
-  var meterProgress = element.all(by.repeater('meter in pollLevel'));
+  var themeBlog = element.all(by.repeater('block in vm.blogContent'));
+  var blogCategory = element.all(by.repeater('name in vm.pollCategory'));
+  var meterProgress = element.all(by.repeater('meter in vm.pollLevel'));
 
   //   var linksHeader = element.all(by.css('.links-navigation li > a'));
 
