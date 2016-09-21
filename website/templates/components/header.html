@@ -1,6 +1,5 @@
 <nav class="navbar navbar-default navbar-fixed-top main-header" role="navigation">
   <div class="container-fluid content-main-header">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="container-fluid navbar-header wrapper-header-logo">
       <button type="button" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed" class="navbar-toggle collapsed" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         <span class="sr-only">Toggle navigation</span>
@@ -12,7 +11,7 @@
     </div>
     <div class="collapse navbar-collapse links-main-header" ng-class="!navCollapsed && 'in'" >
       <ul class="nav navbar-nav links-navigation" ng-click="navCollapsed = true">
-        <li ng-class="{active: $state.includes('home')}"><a ui-sref="home">HOME <span class="sr-only">(current)</span></a></li>
+        <li ng-class="{active: $state.includes('home')}"><a ui-sref="home">HOME</a></li>
         <li ng-class="{active: $state.includes('contacts')}"><a ui-sref="contacts">CONTACTS</a></li>
         <li ng-class="{active: $state.includes('blog')}"><a ui-sref="blog">BLOG</a></li>
         <li ng-class="{active: $state.includes('reg')}"><a ui-sref="reg">REGISTRATION</a></li>
@@ -24,6 +23,6 @@
           <a><i class="glyphicon glyphicon-search search-icon"></i></a>
         </div>
       </form>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>

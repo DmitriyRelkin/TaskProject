@@ -21,6 +21,19 @@ module.exports = function(module) {
     ];
     /**
     * @ngdoc property
+    * @name socialProperties
+    * @description
+    * It keeps the array, in which objects with links of text, and classes.
+    *
+    **/
+    $scope.socialProperties = [
+      {view: "admin", text: "admin"},
+      {view: "date", text: "April 29,2014"},
+      {view: "views", text: "136 view(s)"},
+      {view: "comments", text: "2 comment(s)"}
+    ];
+    /**
+    * @ngdoc property
     * @name pollCategory
     * @description
     * It keeps the array, in which objects with text category.

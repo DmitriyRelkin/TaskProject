@@ -1,9 +1,12 @@
 describe('Check BlogPage', function() {
   var titles = element.all(by.css(".header-blog"));
-  var socialProp = element.all(by.css(".note-blog-property"));
+  var socialProp = element.all(by.css(".blog-social-properties li"));
   var themeBlog = element.all(by.repeater('block in blogContent'));
   var blogCategory = element.all(by.repeater('name in pollCategory'));
   var meterProgress = element.all(by.repeater('meter in pollLevel'));
+
+  //   var linksHeader = element.all(by.css('.links-navigation li > a'));
+
 
   beforeEach(function() {
     browser.get('http://localhost:8000/#/blog');
@@ -16,8 +19,11 @@ describe('Check BlogPage', function() {
     expect(titles.get(2).getText()).toEqual('POLL');
   });
 
-  it("Have a social properties in blog theme",function () {
-    expect(socialProp.getText()).toEqual[ 'adminApril 29,2014136 view(s)2 comment(s)', 'adminApril 29,2014136 view(s)2 comment(s)', 'adminApril 29,2014136 view(s)2 comment(s)' ];
+  it("Text content of social properties in blog theme",function () {
+    expect(socialProp.get(0).getText()).toEqual('admin');
+    expect(socialProp.get(1).getText()).toEqual('April 29,2014');
+    expect(socialProp.get(2).getText()).toEqual('136 view(s)');
+    expect(socialProp.get(3).getText()).toEqual('2 comment(s)');
   });
 
   it("The number of theme in the blog content", function() {
@@ -44,5 +50,4 @@ describe('Check BlogPage', function() {
   it("Have a meter progress in blog content", function() {
     expect(meterProgress.count()).toEqual(4);
   })
-
 });

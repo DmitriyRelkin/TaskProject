@@ -12242,6 +12242,10 @@ h4 {
       text-align: left; }
     .wrapper-content-blog-page .content-blog-page .wrapper-columns .blog-column .content-blog-column .note-blog .note-blog-property {
       margin: 2% 0 3% 0; }
+      .wrapper-content-blog-page .content-blog-page .wrapper-columns .blog-column .content-blog-column .note-blog .note-blog-property .blog-social-properties {
+        list-style: none; }
+        .wrapper-content-blog-page .content-blog-page .wrapper-columns .blog-column .content-blog-column .note-blog .note-blog-property .blog-social-properties li {
+          display: inline-block; }
     .wrapper-content-blog-page .content-blog-page .wrapper-columns .blog-column .content-blog-column .note-blog .note-depiction {
       padding: 6px;
       background: #fff;

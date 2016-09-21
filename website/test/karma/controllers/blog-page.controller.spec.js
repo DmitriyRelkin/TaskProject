@@ -30,6 +30,11 @@ describe('Controller: blogContentCtrl', function () {
     expect($scope.blogContent.length).toEqual(3);
   });
 
+  it("Having a blog social properties property", function() {
+    expect($scope.socialProperties).toBeDefined();
+    expect($scope.socialProperties.length).toEqual(4);
+  });
+
   it("Having a poll level property", function() {
     expect($scope.pollLevel).toBeDefined();
     expect($scope.pollLevel.length).toEqual(4);

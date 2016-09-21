@@ -26,6 +26,12 @@
 							.comments {
 								@extend %coment;
 							}
+							.blog-social-properties {
+								list-style: none;
+								li {
+									display: inline-block;
+								}
+							}
 						}
 						.note-depiction {
 						    padding: 6px;
