@@ -7,6 +7,8 @@ describe('Check ContactPage', function() {
   var message = element(by.model('formData.contact.message') );
   var submit = element(by.css(".sendTest"));
   var params = {login: {user: 'Niko Belik',password: '123456', email: 'mail@mail.com', subject: 'subject', message: 'message'}}
+  var EC = protractor.ExpectedConditions;
+
 
   beforeEach(function() {
     browser.get('http://localhost:8000/#/contacts');
@@ -28,5 +30,6 @@ describe('Check ContactPage', function() {
     expect(subject.sendKeys(params.login.subject));
     expect(message.sendKeys(params.login.message));
     expect(submit.click());
+    browser.wait(EC.visibilityOf($('.cg-notify-message')), 5000);
   });
 });

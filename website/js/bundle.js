@@ -196,7 +196,7 @@ module.exports = function(module) {
       },function () {
         notify({ message:'An error occurred on the server!', duration: '2000', position: "center", classes: "alert-danger"});
       });
-       notify({ message:'Your message has been successfully sent', duration: '2000', position: "center", classes: "alert-success"});
+       notify({ message:'Your message has been successfully sent', position: "center", classes: "alert-success"});
     }
   });
 };
