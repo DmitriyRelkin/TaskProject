@@ -9,7 +9,6 @@ at the terminal in the directory with the project.
 --------------------------
 1) angular#~1.3 which resolved to 1.3.20 and is required by angular-notify#2.5.0
 2) angular#^1.5.7 which resolved to 1.5.8 and is required by Task Project
---------------------------
 
 After that, you need to run gulp by typing in the console, command 'gulp'
 at the terminal in the directory with the project
@@ -29,6 +28,5 @@ karma **start karma.config.js**
 
 You need to run Selenium Server, typing in the console, command **webdriver-manager start**
 at the terminal in the directory with the project.
---------------------------  
 Once, in the new terminal window typing in the console, command **protractor protractor.config.js**
 at the terminal in the directory with the project.
