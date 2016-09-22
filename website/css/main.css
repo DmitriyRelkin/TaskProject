@@ -12271,6 +12271,8 @@ h4 {
     padding: 0; }
     .wrapper-content-blog-page .content-blog-page .wrapper-columns .categories-column .blog-category li {
       list-style-type: none; }
+      .wrapper-content-blog-page .content-blog-page .wrapper-columns .categories-column .blog-category li a:hover {
+        color: #dc6226; }
   .wrapper-content-blog-page .content-blog-page .wrapper-columns .categories-column .poll-level {
     margin-top: 5%; }
     .wrapper-content-blog-page .content-blog-page .wrapper-columns .categories-column .poll-level .total-votes {

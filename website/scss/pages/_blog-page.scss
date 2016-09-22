@@ -61,12 +61,17 @@
 				.blog-category {
 					margin-top: 10%;
 					padding: 0;
+
 					li {
+
 						list-style-type: none;
 						@extend %chekmark-strategy-block;
 						@extend %links-strategy-block;
 						a {
 							@extend %content-links;
+							&:hover {
+								color: $main-orange-content;
+							}
 						}
 					}
 				}

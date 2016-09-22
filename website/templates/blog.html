@@ -9,7 +9,7 @@
 						<h2>{{block.header}}</h2>
 						<div class="note-blog-property">
 							<ul class="blog-social-properties">
-								<li ng-repeat="link in vm.socialProperties" ng-class="{'active': photo.active}" class="{{link.view}}" >{{link.text}}</li>
+								<li ng-repeat="link in vm.socialProperties" class="{{link.view}}" >{{link.text}}</li>
 							</ul>
 						</div>
 						<div ng-if="block.type == 'photo'" class="note-depiction">
