@@ -42,7 +42,7 @@ module.exports = function(module) {
       * @description
       * This is service for to send post data
       **/
-      sendMessageData.sendMessage(data).then(function () {
+      sendMessageData.send(data).then(function () {
         $state.go("home");
       },function () {
         notify({ message:'An error occurred on the server!', duration: '2000', position: "center", classes: "alert-danger"});

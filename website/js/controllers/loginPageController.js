@@ -12,12 +12,12 @@ module.exports = function(module) {
   loginCtrl.$inject = ['authService', '$state'];
   function loginCtrl(authService, $state) {
     /**
-     * @ngdoc property
-     * @name vm
-     *
-     * @description
-     * vm is an instance of the current controller.
-     */
+    * @ngdoc property
+    * @name vm
+    *
+    * @description
+    * vm is an instance of the current controller.
+    */
     var vm = this;
     /**
     * @ngdoc function

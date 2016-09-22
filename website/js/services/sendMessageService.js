@@ -13,18 +13,17 @@ module.exports = function(module) {
     function sendMessageData($http) {
       var data;
       return {
-          sendMessage: sendMessage
+          send: send
       };
       /**
       * @ngdoc function
-      * @name sendRegistration
       * @description
       * This function for to send post data, entered by the user in the form contact-message.
       *
       * @param {Object} data user entered by user in the form.
       *
       **/
-      function sendMessage(data) {
+      function send(data) {
         return  $http.post("/contacts", data);
       }
   }

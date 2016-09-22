@@ -41,9 +41,9 @@ describe('Controller: contactPageCtrl', function () {
 
   it("Having a sevice for send data, used in function sendContactData", function() {
     expect(sendMessageData).toBeDefined();
-    spyOn(sendMessageData, 'sendMessage').and.returnValue(deferred.promise);
+    spyOn(sendMessageData, 'send').and.returnValue(deferred.promise);
     contactCtrl.sendContactData();
-    expect(sendMessageData.sendMessage).toHaveBeenCalled();
+    expect(sendMessageData.send).toHaveBeenCalled();
   });
 
 });

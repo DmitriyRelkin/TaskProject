@@ -28,25 +28,25 @@ module.exports = function(module) {
       * @param {Object} data user entered by user in the form.
       *
       **/
-        vm.sendDataRegistration = function(data) {
-          /**
-          * @ngdoc property
-          * @name spinnerClass
-          * @description
-          * This property holds the value for ng-class in the form
-          **/
-          vm.spinnerClass = "loading";
-          /**
-          * @ngdoc service
-          * @name authService
-          * @description
-          * This is service for to send post data
-          **/
-          authService.sendRegistration(data).then(function () {
-            $state.go("home");
-          },function () {
-            notify({ message:'An error occurred on the server!', duration: '2000', position: "center", classes: "alert-danger"});
-          });
+      vm.sendDataRegistration = function(data) {
+        /**
+        * @ngdoc property
+        * @name spinnerClass
+        * @description
+        * This property holds the value for ng-class in the form
+        **/
+        vm.spinnerClass = "loading";
+        /**
+        * @ngdoc service
+        * @name authService
+        * @description
+        * This is service for to send post data
+        **/
+        authService.sendRegistration(data).then(function () {
+          $state.go("home");
+        },function () {
+          notify({ message:'An error occurred on the server!', duration: '2000', position: "center", classes: "alert-danger"});
+        });
       }
     }
 };

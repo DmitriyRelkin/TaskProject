@@ -231,7 +231,7 @@ module.exports = function(module) {
       * @description
       * This is service for to send post data
       **/
-      sendMessageData.sendMessage(data).then(function () {
+      sendMessageData.send(data).then(function () {
         $state.go("home");
       },function () {
         notify({ message:'An error occurred on the server!', duration: '2000', position: "center", classes: "alert-danger"});
@@ -374,12 +374,12 @@ module.exports = function(module) {
   loginCtrl.$inject = ['authService', '$state'];
   function loginCtrl(authService, $state) {
     /**
-     * @ngdoc property
-     * @name vm
-     *
-     * @description
-     * vm is an instance of the current controller.
-     */
+    * @ngdoc property
+    * @name vm
+    *
+    * @description
+    * vm is an instance of the current controller.
+    */
     var vm = this;
     /**
     * @ngdoc function
@@ -444,25 +444,25 @@ module.exports = function(module) {
       * @param {Object} data user entered by user in the form.
       *
       **/
-        vm.sendDataRegistration = function(data) {
-          /**
-          * @ngdoc property
-          * @name spinnerClass
-          * @description
-          * This property holds the value for ng-class in the form
-          **/
-          vm.spinnerClass = "loading";
-          /**
-          * @ngdoc service
-          * @name authService
-          * @description
-          * This is service for to send post data
-          **/
-          authService.sendRegistration(data).then(function () {
-            $state.go("home");
-          },function () {
-            notify({ message:'An error occurred on the server!', duration: '2000', position: "center", classes: "alert-danger"});
-          });
+      vm.sendDataRegistration = function(data) {
+        /**
+        * @ngdoc property
+        * @name spinnerClass
+        * @description
+        * This property holds the value for ng-class in the form
+        **/
+        vm.spinnerClass = "loading";
+        /**
+        * @ngdoc service
+        * @name authService
+        * @description
+        * This is service for to send post data
+        **/
+        authService.sendRegistration(data).then(function () {
+          $state.go("home");
+        },function () {
+          notify({ message:'An error occurred on the server!', duration: '2000', position: "center", classes: "alert-danger"});
+        });
       }
     }
 };
@@ -804,18 +804,17 @@ module.exports = function(module) {
     function sendMessageData($http) {
       var data;
       return {
-          sendMessage: sendMessage
+          send: send
       };
       /**
       * @ngdoc function
-      * @name sendRegistration
       * @description
       * This function for to send post data, entered by the user in the form contact-message.
       *
       * @param {Object} data user entered by user in the form.
       *
       **/
-      function sendMessage(data) {
+      function send(data) {
         return  $http.post("/contacts", data);
       }
   }
