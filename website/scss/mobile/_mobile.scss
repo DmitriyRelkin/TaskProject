@@ -30,15 +30,19 @@
 	.social-footer-block {
 		border: none!important;
 	}
+
 	.blog-column {
-		.nav-buttons-blog {
-			font-size: 12px;
-			margin-right: 1px;
-		}
-		.note-blog-property {
-			span {
+		.content-blog-column {
+			.blog-topic-title {
+				text-align: center!important;
+			}
+			.nav-buttons-blog {
+				font-size: 12px;
+				margin-right: 1px;
 			}
 		}
+
+
 	}
 	.footer {
 		font-size: 89%;

@@ -6,10 +6,10 @@
 				<h2 class="header-blog">BLOG</h2>
 				<div class="col-sm-12 content-blog-column">
 					<div class="note-blog" ng-repeat="block in vm.blogContent">
-						<h2>{{block.header}}</h2>
+						<h2 class="blog-topic-title">{{block.header}}</h2>
 						<div class="note-blog-property">
 							<ul class="blog-social-properties">
-								<li ng-repeat="link in vm.socialProperties" class="{{link.view}}" >{{link.text}}</li>
+								<li ng-repeat="link in vm.socialProperties" ng-class="link.view" >{{link.text}}</li>
 							</ul>
 						</div>
 						<div ng-if="block.type == 'photo'" class="note-depiction">
