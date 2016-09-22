@@ -1,7 +1,7 @@
 ## 1.Launch of the project
 
 After downloading the project
-Need to install dependencies, you need to run gulp by typing in the console, command **bower i && npm i**
+Need to install dependencies, by typing in the console, command **bower i && npm i**
 at the terminal in the directory with the project.
 
 **Unable to find a suitable version for angular, please choose one by typing one of the numbers below:**
