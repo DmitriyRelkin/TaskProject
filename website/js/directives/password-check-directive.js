@@ -16,11 +16,10 @@ module.exports = function(module) {
         scope: {
           passwordVerify: '='
         },
-        link: passwordCheck
+        link: link
      };
      /**
    		* @ngdoc function
-   		* @name passwordCheck
    		*
    		* @param ($scope, elm, attrs, ctrl)  house element to which it is connected directive, elements belonging to the attribute, and ngModelController
    		*
@@ -29,7 +28,7 @@ module.exports = function(module) {
    		*
       * @return {Bolean}
    		**/
-      function passwordCheck(scope, element, attrs, ctrl) {
+      function link (scope, element, attrs, ctrl) {
         scope.$watch(function() {
             var combined;
 

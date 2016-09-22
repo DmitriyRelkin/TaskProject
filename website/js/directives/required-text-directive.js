@@ -15,11 +15,10 @@ module.exports = function(module) {
     return {
       restrict: 'A',
       require: 'ngModel',
-      link: requiredText
+      link: link
       };
       /**
   		* @ngdoc function
-  		* @name requiredText
   		*
   		* @param ($scope, elm, attrs, ctrl)  house element to which it is connected directive, elements belonging to the attribute, and ngModelController
   		*
@@ -28,7 +27,7 @@ module.exports = function(module) {
   		*
       * @return {Bolean}
   		**/
-      function requiredText(scope, elm, attrs, ctrl) {
+      function link (scope, elm, attrs, ctrl) {
         ctrl.$validators['mandatory'] = function(modelValue) {
           return ctrl.$isEmpty(modelValue) || TEXT_REGEXP.test(modelValue);
         };

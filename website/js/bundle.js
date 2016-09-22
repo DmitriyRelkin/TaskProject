@@ -535,11 +535,10 @@ module.exports = function(module) {
     return {
       restrict: 'A',
       require: 'ngModel',
-      link: emailInspection
+      link: link
     };
     /**
 		* @ngdoc function
-		* @name emailInspection
 		*
 		* @param ($scope, elm, attrs, ctrl)  house element to which it is connected directive, elements belonging to the attribute, and ngModelController
 		*
@@ -548,7 +547,7 @@ module.exports = function(module) {
 		*
     * @return {Bolean}
 		**/
-    function emailInspection(scope, elm, attrs, ctrl) {
+    function link (scope, elm, attrs, ctrl) {
       /* only apply the validator if ngModel is present and Angular has added the email validator */
       if (ctrl && ctrl.$validators.email) {
         /* this will overwrite the default Angular email validator */
@@ -579,11 +578,10 @@ module.exports = function(module) {
     return {
       restrict: 'A',
       require: 'ngModel',
-      link: fullNameInspection
+      link: link
     };
     /**
 		* @ngdoc function
-		* @name fullNameInspection
 		*
 		* @param ($scope, elm, attrs, ctrl)  house element to which it is connected directive, elements belonging to the attribute, and ngModelController
 		*
@@ -591,7 +589,7 @@ module.exports = function(module) {
 		*	This is function for fullname validation.
 		*
 		**/
-    function fullNameInspection(scope, elm, attrs, ctrl) {
+    function link (scope, elm, attrs, ctrl) {
       ctrl.$validators['fullname'] = function(modelValue) {
         return ctrl.$isEmpty(modelValue) || FULLNAME_REGEXP.test(modelValue);
       };
@@ -627,11 +625,10 @@ module.exports = function(module) {
         scope: {
           passwordVerify: '='
         },
-        link: passwordCheck
+        link: link
      };
      /**
    		* @ngdoc function
-   		* @name passwordCheck
    		*
    		* @param ($scope, elm, attrs, ctrl)  house element to which it is connected directive, elements belonging to the attribute, and ngModelController
    		*
@@ -640,7 +637,7 @@ module.exports = function(module) {
    		*
       * @return {Bolean}
    		**/
-      function passwordCheck(scope, element, attrs, ctrl) {
+      function link (scope, element, attrs, ctrl) {
         scope.$watch(function() {
             var combined;
 
@@ -684,11 +681,10 @@ module.exports = function(module) {
     return {
       restrict: 'A',
       require: 'ngModel',
-      link: requiredText
+      link: link
       };
       /**
   		* @ngdoc function
-  		* @name requiredText
   		*
   		* @param ($scope, elm, attrs, ctrl)  house element to which it is connected directive, elements belonging to the attribute, and ngModelController
   		*
@@ -697,7 +693,7 @@ module.exports = function(module) {
   		*
       * @return {Bolean}
   		**/
-      function requiredText(scope, elm, attrs, ctrl) {
+      function link (scope, elm, attrs, ctrl) {
         ctrl.$validators['mandatory'] = function(modelValue) {
           return ctrl.$isEmpty(modelValue) || TEXT_REGEXP.test(modelValue);
         };

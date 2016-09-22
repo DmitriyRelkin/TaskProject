@@ -16,11 +16,10 @@ module.exports = function(module) {
     return {
       restrict: 'A',
       require: 'ngModel',
-      link: fullNameInspection
+      link: link
     };
     /**
 		* @ngdoc function
-		* @name fullNameInspection
 		*
 		* @param ($scope, elm, attrs, ctrl)  house element to which it is connected directive, elements belonging to the attribute, and ngModelController
 		*
@@ -28,7 +27,7 @@ module.exports = function(module) {
 		*	This is function for fullname validation.
 		*
 		**/
-    function fullNameInspection(scope, elm, attrs, ctrl) {
+    function link (scope, elm, attrs, ctrl) {
       ctrl.$validators['fullname'] = function(modelValue) {
         return ctrl.$isEmpty(modelValue) || FULLNAME_REGEXP.test(modelValue);
       };

@@ -16,11 +16,10 @@ module.exports = function(module) {
     return {
       restrict: 'A',
       require: 'ngModel',
-      link: emailInspection
+      link: link
     };
     /**
 		* @ngdoc function
-		* @name emailInspection
 		*
 		* @param ($scope, elm, attrs, ctrl)  house element to which it is connected directive, elements belonging to the attribute, and ngModelController
 		*
@@ -29,7 +28,7 @@ module.exports = function(module) {
 		*
     * @return {Bolean}
 		**/
-    function emailInspection(scope, elm, attrs, ctrl) {
+    function link (scope, elm, attrs, ctrl) {
       /* only apply the validator if ngModel is present and Angular has added the email validator */
       if (ctrl && ctrl.$validators.email) {
         /* this will overwrite the default Angular email validator */
