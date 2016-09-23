@@ -16,6 +16,7 @@ module.exports = function(module) {
         scope: {
           passwordVerify: '='
         },
+        // scope: true,
         link: link
      };
      /**
@@ -28,7 +29,7 @@ module.exports = function(module) {
    		*
       * @return {Bolean}
    		**/
-      function link (scope, element, attrs, ctrl) {
+      function link (scope, elem, attrs, ctrl) {
         scope.$watch(function() {
             var combined;
 
@@ -50,6 +51,36 @@ module.exports = function(module) {
               });
             }
         });
+        //
+        // // ---------------------------------
+        // // scope:true
+        // // ---------------------------------
+        // var checker = function () {
+        //   //get the value of the first password
+        //   var modelValue = scope.$eval(attrs.ngModel);
+        //   //get the value of the other password
+        //   var viewValue = scope.$eval(attrs.passwordVerify);
+        //   return modelValue == viewValue;
+        // };
+        // scope.$watch(checker, function (n) {
+        //   //set the form control to valid if both
+        //   //passwords are the same, else invalid
+        //   ctrl.$setValidity("unique", n);
+        // });
+        //
+        // // ---------------------------------
+        // // scope : '='
+        // // ---------------------------------
+        // ctrl.$validators.passwordVerify = function(modelValue, viewValue) {
+        //   return modelValue === scope.passwordVerify;
+        // };
+        // //
+        // //
+        scope.$watch('modelValue', function(newVal, oldVal) {
+          ctrl.$validate();
+        });
+
       }
+
   });
 };

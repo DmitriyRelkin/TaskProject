@@ -24,12 +24,12 @@ describe('directive email-validate', function() {
 
   describe('Full scan directive validate-email', function() {
     it('Should pass with correct email', function() {
-      form.email.$setViewValue('mail@mail.com');
+      form.email.$setViewValue('t@t.co');
       $scope.$digest();
       expect(form.email.$valid).toBe(true);
     });
     it('Should not pass with incorrect email', function() {
-      form.email.$setViewValue('m@m.com');
+      form.email.$setViewValue('t@t.c');
       $scope.$digest();
       expect(form.email.$valid).toBe(false);
     });

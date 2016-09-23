@@ -16,7 +16,7 @@
    </head>
       <body>
          <header ng-include="'website/templates/components/header.html'"></header>
-         <div class="content-wrapper" ui-view></div>
+         <div class="content-wrapper" ui-view autoscroll="true"></div>
          <footer ng-hide="$state.includes('home')" class="wrapper-footer" ng-include="'website/templates/components/footer.html'"></footer>
 
       </body>

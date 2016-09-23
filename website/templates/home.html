@@ -1,16 +1,16 @@
 <div class="hidden-xs goToTop" back-to-top ng-include="'website/templates/components/backToTop.html'"></div>
 <div class="comtainer wrapper-slider">
 	<div class="col-xs-12 col-sm-12 slider-view">
-		<img ng-src="{{vm.photoSrc.src}}">
+		<img ng-src="{{vm.slider.srcImg}}">
 		<div class="hidden-xs wrapper-btn-slider">
-			<a href="#" class="btn-slider btn-lg">{{vm.btnSrc.btnName}}</a>
-			<p class="the-bottom-text-box">{{vm.btnTitle.btnBanner}}</p>
+			<a href="#" class="btn-slider btn-lg">{{vm.slider.btnName}}</a>
+			<p class="the-bottom-text-box">{{vm.slider.btnBanner}}</p>
 		</div>
 	</div>
 	<div class="col-xs-12  col-sm-12 wrapper-nav-slider">
 		<ul class="nav-galery hidden-xs">
 			<li  ng-repeat="photo in vm.photos" class="slide-link" ng-click="vm.showSlide($index)">
-				<img ng-src="{{photo.src}}" ng-class="{'active': photo.active}">
+				<img ng-src="{{photo.srcImg}}" ng-class="{'active': photo.active}">
 			</li>
 		</ul>
 	</div>
@@ -18,9 +18,9 @@
 
 <div class="col-xs-12 col-sm-12 hidden-sm hidden-md hidden-lg nav-btn-slider">
 	<div class="wrapper-slider-nav-btn">
-		<a href="#" class="btn btn-default btn-lg hidden-sm hidden-md hidden-lg slider-nav-btn">{{vm.btnSrc.btnName}}</a>
+		<a href="#" class="btn btn-default btn-lg hidden-sm hidden-md hidden-lg slider-nav-btn">{{vm.slider.btnName}}</a>
 	</div>
-	<p class="nav-bottom-text-btn">{{vm.btnTitle.btnBanner}}</p>
+	<p class="nav-bottom-text-btn">{{vm.slider.btnBanner}}</p>
 </div>
 
 <div class="col-xs-12  col-sm-12 wrapper-greeting-block">
@@ -53,7 +53,7 @@
 <div class="container business-services-block">
 	<div class="col-xs-12  col-sm-12 wrapper-services-blocks services-blocks"  ng-controller="homePageCtrl">
 		<div class="col-xs-12 col-sm-4 service-block" ng-repeat="block in vm.serviceBlock">
-			<img src="{{block.srcImg}}" alt="">
+			<img ng-src="{{block.srcImg}}" alt="">
 			<h3>{{block.header}}</h3>
 			<p>{{block.paragraph}}</p>
 			<button type="button" class="btn btn-default btn-lg content-button">READ MORE</button>
@@ -66,7 +66,7 @@
 		<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
 		<div class="container content-strategy-block" ng-controller="homePageCtrl">
 			<div ng-repeat="list in vm.strategyBlock" class="col-sm-4 column-strategy-block">
-				<img src="{{list.srcImg}}" alt="">
+				<img ng-src="{{list.srcImg}}" alt="">
 				<h5 class="header-strategy-block">{{list.header}}</h5>
 				<ul>
 					<li>{{list.item1}}</li>

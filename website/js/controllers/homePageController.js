@@ -1,7 +1,7 @@
 module.exports = function(module) {
   /**
   * @ngdoc controller
-  * @name module.controller:bisinessBlockCtrl
+  * @name sampleApp:homePageCtrl
   * @description
   * This is the home page content controller.
   *
@@ -9,9 +9,7 @@ module.exports = function(module) {
   // angular
     module
     .controller('homePageCtrl', homePageCtrl);
-
     homePageCtrl.$inject = ['$rootScope', '$interval'];
-
     function homePageCtrl($rootScope, $interval) {
       /**
        * @ngdoc property
@@ -21,26 +19,27 @@ module.exports = function(module) {
        * vm is an instance of the current controller.
        */
       var vm = this;
+
+      vm.showSlide = showSlide;
       /**
       * @ngdoc property
-      * @name photos
+      * @name vm.photos
       * @description
       * It keeps the array, in which objects with links of pictures, headers, button name, and button text.
       **/
       vm.photos = [
-        {src: "website/images/slide-1.jpg", active : true , btnName: "BUSINES WORKS WITH TECNOLOGY", btnBanner: "We added technology to strategy. You get the multiplier effect"},
-        {src: "website/images/slide-2.jpg", active : false , btnName: "PROFESSIONAL CONSULTING SERVICES", btnBanner: "We are the trusted advisor to the world's leading businesses"},
-        {src: "website/images/slide-3.jpg", active : false , btnName: "BROADEN YOUR MARKET EDGE", btnBanner: "We work with our clients as we do with our colleagues"},
-        {src: "website/images/slide-4.jpg", active : false , btnName: "WE AREA NETWORK OF LEADERS", btnBanner: "We develop unparalleled management insights"}
+        {srcImg: "website/images/slide-1.jpg", active : true , btnName: "BUSINES WORKS WITH TECNOLOGY", btnBanner: "We added technology to strategy. You get the multiplier effect"},
+        {srcImg: "website/images/slide-2.jpg", active : false , btnName: "PROFESSIONAL CONSULTING SERVICES", btnBanner: "We are the trusted advisor to the world's leading businesses"},
+        {srcImg: "website/images/slide-3.jpg", active : false , btnName: "BROADEN YOUR MARKET EDGE", btnBanner: "We work with our clients as we do with our colleagues"},
+        {srcImg: "website/images/slide-4.jpg", active : false , btnName: "WE AREA NETWORK OF LEADERS", btnBanner: "We develop unparalleled management insights"}
       ];
       /**
       * @ngdoc property
+      * @name vm.slider
       * @description
       * For the initial display of the slider at the first page load
       **/
-      vm.photoSrc = vm.photos[0];
-      vm.btnSrc = vm.photos[0];
-      vm.btnTitle = vm.photos[0];
+      vm.slider = vm.photos[0];
       /**
       * @ngdoc function
       * @name showSlide
@@ -48,10 +47,8 @@ module.exports = function(module) {
       * This function opens the selected slide by click
       * @param [index]
       **/
-      vm.showSlide = function(index) {
-        vm.photoSrc = vm.photos[index];
-        vm.btnSrc = vm.photos[index];
-        vm.btnTitle = vm.photos[index];
+      function showSlide(index) {
+        vm.slider = vm.photos[index];
       };
       /**
       * @ngdoc property
@@ -67,9 +64,7 @@ module.exports = function(module) {
       **/
       $interval(function() {
         vm.counter++;
-        vm.photoSrc = vm.photos[vm.counter];
-        vm.btnSrc = vm.photos[vm.counter];
-        vm.btnTitle = vm.photos[vm.counter];
+        vm.slider = vm.photos[vm.counter];
         for(var i = 0; i < vm.photos.length; i++) {
              vm.photos[i].active = false;
         }

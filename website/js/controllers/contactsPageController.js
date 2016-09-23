@@ -6,11 +6,10 @@ module.exports = function(module) {
   * This is the contact content controller.
   *
   **/
-  // angular
   module
   .controller('contactPageCtrl', contactPageCtrl);
-  contactPageCtrl.$inject = ['sendMessageData','notify','$state'];
-  function contactPageCtrl(sendMessageData, notify, $state) {
+  contactPageCtrl.$inject = ['sendMessageData','notify','$scope'];
+  function contactPageCtrl(sendMessageData, notify, $scope) {
     /**
      * @ngdoc property
      * @name vm
@@ -19,19 +18,28 @@ module.exports = function(module) {
      * vm is an instance of the current controller.
      */
     var vm = this;
+
+    vm.sendContactData = sendContactData;
+    /**
+    * @ngdoc property
+    * @name vm.contactData
+    * @description
+    * This property saved data, entered by the user in the form contact-message.
+    **/
+    vm.contactData = {};
     /**
     * @ngdoc function
-    * @name sendDataRegistration
+    * @name vm.sendContactData
     * @description
     * This function send data, entered by the user in the form contact-message.
     *
     * @param {Object} data user entered by user in the form.
     *
     **/
-    vm.sendContactData = function(data) {
+    function sendContactData(data) {
       /**
       * @ngdoc property
-      * @name spinnerClass
+      * @name vm.spinnerClass
       * @description
       * This property holds the value for ng-class in the form
       **/
@@ -43,7 +51,9 @@ module.exports = function(module) {
       * This is service for to send post data
       **/
       sendMessageData.send(data).then(function () {
-        $state.go("home");
+        $scope.contactForm.$setPristine();
+        $scope.contactForm.$setUntouched();
+        vm.contactData = {};
       },function () {
         notify({ message:'An error occurred on the server!', duration: '2000', position: "center", classes: "alert-danger"});
       });

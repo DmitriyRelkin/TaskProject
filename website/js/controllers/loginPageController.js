@@ -6,7 +6,6 @@ module.exports = function(module) {
   * This is the login page controller
   *
   **/
-  // angular
   module
   .controller('loginCtrl', loginCtrl);
   loginCtrl.$inject = ['authService', '$state'];
@@ -19,19 +18,28 @@ module.exports = function(module) {
     * vm is an instance of the current controller.
     */
     var vm = this;
+    
+    vm.sendDataLogin = sendDataLogin;
+    /**
+    * @ngdoc property
+    * @name vm.loginData
+    * @description
+    * This property saved data, entered by the user in the form login.
+    **/
+    vm.loginData = {};
     /**
     * @ngdoc function
-    * @name sendDataLogin
+    * @name vm.sendDataLogin
     * @description
     * This function send data, entered by the user in the form login.
     *
     * @param {Object} data user entered by user in the form.
     *
     **/
-    vm.sendDataLogin = function(data) {
+    function sendDataLogin(data) {
       /**
       * @ngdoc property
-      * @name spinnerClass
+      * @name vm.spinnerClass
       * @description
       * This property holds the value for ng-class in the form
       **/
