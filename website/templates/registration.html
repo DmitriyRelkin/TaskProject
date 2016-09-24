@@ -25,8 +25,7 @@
 			     	<div class="form-group">
 			     	    <label>Password (Confirm)</label>
 								<input ng-model='vm.regData.password_verify' type="password" name='confirm_password' class="form-control" placeholder="User Password Confirm" required password-verify="vm.regData.password">
-								<span class="error" ng-show="myForm.confirm_password.$error.required && myForm.confirm_password.$dirty">Field required!</span>
-					      <span class="error" ng-show="myForm.confirm_password.$error.passwordVerify">Password does not match!</span>
+					      <span class="error" ng-show="myForm.confirm_password.$dirty && myForm.confirm_password.$invalid">Password does not match!</span>
 			     	</div>
 			     	<button type="submit" class="btn btn-default content-button sendTest" ng-disabled="myForm.$invalid">Register</button>
 						<span class="spinner" ng-class="spinnerClass">
