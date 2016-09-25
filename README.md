@@ -6,7 +6,8 @@ at the terminal in the directory with the project.
 
 **Where Answer press 2!**
 
-1) angular#~1.3 which resolved to 1.3.20 and is required by angular-notify#2.5.0 /n
+1) angular#~1.3 which resolved to 1.3.20 and is required by angular-notify#2.5.0
+
 2) angular#^1.5.7 which resolved to 1.5.8 and is required by Task Project
 
 After that, you need to run gulp by typing in the console, command 'gulp'
