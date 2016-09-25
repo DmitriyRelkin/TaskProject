@@ -21,11 +21,11 @@ describe('Controller: homePageCtrl', function () {
     $interval = _$interval_;
   }));
 
-  it("Having a home page controller", function () {
+  it("Should have a home page controller", function () {
     expect(homeCtrl).toBeDefined();
   });
 
-  it("Having a properties photos", function () {
+  it("Should have a properties photos", function () {
     expect(homeCtrl.photos).toBeDefined();
     expect(homeCtrl.photos.length).toEqual(4);
   });
@@ -43,12 +43,12 @@ describe('Controller: homePageCtrl', function () {
     $interval.flush(3000);
   });
 
-  it("Having a properties serviceBlock", function () {
+  it("Should have a properties serviceBlock", function () {
     expect(homeCtrl.serviceBlock).toBeDefined();
     expect(homeCtrl.serviceBlock.length).toEqual(6);
   });
 
-  it("Having a properties strategyBlock", function () {
+  it("Should have a properties strategyBlock", function () {
     expect(homeCtrl.strategyBlock).toBeDefined();
     expect(homeCtrl.strategyBlock.length).toEqual(3);
   });

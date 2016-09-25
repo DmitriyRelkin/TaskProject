@@ -1,23 +1,33 @@
 describe('Check HomePage', function() {
+
+
   var buttonSlide = element(by.css('.btn-slider'));
-  var namesButtonSlide = element.all(by.binding('btnSrc.btnName'));
-  var bannerButtonSlide = element.all(by.binding('btnTitle.btnBanner'));
-  var linksSlider = element.all(by.repeater('photo in vm.photos'));
+  var namesButtonSlide = element.all(by.binding('vm.slider.btnName'));
+  var bannerButtonSlide = element.all(by.binding('vm.slider.btnBanner'));
   var headerGreeting = element(by.css('.header1-greeting-block'));
   var servicesBlocks = element.all(by.repeater('block in vm.serviceBlock'));
   var headerStrategyBlock = element(by.css('.heading-strategy-block'));
   var strategyBlock = element.all(by.repeater('list in vm.strategyBlock'));
-
   var headersFooterBlock = element.all(by.css('.header-footer-column'));
-
   var navigationFooter = element.all(by.css('.navigation-footer-block'));
+
+  var slider = element(by.css('.slider-view'));
+  var sliderView = slider.element(by.css('img'));
+  var linksSlider = element.all(by.repeater('photo in vm.photos'));
 
   beforeEach(function() {
     browser.get('http://localhost:8000');
   });
 
-  it('Click on the button in slides', function() {
-    expect(buttonSlide.click());
+  it('Click on the links slider', function() {
+    expect(linksSlider.get(0).click());
+    expect(sliderView.getAttribute('src')).toEqual('http://localhost:8000/website/images/slide-1.jpg');
+    expect(linksSlider.get(1).click());
+    expect(sliderView.getAttribute('src')).toEqual('http://localhost:8000/website/images/slide-2.jpg');
+    expect(linksSlider.get(2).click());
+    expect(sliderView.getAttribute('src')).toEqual('http://localhost:8000/website/images/slide-3.jpg');
+    expect(linksSlider.get(3).click());
+    expect(sliderView.getAttribute('src')).toEqual('http://localhost:8000/website/images/slide-4.jpg');
   });
 
   it('Number use in presenting number of button slider', function() {
@@ -28,12 +38,10 @@ describe('Check HomePage', function() {
     expect(bannerButtonSlide.count()).toEqual(2);
   });
 
-  it('Click on the links slider to switch slides', function() {
-    expect(linksSlider.click().get(0));
-    expect(linksSlider.click().get(1));
-    expect(linksSlider.click().get(2));
-    expect(linksSlider.click().get(3));
+  it('Number use in presenting number of banner button slider', function() {
+    expect(linksSlider.count()).toEqual(4);
   });
+
 
   it('Have a title greeting block', function() {
     expect(headerGreeting.getText()).toEqual('WELCOME TO OUR COMPANY!');
@@ -80,5 +88,4 @@ describe('Check HomePage', function() {
     expect(headersFooterBlock.get(2).getText()).toEqual('GET IN TOUCH');
     expect(headersFooterBlock.get(3).getText()).toEqual('CONNECT ONLINE');
   });
-
 });

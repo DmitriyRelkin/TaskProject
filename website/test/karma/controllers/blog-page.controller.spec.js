@@ -16,36 +16,36 @@ describe('Controller: blogContentCtrl', function () {
       blogCtrl = $controller('blogContentCtrl', {$scope: $scope});
   }));
 
-  it("Having a blog page controller", function() {
+  it("Should have a blog page controller", function() {
     expect(blogCtrl).toBeDefined();
   });
 
-  it("Having a category property", function() {
+  it("Should have a category property", function() {
     expect(blogCtrl.pollCategory).toBeDefined();
     expect(blogCtrl.pollCategory.length).toEqual(10);
   });
 
-  it("Having a blog category property", function() {
+  it("Should have a blog category property", function() {
     expect(blogCtrl.blogContent).toBeDefined();
     expect(blogCtrl.blogContent.length).toEqual(3);
   });
 
-  it("Having a blog social properties property", function() {
+  it("Should have a blog social properties property", function() {
     expect(blogCtrl.socialProperties).toBeDefined();
     expect(blogCtrl.socialProperties.length).toEqual(4);
   });
 
-  it("Having a poll level property", function() {
+  it("Should have a poll level property", function() {
     expect(blogCtrl.pollLevel).toBeDefined();
     expect(blogCtrl.pollLevel.length).toEqual(4);
   });
 
-  it("Having a btnBlog property", function() {
+  it("Should have a btnBlog property", function() {
     expect(blogCtrl.btnBlog).toBeDefined();
     expect(blogCtrl.btnBlog.length).toEqual(4);
   });
 
-  it("Having a btnBlogNav property", function() {
+  it("Should have a btnBlogNav property", function() {
     expect(blogCtrl.btnBlogNav).toBeDefined();
     expect(blogCtrl.btnBlogNav.length).toEqual(4);
   });

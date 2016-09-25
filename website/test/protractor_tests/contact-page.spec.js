@@ -1,10 +1,10 @@
 describe('Check ContactPage', function() {
   var title = element(by.css(".header-contacts"));
   var columsNames = element.all(by.css(".article-contacts"));
-  var name = element(by.model('formData.contact.name') );
-  var email = element(by.model('formData.contact.email') );
-  var subject = element(by.model('formData.contact.subject') );
-  var message = element(by.model('formData.contact.message') );
+  var name = element(by.model('vm.contactData.name') );
+  var email = element(by.model('vm.contactData.email') );
+  var subject = element(by.model('vm.contactData.subject') );
+  var message = element(by.model('vm.contactData.message') );
   var submit = element(by.css(".sendTest"));
   var params = {login: {user: 'Niko Belik',password: '123456', email: 'mail@mail.com', subject: 'subject', message: 'message'}}
   var EC = protractor.ExpectedConditions;
@@ -25,10 +25,10 @@ describe('Check ContactPage', function() {
   });
 
   it('Filling out the form for sending messages', function() {
-    expect(name.sendKeys(params.login.user));
-    expect(email.sendKeys(params.login.email));
-    expect(subject.sendKeys(params.login.subject));
-    expect(message.sendKeys(params.login.message));
+    name.sendKeys(params.login.user);
+    email.sendKeys(params.login.email);
+    subject.sendKeys(params.login.subject);
+    message.sendKeys(params.login.message);
     expect(submit.click());
     browser.wait(EC.visibilityOf($('.cg-notify-message')), 5000);
   });

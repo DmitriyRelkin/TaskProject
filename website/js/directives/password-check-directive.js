@@ -13,10 +13,6 @@ module.exports = function(module) {
   .directive("passwordVerify",['$parse', function ($parse) {
     return {
         require: "ngModel",
-        // scope: {
-        //   passwordVerify: '='
-        // },
-        // scope: true,
         link: link
      };
      /**

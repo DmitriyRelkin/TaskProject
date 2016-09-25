@@ -1,9 +1,9 @@
 describe('Check RegistrationPage', function() {
   var title = element(by.css(".header-sig-in"));
-  var name = element(by.model('formData.login.name'));
-  var password = element(by.model('formData.login.pasword'));
+  var name = element(by.model('vm.loginData.email'));
+  var password = element(by.model('vm.loginData.pasword'));
   var submit = element(by.css(".sendTest"));
-  var params = {login: {user: 'Niko Belik',password: '123456'}}
+  var params = {login: {email: 'mail@mail.com',password: '123456'}}
 
   beforeEach(function() {
     browser.get('http://localhost:8000/#/sig-in');
@@ -14,8 +14,8 @@ describe('Check RegistrationPage', function() {
   });
 
   it('Filling out the form for login', function() {
-    expect(name.sendKeys(params.login.user));
-    expect(password.sendKeys(params.login.password));
+    name.sendKeys(params.login.email);
+    password.sendKeys(params.login.password);
     expect(submit.click());
   });
 });

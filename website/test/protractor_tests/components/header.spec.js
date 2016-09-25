@@ -7,10 +7,6 @@ describe('Check header', function() {
     browser.get('http://localhost:8000');
   });
 
-  it('Сlicking on header logo', function() {
-    expect(headerLogo.click());
-  });
-
   it('Check the header logo', function() {
     expect(headerLogo.getText()).toEqual('CONSULTING CO.');
   });
@@ -20,9 +16,18 @@ describe('Check header', function() {
   });
 
   it('Сlicking on links', function() {
-    expect(linksHeader.click());
+    expect(linksHeader.get(4).click());
+    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/sig-in');
+    expect(linksHeader.get(3).click());
+    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/reg');
+    expect(linksHeader.get(2).click());
+    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/blog');
+    expect(linksHeader.get(1).click());
+    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/contacts');
+    expect(linksHeader.get(0).click());
+    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/');
   });
-
+  
   it('Names on links', function() {
     expect(linksHeader.get(0).getText()).toEqual('HOME');
     expect(linksHeader.get(1).getText()).toEqual('CONTACTS');

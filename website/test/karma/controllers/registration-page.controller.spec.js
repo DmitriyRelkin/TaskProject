@@ -25,11 +25,11 @@ describe('Controller: registrationContentCtrl', function () {
     vm = this;
   }));
 
-  it("Having a registration page controller", function () {
+  it("Should have a registration page controller", function () {
     expect(regCtrl).toBeDefined();
   });
   //
-  it("Having a function sendDataRegistration for send data authorization", function () {
+  it("Should have a function sendDataRegistration for send data authorization", function () {
     expect(regCtrl.sendDataRegistration).toBeDefined();
   });
 
@@ -40,7 +40,7 @@ describe('Controller: registrationContentCtrl', function () {
     expect(regCtrl.spinnerClass).toBeDefined("loading");
   });
 
-  it("Having a sevice for send data, used in function sendDataRegistration", function() {
+  it("Should have a sevice for send data, used in function sendDataRegistration", function() {
     expect(authService).toBeDefined();
     spyOn(authService, 'sendRegistration').and.returnValue(deferred.promise);
     regCtrl.sendDataRegistration();

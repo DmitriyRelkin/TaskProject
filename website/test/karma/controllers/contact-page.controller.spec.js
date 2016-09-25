@@ -24,11 +24,11 @@ describe('Controller: contactPageCtrl', function () {
       sendMessageData = _sendMessageData_;
   }));
 
-  it("Having a contact page controller", function () {
+  it("Should have a contact page controller", function () {
     expect(contactCtrl).toBeDefined();
   });
 
-  it("Having a function sendContactData for send data authorization", function () {
+  it("Should have a function sendContactData for send data authorization", function () {
     expect(contactCtrl.sendContactData).toBeDefined();
   });
 
@@ -39,7 +39,7 @@ describe('Controller: contactPageCtrl', function () {
     expect(contactCtrl.spinnerClass).toBeDefined("loading");
   });
 
-  it("Having a sevice for send data, used in function sendContactData", function() {
+  it("Should have a sevice for send data, used in function sendContactData", function() {
     expect(sendMessageData).toBeDefined();
     spyOn(sendMessageData, 'send').and.returnValue(deferred.promise);
     contactCtrl.sendContactData();

@@ -23,11 +23,11 @@ describe('Controller: loginCtrl', function () {
     authService = _authService_;
   }));
 
-  it("Having a log-in page controller", function () {
+  it("Should have a log-in page controller", function () {
     expect(loginCtrl).toBeDefined();
   });
 
-  it("Having a function sendDataLogin for send data authorization", function () {
+  it("Should have a function sendDataLogin for send data authorization", function () {
     expect(loginCtrl.sendDataLogin).toBeDefined();
   });
 
@@ -38,7 +38,7 @@ describe('Controller: loginCtrl', function () {
     expect(loginCtrl.spinnerClass).toBeDefined("loading");
   });
 
-  it("Having a sevice for send data, used in function sendDataLogin", function() {
+  it("Should have a sevice for send data, used in function sendDataLogin", function() {
     expect(authService).toBeDefined();
     spyOn(authService, 'sendLogin').and.returnValue(deferred.promise);
     loginCtrl.sendDataLogin();
