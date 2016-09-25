@@ -4,7 +4,7 @@ After downloading the project
 Need to install dependencies, by typing in the console, command **bower i && npm i**
 at the terminal in the directory with the project.
 
-**Where Answer press 2 !**
+**Where Answer press 2!**
 
 1) angular#~1.3 which resolved to 1.3.20 and is required by angular-notify#2.5.0
 
