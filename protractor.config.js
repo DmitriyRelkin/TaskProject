@@ -27,9 +27,4 @@ exports.config = {
     defaultTimeoutInterval: 30000
   },
 
-  plugins: [{
-    package: 'protractor-console',
-    logLevels: ['debug', 'info']
-  }]
-
 };
