@@ -30,6 +30,6 @@ describe('Check ContactPage', function() {
     subject.sendKeys(params.login.subject);
     message.sendKeys(params.login.message);
     expect(submit.click());
-    browser.wait(EC.visibilityOf($('.cg-notify-message')), 5000);
+    browser.wait(EC.visibilityOf($('.cg-notify-message')), 3000);
   });
 });
