@@ -33,7 +33,7 @@ describe('Check header', function() {
     expect(linksHeader.get(1).getText()).toEqual('CONTACTS');
     expect(linksHeader.get(2).getText()).toEqual('BLOG');
     expect(linksHeader.get(3).getText()).toEqual('REGISTRATION');
-    expect(linksHeader.get(4).getText()).toEqual('SIG IN');
+    expect(linksHeader.get(4).getText()).toEqual('SIGN IN');
   });
 
   it('Check input in the search field', function() {

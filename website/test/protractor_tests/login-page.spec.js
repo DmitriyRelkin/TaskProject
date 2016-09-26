@@ -1,4 +1,4 @@
-describe('Check RegistrationPage', function() {
+describe('Check SingInPage', function() {
   var title = element(by.css(".header-sig-in"));
   var name = element(by.model('vm.loginData.email'));
   var password = element(by.model('vm.loginData.pasword'));
@@ -6,7 +6,7 @@ describe('Check RegistrationPage', function() {
   var params = {login: {email: 'mail@mail.com',password: '123456'}}
 
   beforeEach(function() {
-    browser.get('http://localhost:8000/#/sig-in');
+    browser.get('http://localhost:8000/#/sign-in');
   });
 
   it('Should have a title', function() {

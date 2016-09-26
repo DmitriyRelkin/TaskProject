@@ -781,7 +781,7 @@ module.exports = function(module) {
       *
       **/
       function sendLogin(data) {
-        return $http.post("/sig-in", data);
+        return $http.post("/sign-in", data);
       }
     }
 };
