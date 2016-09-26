@@ -5974,7 +5974,7 @@ button.close {
         font-weight: bold;
         transition: background .1s ease-in-out; }
     .main-header .content-main-header .search-block-main-header {
-      overflow: auto;
+      overflow: hidden;
       position: relative;
       padding: 0 8px; }
       @media (max-width: 768px) {

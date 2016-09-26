@@ -40,7 +40,7 @@
 			}
 		}
 		.search-block-main-header {
-			overflow: auto;
+			overflow: hidden;
 			position: relative;
 	    padding: 0 8px;
 			@media (max-width: $screen-sm-min) {
