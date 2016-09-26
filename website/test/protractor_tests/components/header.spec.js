@@ -17,7 +17,7 @@ describe('Check header', function() {
 
   it('Сlicking on links', function() {
     expect(linksHeader.get(4).click());
-    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/sig-in');
+    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/sign-in');
     expect(linksHeader.get(3).click());
     expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/reg');
     expect(linksHeader.get(2).click());
@@ -27,7 +27,7 @@ describe('Check header', function() {
     expect(linksHeader.get(0).click());
     expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/');
   });
-  
+
   it('Names on links', function() {
     expect(linksHeader.get(0).getText()).toEqual('HOME');
     expect(linksHeader.get(1).getText()).toEqual('CONTACTS');

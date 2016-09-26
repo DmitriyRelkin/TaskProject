@@ -78,7 +78,7 @@ function config($stateProvider, $urlRouterProvider) {
     })
     /* AuthorizationPage */
     .state('sign-in', {
-        url: '/sig-in',
+        url: '/sign-in',
         templateUrl: 'website/templates/sig-in.html',
         controller: 'loginCtrl',
         controllerAs: 'vm'
