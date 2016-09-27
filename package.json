@@ -4,7 +4,11 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "webdriver-manager": "webdriver-manager",
+    "webdriver:start": "webdriver-manager start",
+    "webdriver:update": "npm run webdriver-manager update",
+    "e2e": "protractor protractor.config.js",
+    "unit": "karma start karma.config.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +32,7 @@
     "gulp-uglify": "^2.0.0",
     "gulp-watch": "^4.3.9",
     "jasmine-spec-reporter": "^2.7.0",
+    "karma-chrome-launcher": "^2.0.0",
     "karma-jasmine": "^1.0.2",
     "nodemailer": "^2.6.0",
     "protractor": "^4.0.9",
