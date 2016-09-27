@@ -19,5 +19,8 @@
     "angular": "^1.5.7",
     "bootstrap": "^3.3.6",
     "angular-notify": "^2.5.0"
+  },
+  "resolutions": {
+    "angular": "^1.5.7"
   }
 }
