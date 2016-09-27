@@ -32,14 +32,11 @@ describe('Controller: contactPageCtrl', function () {
     expect(contactCtrl.sendContactData).toBeDefined();
   });
 
-  it("Class variable that stores the value of the class styles of animation,form is submitted", function() {
+  it("Should send massege", function() {
     expect(contactCtrl.sendContactData).toBeDefined(contactCtrl.spinnerClass);
     expect(contactCtrl.spinnerClass).toBeUndefined("loading");
     contactCtrl.sendContactData();
     expect(contactCtrl.spinnerClass).toBeDefined("loading");
-  });
-
-  it("Should have a sevice for send data, used in function sendContactData", function() {
     expect(sendMessageData).toBeDefined();
     spyOn(sendMessageData, 'send').and.returnValue(deferred.promise);
     contactCtrl.sendContactData();

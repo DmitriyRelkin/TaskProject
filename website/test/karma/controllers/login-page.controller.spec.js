@@ -31,14 +31,11 @@ describe('Controller: loginCtrl', function () {
     expect(loginCtrl.sendDataLogin).toBeDefined();
   });
 
-  it("Class variable that stores the value of the class styles of animation,form is submitted", function() {
+  it("Should login", function() {
     expect(loginCtrl.sendDataLogin).toBeDefined(loginCtrl.spinnerClass);
     expect(loginCtrl.spinnerClass).toBeUndefined("loading");
     loginCtrl.sendDataLogin();
     expect(loginCtrl.spinnerClass).toBeDefined("loading");
-  });
-
-  it("Should have a sevice for send data, used in function sendDataLogin", function() {
     expect(authService).toBeDefined();
     spyOn(authService, 'sendLogin').and.returnValue(deferred.promise);
     loginCtrl.sendDataLogin();

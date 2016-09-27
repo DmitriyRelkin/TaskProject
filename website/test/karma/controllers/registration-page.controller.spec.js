@@ -33,14 +33,11 @@ describe('Controller: registrationContentCtrl', function () {
     expect(regCtrl.sendDataRegistration).toBeDefined();
   });
 
-  it("Class variable that stores the value of the class styles of animation,form is submitted", function() {
+  it("Should registration", function() {
     expect(regCtrl.sendDataRegistration).toBeDefined(regCtrl.spinnerClass);
     expect(regCtrl.spinnerClass).toBeUndefined("loading");
     regCtrl.sendDataRegistration();
     expect(regCtrl.spinnerClass).toBeDefined("loading");
-  });
-
-  it("Should have a sevice for send data, used in function sendDataRegistration", function() {
     expect(authService).toBeDefined();
     spyOn(authService, 'sendRegistration').and.returnValue(deferred.promise);
     regCtrl.sendDataRegistration();
