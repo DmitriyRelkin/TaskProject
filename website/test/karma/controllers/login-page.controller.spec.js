@@ -34,11 +34,10 @@ describe('Controller: loginCtrl', function () {
   it("Should login", function() {
     expect(loginCtrl.sendDataLogin).toBeDefined(loginCtrl.spinnerClass);
     expect(loginCtrl.spinnerClass).toBeUndefined("loading");
+    spyOn(authService, 'sendLogin').and.returnValue(deferred.promise);
     loginCtrl.sendDataLogin();
     expect(loginCtrl.spinnerClass).toBeDefined("loading");
     expect(authService).toBeDefined();
-    spyOn(authService, 'sendLogin').and.returnValue(deferred.promise);
-    loginCtrl.sendDataLogin();
     expect(authService.sendLogin).toHaveBeenCalled();
   });
 });
