@@ -1,7 +1,7 @@
 'use strict';
 
 describe('Controller: contactPageCtrl', function () {
-  // Arrange
+
   var $controller,
       $rootScope,
       $scope,
