@@ -38,7 +38,7 @@ describe('Check HomePage', function() {
     expect(bannerButtonSlide.count()).toEqual(2);
   });
 
-  it('Number use in presenting number of banner button slider', function() {
+  it('The number of links on the slider', function() {
     expect(linksSlider.count()).toEqual(4);
   });
 
