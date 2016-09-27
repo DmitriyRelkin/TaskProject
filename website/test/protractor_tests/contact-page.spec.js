@@ -32,4 +32,12 @@ describe('Check ContactPage', function() {
     expect(submit.click());
     browser.wait(EC.visibilityOf($('.cg-notify-message')), 3000);
   });
+
+  it('Should not allow empty form for sending messages', function() {
+    name.sendKeys("    ");
+    email.sendKeys("    ");
+    subject.sendKeys("    ");
+    message.sendKeys("    ");
+    expect(submit.isEnabled()).toBeFalsy();
+  });
 });

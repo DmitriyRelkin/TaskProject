@@ -17,5 +17,13 @@ describe('Check SingInPage', function() {
     name.sendKeys(params.login.email);
     password.sendKeys(params.login.password);
     expect(submit.click());
+    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/');
+  });
+
+  it('Should not allow empty form for login', function() {
+    browser.get('http://localhost:8000/#/sign-in');
+    name.sendKeys("    ");
+    password.sendKeys("    ");
+    expect(submit.isEnabled()).toBeFalsy();
   });
 });

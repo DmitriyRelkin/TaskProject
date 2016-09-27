@@ -21,5 +21,15 @@ describe('Check RegistrationPage', function() {
     password.sendKeys(params.login.password);
     passwordConfirm.sendKeys(params.login.password);
     expect(submit.click());
+    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/');
+  });
+
+  it('Should not allow empty form for for registration', function() {
+    browser.get('http://localhost:8000/#/reg');
+    name.sendKeys("    ");
+    email.sendKeys("    ");
+    password.sendKeys("    ");
+    passwordConfirm.sendKeys("    ");
+    expect(submit.isEnabled()).toBeFalsy();
   });
 });
