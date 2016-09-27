@@ -7,7 +7,7 @@ at the terminal in the directory with the project.
 After that, you need to run gulp by typing in the console, command 'gulp'
 at the terminal in the directory with the project
 Then, after the full launch gulp, go to the browser link:
-http://localhost:8000/
+**http://localhost:8000/**
 
 --------------------------
 
