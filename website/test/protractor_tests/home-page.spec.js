@@ -9,8 +9,7 @@ describe('Check HomePage', function() {
   var headerStrategyBlock = element(by.css('.heading-strategy-block'));
   var strategyBlock = element.all(by.repeater('list in vm.strategyBlock'));
   var headersFooterBlock = element.all(by.css('.header-footer-column'));
-  var navigationFooter = element.all(by.css('.navigation-footer-block'));
-
+  var navigationFooter = element.all(by.css('.footer-navigation li > a'));
   var slider = element(by.css('.slider-view'));
   var sliderView = slider.element(by.css('img'));
   var linksSlider = element.all(by.repeater('photo in vm.photos'));
@@ -74,8 +73,46 @@ describe('Check HomePage', function() {
     expect(strategyBlock.get(2).element(by.tagName('h5')).getText()).toEqual('OUR KEY OFFERS:');
   });
 
-  it('Click in slides navigation footer block', function() {
-    expect(navigationFooter.click());
+  it('Number links of navigation footer block', function() {
+      expect(navigationFooter.count()).toEqual(5);
+  });
+
+  it('Click navigation link sign-in page on the footer', function() {
+    browser.get('http://localhost:8000');
+    expect(navigationFooter.get(4).click());
+    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/sign-in');
+  });
+
+  it('Click navigation link registration page on the footer', function() {
+    browser.get('http://localhost:8000');
+    expect(navigationFooter.get(3).click());
+    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/reg');
+  });
+
+  it('Click navigation link blog page on the footer', function() {
+    browser.get('http://localhost:8000');
+    expect(navigationFooter.get(2).click());
+    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/blog');
+  });
+
+  it('Click navigation link contacts page on the footer', function() {
+    browser.get('http://localhost:8000');
+    expect(navigationFooter.get(1).click());
+    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/contacts');
+  });
+
+  it('Click navigation link home page on the footer', function() {
+    browser.get('http://localhost:8000');
+    expect(navigationFooter.get(0).click());
+    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/');
+  });
+
+  it('Names on links', function() {
+    expect(navigationFooter.get(0).getText()).toEqual('HOME');
+    expect(navigationFooter.get(1).getText()).toEqual('CONTACTS');
+    expect(navigationFooter.get(2).getText()).toEqual('BLOG');
+    expect(navigationFooter.get(3).getText()).toEqual('REGISTRATION');
+    expect(navigationFooter.get(4).getText()).toEqual('SIGN IN');
   });
 
   it('Number headers of footer block', function() {

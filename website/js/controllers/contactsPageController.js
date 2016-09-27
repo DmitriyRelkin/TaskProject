@@ -54,10 +54,10 @@ module.exports = function(module) {
         $scope.contactForm.$setPristine();
         $scope.contactForm.$setUntouched();
         vm.contactData = {};
+        notify({ message:'Your message has been successfully sent', duration: '2000', position: "center", classes: "alert-success"});
       },function () {
         notify({ message:'An error occurred on the server!', duration: '2000', position: "center", classes: "alert-danger"});
       });
-        notify({ message:'Your message has been successfully sent', duration: '2000', position: "center", classes: "alert-success"});
     };
   }
 };

@@ -28,6 +28,7 @@
     "gulp-uglify": "^2.0.0",
     "gulp-watch": "^4.3.9",
     "jasmine-spec-reporter": "^2.7.0",
+    "karma-jasmine": "^1.0.2",
     "nodemailer": "^2.6.0",
     "protractor": "^4.0.9",
     "var": "^0.2.0",
