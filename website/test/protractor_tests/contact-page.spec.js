@@ -9,7 +9,6 @@ describe('Check ContactPage', function() {
   var params = {login: {user: 'Niko Belik',password: '123456', email: 'mail@mail.com', subject: 'subject', message: 'message'}}
   var EC = protractor.ExpectedConditions;
 
-
   beforeEach(function() {
     browser.get('http://localhost:8000/#/contacts');
   });
@@ -34,10 +33,10 @@ describe('Check ContactPage', function() {
   });
 
   it('Should not allow empty form for sending messages', function() {
-    name.sendKeys("    ");
-    email.sendKeys("    ");
-    subject.sendKeys("    ");
-    message.sendKeys("    ");
+    name.sendKeys(" ");
+    email.sendKeys(" ");
+    subject.sendKeys(" ");
+    message.sendKeys(" ");
     expect(submit.isEnabled()).toBeFalsy();
   });
 });

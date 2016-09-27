@@ -1,6 +1,4 @@
 describe('Check HomePage', function() {
-
-
   var buttonSlide = element(by.css('.btn-slider'));
   var namesButtonSlide = element.all(by.binding('vm.slider.btnName'));
   var bannerButtonSlide = element.all(by.binding('vm.slider.btnBanner'));
@@ -40,7 +38,6 @@ describe('Check HomePage', function() {
   it('The number of links on the slider', function() {
     expect(linksSlider.count()).toEqual(4);
   });
-
 
   it('Have a title greeting block', function() {
     expect(headerGreeting.getText()).toEqual('WELCOME TO OUR COMPANY!');
@@ -107,7 +104,7 @@ describe('Check HomePage', function() {
     expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/');
   });
 
-  it('Names on links', function() {
+  it('Names on links footer navigation', function() {
     expect(navigationFooter.get(0).getText()).toEqual('HOME');
     expect(navigationFooter.get(1).getText()).toEqual('CONTACTS');
     expect(navigationFooter.get(2).getText()).toEqual('BLOG');

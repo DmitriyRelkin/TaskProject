@@ -5,9 +5,6 @@ describe('Check BlogPage', function() {
   var blogCategory = element.all(by.repeater('name in vm.pollCategory'));
   var meterProgress = element.all(by.repeater('meter in vm.pollLevel'));
 
-  //   var linksHeader = element.all(by.css('.links-navigation li > a'));
-
-
   beforeEach(function() {
     browser.get('http://localhost:8000/#/blog');
   });

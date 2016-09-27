@@ -22,8 +22,8 @@ describe('Check SingInPage', function() {
 
   it('Should not allow empty form for login', function() {
     browser.get('http://localhost:8000/#/sign-in');
-    name.sendKeys("    ");
-    password.sendKeys("    ");
+    name.sendKeys(" ");
+    password.sendKeys(" ");
     expect(submit.isEnabled()).toBeFalsy();
   });
 });

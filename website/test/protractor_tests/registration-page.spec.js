@@ -26,10 +26,10 @@ describe('Check RegistrationPage', function() {
 
   it('Should not allow empty form for for registration', function() {
     browser.get('http://localhost:8000/#/reg');
-    name.sendKeys("    ");
-    email.sendKeys("    ");
-    password.sendKeys("    ");
-    passwordConfirm.sendKeys("    ");
+    name.sendKeys(" ");
+    email.sendKeys(" ");
+    password.sendKeys(" ");
+    passwordConfirm.sendKeys(" ");
     expect(submit.isEnabled()).toBeFalsy();
   });
 });

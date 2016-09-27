@@ -1,7 +1,6 @@
 describe('Check header', function() {
   var headerLogo = element(by.css('.header-logo'));
   var linksHeader = element.all(by.css('.links-navigation li > a'));
-  var inputSearch = element(by.css('.search-header-input'));
 
   beforeEach(function() {
     browser.get('http://localhost:8000');
@@ -15,7 +14,7 @@ describe('Check header', function() {
     expect(linksHeader.count(5));
   });
 
-  it('Сlicking on links', function() {
+  it('Сlicking on links header', function() {
     expect(linksHeader.get(4).click());
     expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/sign-in');
     expect(linksHeader.get(3).click());
@@ -28,16 +27,11 @@ describe('Check header', function() {
     expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/');
   });
 
-  it('Names on links', function() {
+  it('Names on links header', function() {
     expect(linksHeader.get(0).getText()).toEqual('HOME');
     expect(linksHeader.get(1).getText()).toEqual('CONTACTS');
     expect(linksHeader.get(2).getText()).toEqual('BLOG');
     expect(linksHeader.get(3).getText()).toEqual('REGISTRATION');
     expect(linksHeader.get(4).getText()).toEqual('SIGN IN');
   });
-
-  it('Check input in the search field', function() {
-    expect(inputSearch.sendKeys('Search'));
-  });
-
 });
