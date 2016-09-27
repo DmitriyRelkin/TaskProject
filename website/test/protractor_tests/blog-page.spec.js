@@ -31,7 +31,7 @@ describe('Check BlogPage', function() {
     expect(blogCategory.count()).toEqual(10);
   })
 
-  it("Name a blog category in blog content", function() {
+  it("Names a blog category in blog content", function() {
     expect(blogCategory.get(0).getText()).toEqual('Condimentum tellus tellus');
     expect(blogCategory.get(1).getText()).toEqual('Condimentum tellus tellus');
     expect(blogCategory.get(2).getText()).toEqual('Lorem ipsum dolor sit amet');
