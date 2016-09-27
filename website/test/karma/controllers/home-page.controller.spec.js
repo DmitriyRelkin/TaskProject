@@ -1,7 +1,6 @@
 'use strict';
 
 describe('Controller: homePageCtrl', function () {
-  // Arrange
   var $controller,
       $rootScope,
       $scope,

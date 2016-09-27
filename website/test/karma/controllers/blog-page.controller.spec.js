@@ -10,10 +10,10 @@ describe('Controller: blogContentCtrl', function () {
   beforeEach(module('sampleApp'));
 
   beforeEach(inject(function(_$controller_, _$rootScope_) {
-      $controller = _$controller_;
-      $rootScope = _$rootScope_;
-      $scope = $rootScope.$new();
-      blogCtrl = $controller('blogContentCtrl', {$scope: $scope});
+    $controller = _$controller_;
+    $rootScope = _$rootScope_;
+    $scope = $rootScope.$new();
+    blogCtrl = $controller('blogContentCtrl', {$scope: $scope});
   }));
 
   it("Should have a blog page controller", function() {

@@ -9,51 +9,46 @@ var app             = connect();
 app.use(connectStatic(__dirname  + '/'));
 app.use(bodyParser.json());
 
-
 app.use(connectRouter(function (router) {
 
   router.get('/404', function (req, res, next) {
-      indexRedirect(res);
+    indexRedirect(res);
   });
-  // //
-  // router.post('/contacts', function (req, res, next) {
-  //   res.end(200);
-  // });
-  //
+
   router.post('/contacts', function (req, res, next) {
-      res.writeHeader(200, {"Content-Type": "text/html"});
-      res.end();
+    res.writeHeader(200, {"Content-Type": "text/html"});
+    res.end();
   });
 
   router.post('/reg', function (req, res, next) {
-      res.writeHeader(200, {"Content-Type": "text/html"});
-      res.end();
+    res.writeHeader(200, {"Content-Type": "text/html"});
+    res.end();
   });
 
   router.post('/sig-in', function (req, res, next) {
-      res.writeHeader(200, {"Content-Type": "text/html"});
-      res.end();
+    res.writeHeader(200, {"Content-Type": "text/html"});
+    res.end();
   });
 }));
 
 function indexRedirect(res){
-    fs.readFile('./index.html', function (err, html) {
-        if (err) {
-            throw err;
-        }
-        res.writeHeader(200, {"Content-Type": "text/html"});
-        res.write(html);
-        res.end();
-    });
+  fs.readFile('./index.html', function (err, html) {
+    if (err) {
+      throw err;
+    }
+    res.writeHeader(200, {"Content-Type": "text/html"});
+    res.write(html);
+    res.end();
+  });
 }
 
 app.use(function (req, res) {
-    res.writeHead(302, {
-      'Location': '/404'
-    });
-    res.end();
+  res.writeHead(302, {
+    'Location': '/404'
+  });
+  res.end();
 });
 
 app.listen(port, function() {
-    console.log('Server running on ' + port);
+  console.log('Server running on ' + port);
 });

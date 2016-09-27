@@ -1,7 +1,6 @@
 'use strict';
 
 describe('Controller: loginCtrl', function () {
-  // Arrange
   var $controller,
       $rootScope,
       $scope,

@@ -1,7 +1,6 @@
 'use strict';
 
 describe('Controller: registrationContentCtrl', function () {
-
   var $controller,
       $rootScope,
       $scope,
