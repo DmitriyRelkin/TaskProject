@@ -27,17 +27,13 @@ describe('Controller: loginCtrl', function () {
     expect(loginCtrl).toBeDefined();
   });
 
-  it("Should have a function sendDataLogin for send data authorization", function () {
-    expect(loginCtrl.sendDataLogin).toBeDefined();
-  });
-
   it("Should login", function() {
     expect(loginCtrl.sendDataLogin).toBeDefined(loginCtrl.spinnerClass);
     expect(loginCtrl.spinnerClass).toBeUndefined("loading");
+    expect(authService).toBeDefined();
     spyOn(authService, 'sendLogin').and.returnValue(deferred.promise);
     loginCtrl.sendDataLogin();
     expect(loginCtrl.spinnerClass).toBeDefined("loading");
-    expect(authService).toBeDefined();
     expect(authService.sendLogin).toHaveBeenCalled();
   });
 });

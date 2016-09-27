@@ -9,8 +9,7 @@ describe('Controller: registrationContentCtrl', function () {
       $state,
       $q,
       deferred,
-      authService,
-      vm;
+      authService;
 
   beforeEach(module('sampleApp'));
 
@@ -22,24 +21,19 @@ describe('Controller: registrationContentCtrl', function () {
     $scope = $rootScope.$new();
     regCtrl = $controller('registrationContentCtrl', {$scope: $scope});
     authService = _authService_;
-    vm = this;
   }));
 
   it("Should have a registration page controller", function () {
     expect(regCtrl).toBeDefined();
   });
-  //
-  it("Should have a function sendDataRegistration for send data authorization", function () {
-    expect(regCtrl.sendDataRegistration).toBeDefined();
-  });
 
   it("Should registration", function() {
     expect(regCtrl.sendDataRegistration).toBeDefined(regCtrl.spinnerClass);
     expect(regCtrl.spinnerClass).toBeUndefined("loading");
+    expect(authService).toBeDefined();
     spyOn(authService, 'sendRegistration').and.returnValue(deferred.promise);
     regCtrl.sendDataRegistration();
     expect(regCtrl.spinnerClass).toBeDefined("loading");
-    expect(authService).toBeDefined();
     expect(authService.sendRegistration).toHaveBeenCalled();
   });
 });

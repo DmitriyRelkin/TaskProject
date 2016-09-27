@@ -28,17 +28,13 @@ describe('Controller: contactPageCtrl', function () {
     expect(contactCtrl).toBeDefined();
   });
 
-  it("Should have a function sendContactData for send data authorization", function () {
-    expect(contactCtrl.sendContactData).toBeDefined();
-  });
-
   it("Should send massege", function() {
     expect(contactCtrl.sendContactData).toBeDefined(contactCtrl.spinnerClass);
     expect(contactCtrl.spinnerClass).toBeUndefined("loading");
+    expect(sendMessageData).toBeDefined();
     spyOn(sendMessageData, 'send').and.returnValue(deferred.promise);
     contactCtrl.sendContactData();
     expect(contactCtrl.spinnerClass).toBeDefined("loading");
-    expect(sendMessageData).toBeDefined();
     expect(sendMessageData.send).toHaveBeenCalled();
   });
 
