@@ -28,8 +28,13 @@ describe('Check ContactPage', function() {
     email.sendKeys(params.login.email);
     subject.sendKeys(params.login.subject);
     message.sendKeys(params.login.message);
-    expect(submit.click());
-    browser.wait(EC.visibilityOf($('.cg-notify-message')), 3000);
+    submit.click().then(function() {
+      browser.wait(EC.visibilityOf($('.cg-notify-message')), 3000);
+      expect(name.getAttribute('value')).toBe('');
+      expect(email.getAttribute('value')).toBe('');
+      expect(subject.getAttribute('value')).toBe('');
+      expect(message.getAttribute('value')).toBe('');
+    });
   });
 
   it('Should not allow empty form for sending messages', function() {

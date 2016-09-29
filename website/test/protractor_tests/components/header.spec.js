@@ -15,16 +15,21 @@ describe('Check header', function() {
   });
 
   it('Сlicking on links header', function() {
-    expect(linksHeader.get(4).click());
-    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/sign-in');
-    expect(linksHeader.get(3).click());
-    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/reg');
-    expect(linksHeader.get(2).click());
-    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/blog');
-    expect(linksHeader.get(1).click());
-    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/contacts');
-    expect(linksHeader.get(0).click());
-    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/');
+    linksHeader.get(4).click().then(function() {
+      expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/sign-in');
+    });
+    linksHeader.get(3).click().then(function() {
+      expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/reg');
+    });
+    linksHeader.get(2).click().then(function() {
+      expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/blog');
+    });
+    linksHeader.get(1).click().then(function() {
+      expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/contacts');
+    });
+    linksHeader.get(0).click().then(function() {
+      expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/');
+    });
   });
 
   it('Names on links header', function() {

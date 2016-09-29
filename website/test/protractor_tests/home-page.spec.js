@@ -17,14 +17,18 @@ describe('Check HomePage', function() {
   });
 
   it('Click on the links slider', function() {
-    expect(linksSlider.get(0).click());
-    expect(sliderView.getAttribute('src')).toEqual('http://localhost:8000/website/images/slide-1.jpg');
-    expect(linksSlider.get(1).click());
-    expect(sliderView.getAttribute('src')).toEqual('http://localhost:8000/website/images/slide-2.jpg');
-    expect(linksSlider.get(2).click());
-    expect(sliderView.getAttribute('src')).toEqual('http://localhost:8000/website/images/slide-3.jpg');
-    expect(linksSlider.get(3).click());
-    expect(sliderView.getAttribute('src')).toEqual('http://localhost:8000/website/images/slide-4.jpg');
+    linksSlider.get(0).click().then(function() {
+      expect(sliderView.getAttribute('src')).toEqual('http://localhost:8000/website/images/slide-1.jpg');
+    });
+    linksSlider.get(1).click().then(function() {
+      expect(sliderView.getAttribute('src')).toEqual('http://localhost:8000/website/images/slide-2.jpg');
+    });
+    linksSlider.get(2).click().then(function() {
+      expect(sliderView.getAttribute('src')).toEqual('http://localhost:8000/website/images/slide-3.jpg');
+    });
+    linksSlider.get(3).click().then(function() {
+      expect(sliderView.getAttribute('src')).toEqual('http://localhost:8000/website/images/slide-4.jpg');
+    });
   });
 
   it('Number use in presenting number of button slider', function() {
@@ -76,32 +80,37 @@ describe('Check HomePage', function() {
 
   it('Click navigation link sign-in page on the footer', function() {
     browser.get('http://localhost:8000');
-    expect(navigationFooter.get(4).click());
-    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/sign-in');
+    navigationFooter.get(4).click().then(function() {
+      expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/sign-in');
+    });
   });
 
   it('Click navigation link registration page on the footer', function() {
     browser.get('http://localhost:8000');
-    expect(navigationFooter.get(3).click());
-    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/reg');
+    navigationFooter.get(3).click().then(function() {
+      expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/reg');
+    });
   });
 
   it('Click navigation link blog page on the footer', function() {
     browser.get('http://localhost:8000');
-    expect(navigationFooter.get(2).click());
-    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/blog');
+    navigationFooter.get(2).click().then(function() {
+      expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/blog');
+    });
   });
 
   it('Click navigation link contacts page on the footer', function() {
     browser.get('http://localhost:8000');
-    expect(navigationFooter.get(1).click());
-    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/contacts');
+    navigationFooter.get(1).click().then(function() {
+      expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/contacts');
+    });
   });
 
   it('Click navigation link home page on the footer', function() {
     browser.get('http://localhost:8000');
-    expect(navigationFooter.get(0).click());
-    expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/');
+    navigationFooter.get(0).click().then(function() {
+      expect(browser.getCurrentUrl()).toBe('http://localhost:8000/#/');
+    });
   });
 
   it('Names on links footer navigation', function() {
