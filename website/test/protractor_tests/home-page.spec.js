@@ -8,13 +8,9 @@ describe('Check HomePage', function() {
   var strategyBlock = element.all(by.repeater('list in vm.strategyBlock'));
   var headersFooterBlock = element.all(by.css('.header-footer-column'));
   var navigationFooter = element.all(by.css('.footer-navigation li > a'));
-
   var slider = element(by.css('.slider-view'));
   var sliderView = slider.element(by.css('img'));
   var linksSlider = element.all(by.repeater('photo in vm.photos'));
-
-
-
 
   beforeEach(function() {
     browser.get('http://localhost:8000');
