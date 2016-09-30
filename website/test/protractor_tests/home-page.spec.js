@@ -24,20 +24,17 @@ describe('Check HomePage', function() {
     linksSlider.get(0).click().then(function() {
       expect(sliderView.getAttribute('src')).toBe(linksSlider.get(0).element(by.css('img')).getAttribute('src'));
     });
-
     linksSlider.get(1).click().then(function() {
       expect(sliderView.getAttribute('src')).toBe(linksSlider.get(1).element(by.css('img')).getAttribute('src'));
     });
-
     linksSlider.get(2).click().then(function() {
       expect(sliderView.getAttribute('src')).toBe(linksSlider.get(2).element(by.css('img')).getAttribute('src'));
     });
-
     linksSlider.get(3).click().then(function() {
       expect(sliderView.getAttribute('src')).toBe(linksSlider.get(3).element(by.css('img')).getAttribute('src'));
     });
   });
-  
+
   it('Number use in presenting number of button slider', function() {
     expect(namesButtonSlide.count()).toEqual(2);
   });
