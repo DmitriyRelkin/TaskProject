@@ -8,9 +8,13 @@ describe('Check HomePage', function() {
   var strategyBlock = element.all(by.repeater('list in vm.strategyBlock'));
   var headersFooterBlock = element.all(by.css('.header-footer-column'));
   var navigationFooter = element.all(by.css('.footer-navigation li > a'));
+
   var slider = element(by.css('.slider-view'));
   var sliderView = slider.element(by.css('img'));
   var linksSlider = element.all(by.repeater('photo in vm.photos'));
+
+
+
 
   beforeEach(function() {
     browser.get('http://localhost:8000');
@@ -18,19 +22,22 @@ describe('Check HomePage', function() {
 
   it('Click on the links slider', function() {
     linksSlider.get(0).click().then(function() {
-      expect(sliderView.getAttribute('src')).toEqual('http://localhost:8000/website/images/slide-1.jpg');
+      expect(sliderView.getAttribute('src')).toBe(linksSlider.get(0).element(by.css('img')).getAttribute('src'));
     });
+
     linksSlider.get(1).click().then(function() {
-      expect(sliderView.getAttribute('src')).toEqual('http://localhost:8000/website/images/slide-2.jpg');
+      expect(sliderView.getAttribute('src')).toBe(linksSlider.get(1).element(by.css('img')).getAttribute('src'));
     });
+
     linksSlider.get(2).click().then(function() {
-      expect(sliderView.getAttribute('src')).toEqual('http://localhost:8000/website/images/slide-3.jpg');
+      expect(sliderView.getAttribute('src')).toBe(linksSlider.get(2).element(by.css('img')).getAttribute('src'));
     });
+
     linksSlider.get(3).click().then(function() {
-      expect(sliderView.getAttribute('src')).toEqual('http://localhost:8000/website/images/slide-4.jpg');
+      expect(sliderView.getAttribute('src')).toBe(linksSlider.get(3).element(by.css('img')).getAttribute('src'));
     });
   });
-
+  
   it('Number use in presenting number of button slider', function() {
     expect(namesButtonSlide.count()).toEqual(2);
   });
